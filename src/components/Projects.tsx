@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { MapPin, Calendar, ArrowRight, CheckCircle, Clock } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { MapPin, Calendar, ArrowRight, CheckCircle, Clock, Search, SortAsc, SortDesc } from 'lucide-react';
 
 interface ProjectsProps {
   fullPage?: boolean;
@@ -9,6 +9,8 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedStatus, setSelectedStatus] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('year-desc');
 
   const categories = [
     { id: 'all', label: 'Tất cả' },
@@ -127,12 +129,36 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
     },
   ];
 
-  const filteredProjects = projects.filter(
-    (project) =>
-      (selectedCategory === 'all' || project.category === selectedCategory) &&
-      (selectedYear === 'all' || project.year === selectedYear) &&
-      (selectedStatus === 'all' || project.status === selectedStatus)
-  );
+  const filteredAndSortedProjects = useMemo(() => {
+    let filtered = projects.filter(
+      (project) =>
+        (selectedCategory === 'all' || project.category === selectedCategory) &&
+        (selectedYear === 'all' || project.year === selectedYear) &&
+        (selectedStatus === 'all' || project.status === selectedStatus) &&
+        (searchQuery === '' || project.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+
+    // Sort projects
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'year-desc':
+          return parseInt(b.year) - parseInt(a.year);
+        case 'year-asc':
+          return parseInt(a.year) - parseInt(b.year);
+        case 'name-asc':
+          return a.title.localeCompare(b.title);
+        case 'name-desc':
+          return b.title.localeCompare(a.title);
+        case 'status':
+          if (a.status === b.status) return 0;
+          return a.status === 'completed' ? -1 : 1;
+        default:
+          return 0;
+      }
+    });
+
+    return filtered;
+  }, [projects, selectedCategory, selectedYear, selectedStatus, searchQuery, sortBy]);
 
   if (fullPage) {
     return (
@@ -144,22 +170,79 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
               Hơn 500 dự án thành công trên toàn quốc
             </p>
           </div>
+
+          {/* Top Controls */}
+          <div className="bg-white p-6 rounded-2xl shadow-lg mb-8">
+            <div className="grid md:grid-cols-4 gap-4">
+              {/* Search */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <input
+                  type="text"
+                  placeholder="Tìm kiếm dự án..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E2A78] focus:border-[#1E2A78] bg-white"
+                />
+              </div>
+
+              {/* Year Filter */}
+              <div>
+                <select
+                  value={selectedYear}
+                  onChange={(e) => setSelectedYear(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3CB371] focus:border-[#3CB371] bg-white"
+                >
+                  {years.map((year: any) => (
+                    <option key={year.id} value={year.id}>
+                      {year.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Status Filter */}
+              <div>
+                <select
+                  value={selectedStatus}
+                  onChange={(e) => setSelectedStatus(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] bg-white"
+                >
+                  {statuses.map((status: any) => (
+                    <option key={status.id} value={status.id}>
+                      {status.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Sort */}
+              <div>
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E2A78] focus:border-[#1E2A78] bg-white"
+                >
+                  <option value="year-desc">Năm giảm dần</option>
+                  <option value="year-asc">Năm tăng dần</option>
+                  <option value="name-asc">Tên A-Z</option>
+                  <option value="name-desc">Tên Z-A</option>
+                  <option value="status">Trạng thái</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
           <div className="flex gap-8">
             <div className="w-80 flex-shrink-0">
               <ProjectFilters
                 categories={categories}
-                years={years}
-                statuses={statuses}
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
-                selectedYear={selectedYear}
-                setSelectedYear={setSelectedYear}
-                selectedStatus={selectedStatus}
-                setSelectedStatus={setSelectedStatus}
               />
             </div>
             <div className="flex-1">
-              <ProjectGrid projects={filteredProjects} />
+              <ProjectGrid projects={filteredAndSortedProjects} />
             </div>
           </div>
         </div>
@@ -178,7 +261,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
             Dự án tiêu biểu
           </h2>
         </div>
-        <ProjectGrid projects={filteredProjects.slice(0, 3)} />
+        <ProjectGrid projects={filteredAndSortedProjects.slice(0, 3)} />
       </div>
     </section>
   );
@@ -186,76 +269,27 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
 
 function ProjectFilters({
   categories,
-  years,
-  statuses,
   selectedCategory,
-  setSelectedCategory,
-  selectedYear,
-  setSelectedYear,
-  selectedStatus,
-  setSelectedStatus
+  setSelectedCategory
 }: any) {
   return (
     <div className="bg-white p-6 rounded-2xl shadow-lg sticky top-8">
-      <h3 className="text-lg font-bold text-[#1E2A78] mb-6">Bộ lọc dự án</h3>
+      <h3 className="text-lg font-bold text-[#1E2A78] mb-6">Theo nhóm</h3>
 
-      <div className="space-y-8">
-        <div>
-          <h4 className="text-sm font-semibold text-gray-700 mb-4">Theo nhóm:</h4>
-          <div className="space-y-2">
-            {categories.map((category: any) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all text-sm ${
-                  selectedCategory === category.id
-                    ? 'bg-[#1E2A78] text-white shadow-md'
-                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold text-gray-700 mb-4">Dự án theo năm:</h4>
-          <div className="space-y-2">
-            {years.map((year: any) => (
-              <button
-                key={year.id}
-                onClick={() => setSelectedYear(year.id)}
-                className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all text-sm ${
-                  selectedYear === year.id
-                    ? 'bg-[#3CB371] text-white shadow-md'
-                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {year.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-sm font-semibold text-gray-700 mb-4">Dự án theo status:</h4>
-          <div className="space-y-2">
-            {statuses.map((status: any) => (
-              <button
-                key={status.id}
-                onClick={() => setSelectedStatus(status.id)}
-                className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all text-sm ${
-                  selectedStatus === status.id
-                    ? 'bg-[#FF6B35] text-white shadow-md'
-                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {status.label}
-              </button>
-            ))}
-          </div>
-        </div>
+      <div className="space-y-2">
+        {categories.map((category: any) => (
+          <button
+            key={category.id}
+            onClick={() => setSelectedCategory(category.id)}
+            className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all text-sm ${
+              selectedCategory === category.id
+                ? 'bg-[#1E2A78] text-white shadow-md'
+                : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+            }`}
+          >
+            {category.label}
+          </button>
+        ))}
       </div>
     </div>
   );
