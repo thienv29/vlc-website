@@ -313,7 +313,7 @@ function ProjectGrid({ projects }: any) {
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
       {projects.map((project: any) => (
         <div
           key={project.id}
@@ -336,11 +336,25 @@ function ProjectGrid({ projects }: any) {
               </div>
             </div>
           </div>
-          <div className="p-6">
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="text-xl font-bold text-[#1E2A78] group-hover:text-[#3CB371] transition-colors">
+          <div className="p-4 flex flex-col justify-between" >
+            <div>
+              <h3 className="text-lg font-bold text-[#1E2A78] group-hover:text-[#3CB371] transition-colors leading-tight mb-3">
                 {project.title}
               </h3>
+
+              <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                <div className="flex items-center gap-2">
+                  <MapPin size={14} className="text-[#3CB371] flex-shrink-0" />
+                  <span>{project.location}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar size={14} className="text-[#3CB371] flex-shrink-0" />
+                  <span>{project.year}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between">
               <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
                 project.status === 'completed'
                   ? 'bg-green-100 text-green-800'
@@ -351,23 +365,16 @@ function ProjectGrid({ projects }: any) {
                 ) : (
                   <Clock size={12} />
                 )}
-                {project.status === 'completed' ? 'Hoàn thành' : 'Đang thi công'}
+                <span className="hidden sm:inline">
+                  {project.status === 'completed' ? 'Hoàn thành' : 'Đang thi công'}
+                </span>
               </div>
+
+              <button className="text-[#3CB371] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                Xem chi tiết
+                <ArrowRight size={14} />
+              </button>
             </div>
-            <div className="space-y-2 mb-4">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <MapPin size={16} className="text-[#3CB371]" />
-                {project.location}
-              </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Calendar size={16} className="text-[#3CB371]" />
-                {project.year}
-              </div>
-            </div>
-            <button className="text-[#3CB371] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-              Xem chi tiết
-              <ArrowRight size={16} />
-            </button>
           </div>
         </div>
       ))}
