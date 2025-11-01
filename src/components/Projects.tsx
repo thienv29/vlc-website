@@ -171,68 +171,6 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
             </p>
           </div>
 
-          {/* Top Controls */}
-          <div className="bg-white p-6 rounded-2xl shadow-lg mb-8">
-            <div className="grid md:grid-cols-4 gap-4">
-              {/* Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                <input
-                  type="text"
-                  placeholder="Tìm kiếm dự án..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E2A78] focus:border-[#1E2A78] bg-white"
-                />
-              </div>
-
-              {/* Year Filter */}
-              <div>
-                <select
-                  value={selectedYear}
-                  onChange={(e) => setSelectedYear(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3CB371] focus:border-[#3CB371] bg-white"
-                >
-                  {years.map((year: any) => (
-                    <option key={year.id} value={year.id}>
-                      {year.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Status Filter */}
-              <div>
-                <select
-                  value={selectedStatus}
-                  onChange={(e) => setSelectedStatus(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] bg-white"
-                >
-                  {statuses.map((status: any) => (
-                    <option key={status.id} value={status.id}>
-                      {status.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Sort */}
-              <div>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E2A78] focus:border-[#1E2A78] bg-white"
-                >
-                  <option value="year-desc">Năm giảm dần</option>
-                  <option value="year-asc">Năm tăng dần</option>
-                  <option value="name-asc">Tên A-Z</option>
-                  <option value="name-desc">Tên Z-A</option>
-                  <option value="status">Trạng thái</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
           <div className="flex gap-8">
             <div className="w-80 flex-shrink-0">
               <ProjectFilters
@@ -242,6 +180,68 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
               />
             </div>
             <div className="flex-1">
+              {/* Top Controls within the project column */}
+              <div className="bg-white p-6 rounded-2xl shadow-lg mb-8">
+                <div className="grid md:grid-cols-4 gap-4">
+                  {/* Search */}
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                    <input
+                      type="text"
+                      placeholder="Tìm kiếm dự án..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E2A78] focus:border-[#1E2A78] bg-white"
+                    />
+                  </div>
+
+                  {/* Year Filter */}
+                  <div>
+                    <select
+                      value={selectedYear}
+                      onChange={(e) => setSelectedYear(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3CB371] focus:border-[#3CB371] bg-white"
+                    >
+                      {years.map((year: any) => (
+                        <option key={year.id} value={year.id}>
+                          {year.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Status Filter */}
+                  <div>
+                    <select
+                      value={selectedStatus}
+                      onChange={(e) => setSelectedStatus(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] bg-white"
+                    >
+                      {statuses.map((status: any) => (
+                        <option key={status.id} value={status.id}>
+                          {status.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Sort */}
+                  <div>
+                    <select
+                      value={sortBy}
+                      onChange={(e) => setSortBy(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E2A78] focus:border-[#1E2A78] bg-white"
+                    >
+                      <option value="year-desc">Năm giảm dần</option>
+                      <option value="year-asc">Năm tăng dần</option>
+                      <option value="name-asc">Tên A-Z</option>
+                      <option value="name-desc">Tên Z-A</option>
+                      <option value="status">Trạng thái</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
               <ProjectGrid projects={filteredAndSortedProjects} />
             </div>
           </div>
