@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,50 +13,36 @@ import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return (
-          <>
-            <Hero />
-            <About />
-            <Services />
-            <Testimonials />
-            <Projects />
-            <News />
-            <Contact />
-          </>
-        );
-      case 'about':
-        return <About fullPage />;
-      case 'services':
-        return <Services fullPage />;
-      case 'projects':
-        return <Projects fullPage />;
-      case 'sustainability':
-        return <Sustainability />;
-      case 'news':
-        return <News fullPage />;
-      case 'careers':
-        return <Careers />;
-      case 'contact':
-        return <Contact fullPage />;
-      default:
-        return <Hero />;
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-[#F5F7FA]">
-      <Header currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main>
-        {renderPage()}
-      </main>
-      <Footer onNavigate={setCurrentPage} />
-      <Chatbox />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-[#F5F7FA]">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Hero />
+                <About />
+                <Services />
+                <Testimonials />
+                <Projects />
+                <News />
+                <Contact />
+              </>
+            } />
+            <Route path="/about" element={<About fullPage />} />
+            <Route path="/services" element={<Services fullPage />} />
+            <Route path="/projects" element={<Projects fullPage />} />
+            <Route path="/sustainability" element={<Sustainability />} />
+            <Route path="/news" element={<News fullPage />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<Contact fullPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <Chatbox />
+      </div>
+    </Router>
   );
 }
 

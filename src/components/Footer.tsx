@@ -1,10 +1,7 @@
 import { Mail, Phone, MapPin, Facebook, Linkedin, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
-
-export default function Footer({ onNavigate }: FooterProps) {
+export default function Footer() {
   return (
     <footer className="bg-[#1E2A78] text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -40,18 +37,18 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h4 className="font-bold text-lg mb-6">Về chúng tôi</h4>
             <ul className="space-y-3">
               {[
-                { id: 'about', label: 'Giới thiệu' },
-                { id: 'services', label: 'Dịch vụ' },
-                { id: 'projects', label: 'Dự án' },
-                { id: 'sustainability', label: 'Phát triển bền vững' },
+                { path: '/about', label: 'Giới thiệu' },
+                { path: '/services', label: 'Dịch vụ' },
+                { path: '/projects', label: 'Dự án' },
+                { path: '/sustainability', label: 'Phát triển bền vững' },
               ].map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => onNavigate(item.id)}
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
                     className="text-gray-300 hover:text-[#3CB371] transition-colors text-sm"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -61,17 +58,17 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h4 className="font-bold text-lg mb-6">Hỗ trợ</h4>
             <ul className="space-y-3">
               {[
-                { id: 'news', label: 'Tin tức' },
-                { id: 'careers', label: 'Tuyển dụng' },
-                { id: 'contact', label: 'Liên hệ' },
+                { path: '/news', label: 'Tin tức' },
+                { path: '/careers', label: 'Tuyển dụng' },
+                { path: '/contact', label: 'Liên hệ' },
               ].map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => onNavigate(item.id)}
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
                     className="text-gray-300 hover:text-[#3CB371] transition-colors text-sm"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
               <li>

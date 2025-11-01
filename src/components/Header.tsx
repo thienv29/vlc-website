@@ -1,18 +1,15 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
-interface HeaderProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
-}
-
-export default function Header({ currentPage, onNavigate }: HeaderProps) {
+export default function Header() {
+  const location = useLocation();
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const isHomePage = currentPage === 'home';
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,14 +20,14 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { id: 'home', label: t('nav.home') },
-    { id: 'about', label: t('nav.about') },
-    { id: 'services', label: t('nav.services') },
-    { id: 'projects', label: t('nav.projects') },
-    { id: 'sustainability', label: t('nav.sustainability') },
-    { id: 'news', label: t('nav.news') },
-    { id: 'careers', label: t('nav.careers') },
-    { id: 'contact', label: t('nav.contact') },
+    { path: '/', label: t('nav.home') },
+    { path: '/about', label: t('nav.about') },
+    { path: '/services', label: t('nav.services') },
+    { path: '/projects', label: t('nav.projects') },
+    { path: '/sustainability', label: t('nav.sustainability') },
+    { path: '/news', label: t('nav.news') },
+    { path: '/careers', label: t('nav.careers') },
+    { path: '/contact', label: t('nav.contact') },
   ];
 
   const shouldHaveSolidBg = !isHomePage || isScrolled;
@@ -42,9 +39,9 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div
+        <Link
+          to="/"
           className="flex items-center gap-3 cursor-pointer"
-          onClick={() => onNavigate('home')}
         >
           <div className="w-12 h-12 bg-gradient-to-br from-[#1E2A78] to-[#3CB371] rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-xl">VLC</span>
@@ -57,16 +54,16 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               {t('header.tagline')}
             </p>
           </div>
-        </div>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => onNavigate(item.id)}
+              <Link
+                key={item.path}
+                to={item.path}
                 className={`text-sm font-medium transition-colors relative group ${
-                  currentPage === item.id
+                  location.pathname === item.path
                     ? shouldHaveSolidBg
                       ? 'text-[#3CB371]'
                       : 'text-white'
@@ -78,10 +75,10 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                 {item.label}
                 <span
                   className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#3CB371] transform transition-transform ${
-                    currentPage === item.id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   }`}
                 />
-              </button>
+              </Link>
             ))}
           </nav>
           <LanguageSwitcher hasSolidBackground={shouldHaveSolidBg} />
@@ -105,18 +102,16 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         <div className="lg:hidden bg-white shadow-xl">
           <nav className="flex flex-col px-6 py-4">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  onNavigate(item.id);
-                  setIsMobileMenuOpen(false);
-                }}
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className={`text-left py-3 text-sm font-medium border-b border-gray-100 ${
-                  currentPage === item.id ? 'text-[#3CB371]' : 'text-gray-700'
+                  location.pathname === item.path ? 'text-[#3CB371]' : 'text-gray-700'
                 }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
         </div>

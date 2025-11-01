@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Globe } from 'lucide-react';
+import { Globe, ChevronDown } from 'lucide-react';
 
 interface LanguageSwitcherProps {
   hasSolidBackground?: boolean;
@@ -22,9 +22,14 @@ export default function LanguageSwitcher({ hasSolidBackground = true }: Language
 
   return (
     <div className="relative group">
-      <button className={`flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors ${textColor} ${hoverColor}`}>
+      <button className={`flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg border-2 ${
+        hasSolidBackground
+          ? 'border-[#3CB371] bg-[#3CB371] text-white hover:bg-white hover:text-[#3CB371]'
+          : 'border-white bg-transparent text-white hover:bg-white hover:text-[#1E2A78]'
+      }`}>
         <Globe size={16} />
         <span className="hidden sm:inline">{t('common.language')}</span>
+        <ChevronDown size={14} />
       </button>
 
       <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
