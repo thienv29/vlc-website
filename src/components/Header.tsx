@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface HeaderProps {
   currentPage: string;
@@ -7,6 +9,7 @@ interface HeaderProps {
 }
 
 export default function Header({ currentPage, onNavigate }: HeaderProps) {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isHomePage = currentPage === 'home';
@@ -20,14 +23,14 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Trang chủ' },
-    { id: 'about', label: 'Giới thiệu' },
-    { id: 'services', label: 'Dịch vụ' },
-    { id: 'projects', label: 'Dự án' },
-    { id: 'sustainability', label: 'Phát triển bền vững' },
-    { id: 'news', label: 'Tin tức' },
-    { id: 'careers', label: 'Tuyển dụng' },
-    { id: 'contact', label: 'Liên hệ' },
+    { id: 'home', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'services', label: t('nav.services') },
+    { id: 'projects', label: t('nav.projects') },
+    { id: 'sustainability', label: t('nav.sustainability') },
+    { id: 'news', label: t('nav.news') },
+    { id: 'careers', label: t('nav.careers') },
+    { id: 'contact', label: t('nav.contact') },
   ];
 
   const shouldHaveSolidBg = !isHomePage || isScrolled;
@@ -48,49 +51,54 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           </div>
           <div>
             <h1 className={`font-bold text-xl ${shouldHaveSolidBg ? 'text-[#1E2A78]' : 'text-white'}`}>
-              VLC GROUP
+              {t('header.companyName')}
             </h1>
             <p className={`text-xs ${shouldHaveSolidBg ? 'text-gray-600' : 'text-gray-200'}`}>
-              Building Sustainable Future
+              {t('header.tagline')}
             </p>
           </div>
         </div>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => onNavigate(item.id)}
-              className={`text-sm font-medium transition-colors relative group ${
-                currentPage === item.id
-                  ? shouldHaveSolidBg
-                    ? 'text-[#3CB371]'
-                    : 'text-white'
-                  : shouldHaveSolidBg
-                  ? 'text-gray-700 hover:text-[#3CB371]'
-                  : 'text-gray-200 hover:text-white'
-              }`}
-            >
-              {item.label}
-              <span
-                className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#3CB371] transform transition-transform ${
-                  currentPage === item.id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+        <div className="hidden lg:flex items-center gap-8">
+          <nav className="flex items-center gap-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => onNavigate(item.id)}
+                className={`text-sm font-medium transition-colors relative group ${
+                  currentPage === item.id
+                    ? shouldHaveSolidBg
+                      ? 'text-[#3CB371]'
+                      : 'text-white'
+                    : shouldHaveSolidBg
+                    ? 'text-gray-700 hover:text-[#3CB371]'
+                    : 'text-gray-200 hover:text-white'
                 }`}
-              />
-            </button>
-          ))}
-        </nav>
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#3CB371] transform transition-transform ${
+                    currentPage === item.id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
+              </button>
+            ))}
+          </nav>
+          <LanguageSwitcher hasSolidBackground={shouldHaveSolidBg} />
+        </div>
 
-        <button
-          className="lg:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? (
-            <X className={shouldHaveSolidBg ? 'text-gray-700' : 'text-white'} size={28} />
-          ) : (
-            <Menu className={shouldHaveSolidBg ? 'text-gray-700' : 'text-white'} size={28} />
-          )}
-        </button>
+        <div className="flex items-center gap-4 lg:hidden">
+          <LanguageSwitcher hasSolidBackground={shouldHaveSolidBg} />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className={shouldHaveSolidBg ? 'text-gray-700' : 'text-white'} size={28} />
+            ) : (
+              <Menu className={shouldHaveSolidBg ? 'text-gray-700' : 'text-white'} size={28} />
+            )}
+          </button>
+        </div>
       </div>
 
       {isMobileMenuOpen && (

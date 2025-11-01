@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "projects": "Dự án",
+    "sustainability": "Phát triển bền vững",
+    "news": "Tin tức",
+    "careers": "Tuyển dụng",
+    "contact": "Liên hệ"
+  },
+  "header": {
+    "companyName": "VLC GROUP",
+    "tagline": "Building Sustainable Future"
+  },
+  "hero": {
+    "badge": "EPC & SUSTAINABILITY LEADER",
+    "title": "XÂY DỰNG TƯƠNG LAI",
+    "subtitle": "BỀN VỮNG & THỊNH VƯỢNG",
+    "description": "Tiên phong trong các giải pháp EPC, công nghệ xanh và phát triển bền vững cho doanh nghiệp hiện đại",
+    "exploreServices": "Khám phá dịch vụ",
+    "watchIntro": "Xem giới thiệu",
+    "stats": {
+      "projects": "Dự án hoàn thành",
+      "experience": "Năm kinh nghiệm",
+      "satisfaction": "Khách hàng hài lòng",
+      "experts": "Đội ngũ chuyên gia"
+    }
+  },
+  "about": {
+    "title": "Về VLC Group",
+    "tagline": "We build values that last",
+    "section": "Về chúng tôi",
+    "title2": "Đối tác tin cậy cho dự án EPC của bạn",
+    "description1": "VLC Group là đơn vị tiên phong trong lĩnh vực EPC (Engineering, Procurement, Construction), cung cấp giải pháp tổng thể từ thiết kế, cung ứng thiết bị đến thi công và vận hành.",
+    "description2": "Với hơn 20 năm kinh nghiệm và đội ngũ chuyên gia giàu năng lực, chúng tôi cam kết mang đến các dự án chất lượng cao, bền vững và thân thiện với môi trường.",
+    "features": {
+      "quality": "Chất lượng hàng đầu",
+      "experts": "1000+ Chuyên gia",
+      "iso": "ISO 9001:2015",
+      "transparency": "Minh bạch & Uy tín"
+    },
+    "timeline": {
+      "title": "Hành trình phát triển",
+      "milestones": {
+        "2003": {
+          "title": "Thành lập",
+          "desc": "Khởi đầu với đội ngũ 20 người"
+        },
+        "2010": {
+          "title": "Mở rộng",
+          "desc": "Mở chi nhánh tại 5 tỉnh thành"
+        },
+        "2015": {
+          "title": "Chứng nhận",
+          "desc": "Đạt chứng nhận ISO 9001:2015"
+        },
+        "2020": {
+          "title": "Xanh hóa",
+          "desc": "Ra mắt bộ phận Phát triển bền vững"
+        },
+        "2024": {
+          "title": "Số hóa",
+          "desc": "Ứng dụng AI và IoT trong EPC"
+        }
+      }
+    },
+    "values": {
+      "vision": {
+        "title": "TẦM NHÌN",
+        "desc": "Trở thành đối tác EPC hàng đầu khu vực, tiên phong trong giải pháp bền vững"
+      },
+      "mission": {
+        "title": "SỨ MỆNH",
+        "desc": "Mang đến giá trị vượt trội cho khách hàng, đối tác và cộng đồng"
+      },
+      "coreValues": {
+        "title": "GIÁ TRỊ CỐT LÕI",
+        "desc": "Chất lượng - Uy tín - Sáng tạo - Bền vững - Trách nhiệm"
+      }
+    },
+    "certifications": {
+      "title": "Chứng nhận & Giải thưởng"
+    }
+  },
+  "services": {
+    "title": "Dịch vụ của chúng tôi",
+    "subtitle": "Giải pháp tổng thể cho mọi nhu cầu dự án EPC và phát triển bền vững",
+    "section": "Dịch vụ",
+    "sectionTitle": "Giải pháp toàn diện cho dự án của bạn",
+    "learnMore": "Tìm hiểu thêm",
+    "requestQuote": "Yêu cầu báo giá",
+    "services": {
+      "epc": {
+        "title": "Tổng thầu EPC",
+        "items": [
+          "Thiết kế kỹ thuật chi tiết",
+          "Cung ứng thiết bị & vật tư",
+          "Thi công lắp đặt chuyên nghiệp",
+          "Nghiệm thu và bàn giao"
+        ]
+      },
+      "maintenance": {
+        "title": "Vận hành & Bảo trì",
+        "items": [
+          "Vận hành hệ thống 24/7",
+          "Bảo trì định kỳ & khẩn cấp",
+          "Tối ưu hóa hiệu suất",
+          "Đào tạo vận hành cho khách hàng"
+        ]
+      },
+      "environment": {
+        "title": "Tư vấn Môi trường",
+        "items": [
+          "Đánh giá tác động môi trường",
+          "Giải pháp xử lý nước thải",
+          "Quản lý chất thải công nghiệp",
+          "Chứng nhận xanh & bền vững"
+        ]
+      },
+      "products": {
+        "title": "Sản phẩm & Công nghệ",
+        "items": [
+          "Thiết bị năng lượng tái tạo",
+          "Hệ thống điều khiển thông minh",
+          "Giải pháp IoT & tự động hóa",
+          "Phần mềm quản lý dự án"
+        ]
+      }
+    }
+  },
+  "common": {
+    "language": "Ngôn ngữ",
+    "vietnamese": "Tiếng Việt",
+    "english": "English"
+  }
+}

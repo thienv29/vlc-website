@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "sustainability": "Sustainability",
+    "news": "News",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "header": {
+    "companyName": "VLC GROUP",
+    "tagline": "Building Sustainable Future"
+  },
+  "hero": {
+    "badge": "EPC & SUSTAINABILITY LEADER",
+    "title": "BUILDING THE FUTURE",
+    "subtitle": "SUSTAINABLE & PROSPEROUS",
+    "description": "Leading in EPC solutions, green technology and sustainable development for modern businesses",
+    "exploreServices": "Explore Services",
+    "watchIntro": "Watch Introduction",
+    "stats": {
+      "projects": "Completed Projects",
+      "experience": "Years of Experience",
+      "satisfaction": "Customer Satisfaction",
+      "experts": "Expert Team"
+    }
+  },
+  "about": {
+    "title": "About VLC Group",
+    "tagline": "We build values that last",
+    "section": "About Us",
+    "title2": "Your Trusted EPC Project Partner",
+    "description1": "VLC Group is a pioneer in the EPC (Engineering, Procurement, Construction) field, providing comprehensive solutions from design, equipment supply to construction and operation.",
+    "description2": "With over 20 years of experience and a team of highly capable experts, we are committed to delivering high-quality, sustainable and environmentally friendly projects.",
+    "features": {
+      "quality": "Top Quality",
+      "experts": "1000+ Experts",
+      "iso": "ISO 9001:2015",
+      "transparency": "Transparent & Reliable"
+    },
+    "timeline": {
+      "title": "Development Journey",
+      "milestones": {
+        "2003": {
+          "title": "Founded",
+          "desc": "Started with a team of 20 people"
+        },
+        "2010": {
+          "title": "Expansion",
+          "desc": "Opened branches in 5 provinces"
+        },
+        "2015": {
+          "title": "Certification",
+          "desc": "Achieved ISO 9001:2015 certification"
+        },
+        "2020": {
+          "title": "Green Transition",
+          "desc": "Launched Sustainability Department"
+        },
+        "2024": {
+          "title": "Digitalization",
+          "desc": "Applied AI and IoT in EPC"
+        }
+      }
+    },
+    "values": {
+      "vision": {
+        "title": "VISION",
+        "desc": "To become the leading EPC partner in the region, pioneering sustainable solutions"
+      },
+      "mission": {
+        "title": "MISSION",
+        "desc": "To deliver superior value to customers, partners and communities"
+      },
+      "coreValues": {
+        "title": "CORE VALUES",
+        "desc": "Quality - Reliability - Innovation - Sustainability - Responsibility"
+      }
+    },
+    "certifications": {
+      "title": "Certifications & Awards"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for all EPC project needs and sustainable development",
+    "section": "Services",
+    "sectionTitle": "Comprehensive solutions for your project",
+    "learnMore": "Learn More",
+    "requestQuote": "Request Quote",
+    "services": {
+      "epc": {
+        "title": "EPC Contracting",
+        "items": [
+          "Detailed technical design",
+          "Equipment & material supply",
+          "Professional installation",
+          "Commissioning and handover"
+        ]
+      },
+      "maintenance": {
+        "title": "Operations & Maintenance",
+        "items": [
+          "24/7 system operation",
+          "Regular & emergency maintenance",
+          "Performance optimization",
+          "Customer operation training"
+        ]
+      },
+      "environment": {
+        "title": "Environmental Consulting",
+        "items": [
+          "Environmental impact assessment",
+          "Wastewater treatment solutions",
+          "Industrial waste management",
+          "Green & sustainability certification"
+        ]
+      },
+      "products": {
+        "title": "Products & Technology",
+        "items": [
+          "Renewable energy equipment",
+          "Smart control systems",
+          "IoT & automation solutions",
+          "Project management software"
+        ]
+      }
+    }
+  },
+  "common": {
+    "language": "Language",
+    "vietnamese": "Vietnamese",
+    "english": "English"
+  }
+}

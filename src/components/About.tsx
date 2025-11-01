@@ -1,18 +1,21 @@
 import { Target, Eye, Award, Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface AboutProps {
   fullPage?: boolean;
 }
 
 export default function About({ fullPage = false }: AboutProps) {
+  const { t } = useTranslation();
+
   if (fullPage) {
     return (
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#1E2A78] mb-4">Về VLC Group</h2>
+            <h2 className="text-5xl font-bold text-[#1E2A78] mb-4">{t('about.title')}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We build values that last
+              {t('about.tagline')}
             </p>
           </div>
 
@@ -35,6 +38,15 @@ export default function About({ fullPage = false }: AboutProps) {
 }
 
 function AboutContent() {
+  const { t } = useTranslation();
+
+  const features = [
+    { icon: Target, label: t('about.features.quality') },
+    { icon: Users, label: t('about.features.experts') },
+    { icon: Award, label: t('about.features.iso') },
+    { icon: Eye, label: t('about.features.transparency') },
+  ];
+
   return (
     <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
       <div className="relative">
@@ -50,27 +62,20 @@ function AboutContent() {
 
       <div>
         <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
-          Về chúng tôi
+          {t('about.section')}
         </span>
         <h2 className="text-4xl font-bold text-[#1E2A78] mt-4 mb-6">
-          Đối tác tin cậy cho dự án EPC của bạn
+          {t('about.title2')}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-6">
-          VLC Group là đơn vị tiên phong trong lĩnh vực EPC (Engineering, Procurement, Construction),
-          cung cấp giải pháp tổng thể từ thiết kế, cung ứng thiết bị đến thi công và vận hành.
+          {t('about.description1')}
         </p>
         <p className="text-gray-600 leading-relaxed mb-8">
-          Với hơn 20 năm kinh nghiệm và đội ngũ chuyên gia giàu năng lực, chúng tôi cam kết
-          mang đến các dự án chất lượng cao, bền vững và thân thiện với môi trường.
+          {t('about.description2')}
         </p>
 
         <div className="grid grid-cols-2 gap-6">
-          {[
-            { icon: Target, label: 'Chất lượng hàng đầu' },
-            { icon: Users, label: '1000+ Chuyên gia' },
-            { icon: Award, label: 'ISO 9001:2015' },
-            { icon: Eye, label: 'Minh bạch & Uy tín' },
-          ].map((item, index) => (
+          {features.map((item, index) => (
             <div key={index} className="flex items-center gap-3">
               <div className="w-12 h-12 bg-[#3CB371]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <item.icon className="text-[#3CB371]" size={24} />
@@ -85,17 +90,19 @@ function AboutContent() {
 }
 
 function Timeline() {
+  const { t } = useTranslation();
+
   const milestones = [
-    { year: '2003', title: 'Thành lập', desc: 'Khởi đầu với đội ngũ 20 người' },
-    { year: '2010', title: 'Mở rộng', desc: 'Mở chi nhánh tại 5 tỉnh thành' },
-    { year: '2015', title: 'Chứng nhận', desc: 'Đạt chứng nhận ISO 9001:2015' },
-    { year: '2020', title: 'Xanh hóa', desc: 'Ra mắt bộ phận Phát triển bền vững' },
-    { year: '2024', title: 'Số hóa', desc: 'Ứng dụng AI và IoT trong EPC' },
+    { year: '2003', title: t('about.timeline.milestones.2003.title'), desc: t('about.timeline.milestones.2003.desc') },
+    { year: '2010', title: t('about.timeline.milestones.2010.title'), desc: t('about.timeline.milestones.2010.desc') },
+    { year: '2015', title: t('about.timeline.milestones.2015.title'), desc: t('about.timeline.milestones.2015.desc') },
+    { year: '2020', title: t('about.timeline.milestones.2020.title'), desc: t('about.timeline.milestones.2020.desc') },
+    { year: '2024', title: t('about.timeline.milestones.2024.title'), desc: t('about.timeline.milestones.2024.desc') },
   ];
 
   return (
     <div className="mb-20">
-      <h3 className="text-3xl font-bold text-[#1E2A78] mb-12 text-center">Hành trình phát triển</h3>
+      <h3 className="text-3xl font-bold text-[#1E2A78] mb-12 text-center">{t('about.timeline.title')}</h3>
       <div className="relative">
         <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#1E2A78] to-[#3CB371]" />
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -117,10 +124,12 @@ function Timeline() {
 }
 
 function Values() {
+  const { t } = useTranslation();
+
   const values = [
-    { title: 'TẦM NHÌN', desc: 'Trở thành đối tác EPC hàng đầu khu vực, tiên phong trong giải pháp bền vững', icon: Eye },
-    { title: 'SỨ MỆNH', desc: 'Mang đến giá trị vượt trội cho khách hàng, đối tác và cộng đồng', icon: Target },
-    { title: 'GIÁ TRỊ CỐT LÕI', desc: 'Chất lượng - Uy tín - Sáng tạo - Bền vững - Trách nhiệm', icon: Award },
+    { title: t('about.values.vision.title'), desc: t('about.values.vision.desc'), icon: Eye },
+    { title: t('about.values.mission.title'), desc: t('about.values.mission.desc'), icon: Target },
+    { title: t('about.values.coreValues.title'), desc: t('about.values.coreValues.desc'), icon: Award },
   ];
 
   return (
@@ -137,9 +146,11 @@ function Values() {
 }
 
 function Certifications() {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-[#F5F7FA] rounded-2xl p-12">
-      <h3 className="text-3xl font-bold text-[#1E2A78] mb-8 text-center">Chứng nhận & Giải thưởng</h3>
+      <h3 className="text-3xl font-bold text-[#1E2A78] mb-8 text-center">{t('about.certifications.title')}</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {['ISO 9001:2015', 'ISO 14001', 'OHSAS 18001', 'Green Building'].map((cert, index) => (
           <div key={index} className="bg-white p-6 rounded-xl text-center shadow-sm">

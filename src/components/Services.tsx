@@ -1,60 +1,42 @@
 import { useState } from 'react';
 import { Building2, Wrench, Leaf, ShoppingBag, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface ServicesProps {
   fullPage?: boolean;
 }
 
 export default function Services({ fullPage = false }: ServicesProps) {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
 
   const services = [
     {
       icon: Building2,
-      title: 'Tổng thầu EPC',
+      title: t('services.services.epc.title'),
       color: '#1E2A78',
-      items: [
-        'Thiết kế kỹ thuật chi tiết',
-        'Cung ứng thiết bị & vật tư',
-        'Thi công lắp đặt chuyên nghiệp',
-        'Nghiệm thu và bàn giao',
-      ],
+      items: t('services.services.epc.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       icon: Wrench,
-      title: 'Vận hành & Bảo trì',
+      title: t('services.services.maintenance.title'),
       color: '#3CB371',
-      items: [
-        'Vận hành hệ thống 24/7',
-        'Bảo trì định kỳ & khẩn cấp',
-        'Tối ưu hóa hiệu suất',
-        'Đào tạo vận hành cho khách hàng',
-      ],
+      items: t('services.services.maintenance.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/3862135/pexels-photo-3862135.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       icon: Leaf,
-      title: 'Tư vấn Môi trường',
+      title: t('services.services.environment.title'),
       color: '#3CB371',
-      items: [
-        'Đánh giá tác động môi trường',
-        'Giải pháp xử lý nước thải',
-        'Quản lý chất thải công nghiệp',
-        'Chứng nhận xanh & bền vững',
-      ],
+      items: t('services.services.environment.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
       icon: ShoppingBag,
-      title: 'Sản phẩm & Công nghệ',
+      title: t('services.services.products.title'),
       color: '#1E2A78',
-      items: [
-        'Thiết bị năng lượng tái tạo',
-        'Hệ thống điều khiển thông minh',
-        'Giải pháp IoT & tự động hóa',
-        'Phần mềm quản lý dự án',
-      ],
+      items: t('services.services.products.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
   ];
@@ -64,9 +46,9 @@ export default function Services({ fullPage = false }: ServicesProps) {
       <div className="pt-32 pb-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#1E2A78] mb-4">Dịch vụ của chúng tôi</h2>
+            <h2 className="text-5xl font-bold text-[#1E2A78] mb-4">{t('services.title')}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Giải pháp tổng thể cho mọi nhu cầu dự án EPC và phát triển bền vững
+              {t('services.subtitle')}
             </p>
           </div>
           <ServiceTabs services={services} activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -80,10 +62,10 @@ export default function Services({ fullPage = false }: ServicesProps) {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
-            Dịch vụ
+            {t('services.section')}
           </span>
           <h2 className="text-4xl font-bold text-[#1E2A78] mt-4 mb-6">
-            Giải pháp toàn diện cho dự án của bạn
+            {t('services.sectionTitle')}
           </h2>
         </div>
 
@@ -101,7 +83,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
               </div>
               <h3 className="text-xl font-bold text-[#1E2A78] mb-4">{service.title}</h3>
               <ul className="space-y-2 mb-6">
-                {service.items.slice(0, 3).map((item, i) => (
+                {service.items.slice(0, 3).map((item: string, i: number) => (
                   <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
                     <span className="text-[#3CB371] mt-1">•</span>
                     {item}
@@ -109,7 +91,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
                 ))}
               </ul>
               <button className="text-[#3CB371] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                Tìm hiểu thêm
+                {t('services.learnMore')}
                 <ArrowRight size={16} />
               </button>
             </div>
@@ -121,6 +103,8 @@ export default function Services({ fullPage = false }: ServicesProps) {
 }
 
 function ServiceTabs({ services, activeTab, setActiveTab }: any) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className="flex flex-wrap gap-4 mb-12 justify-center">
@@ -160,7 +144,7 @@ function ServiceTabs({ services, activeTab, setActiveTab }: any) {
             ))}
           </ul>
           <button className="px-8 py-4 bg-[#3CB371] text-white rounded-lg font-semibold hover:bg-[#34a563] transition-all flex items-center gap-2">
-            Yêu cầu báo giá
+            {t('services.requestQuote')}
             <ArrowRight size={20} />
           </button>
         </div>
