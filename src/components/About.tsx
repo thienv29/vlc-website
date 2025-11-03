@@ -204,7 +204,7 @@ function Timeline() {
               className={`relative mb-24 ${index % 2 === 0 ? 'md:pr-1/2 md:text-right' : 'md:pl-1/2 md:text-left'}`}
             >
               {/* Enhanced Timeline dot with pulse effect */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
+              <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 z-20">
                 <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-primary-500 rounded-full border-4 border-white shadow-xl animate-pulse"></div>
                 <div className="absolute inset-0 w-8 h-8 bg-primary-400 rounded-full animate-ping opacity-20"></div>
               </div>
