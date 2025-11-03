@@ -290,14 +290,9 @@ function Timeline() {
         })}
 
         {/* Progress indicator */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-4 bg-gradient-to-r from-primary-600 to-primary-500 text-white px-8 py-4 rounded-full shadow-xl">
-            <span className="font-semibold">20 năm phát triển liên tục</span>
-            <div className="flex gap-1">
-              {milestones.map((_, idx) => (
-                <div key={idx} className="w-3 h-3 bg-white/30 rounded-full"></div>
-              ))}
-            </div>
+        <div className="text-center mt-24 mb-8">
+          <div className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-12 py-6 rounded-full shadow-xl inline-block">
+            <span className="font-bold text-lg">20 năm phát triển liên tục</span>
           </div>
         </div>
       </div>
