@@ -325,23 +325,187 @@ function Values() {
 function Certifications() {
   const { t } = useTranslation();
 
-  const certificationImages = [
-    { name: 'ISO 9001:2015', image: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=100' },
-    { name: 'ISO 14001', image: 'https://images.pexels.com/photos/3862135/pexels-photo-3862135.jpeg?auto=compress&cs=tinysrgb&w=100' },
-    { name: 'OHSAS 18001', image: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=100' },
-    { name: 'Green Building', image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=100' },
+  const stats = [
+    { value: t('about.certifications.stats.certifications'), label: 'International Certifications', icon: '🏆' },
+    { value: t('about.certifications.stats.awards'), label: 'Industry Awards', icon: '⭐' },
+    { value: t('about.certifications.stats.years'), label: 'Consecutive Recognition', icon: '📈' },
+    { value: t('about.certifications.stats.recognition'), label: 'National Trust', icon: '🏛️' },
   ];
 
+  const certifications = t('about.certifications.certifications', { returnObjects: true }) as any[];
+  const awards = t('about.certifications.awards', { returnObjects: true }) as any[];
+
+  const getIcon = (iconType: string) => {
+    const icons = {
+      quality: '⚡',
+      environment: '🌱',
+      safety: '🛡️',
+      energy: '⚡',
+      green: '🌿',
+      sustainability: '♻️'
+    };
+    return icons[iconType as keyof typeof icons] || '🏆';
+  };
+
   return (
-    <div className="bg-[#F5F7FA] rounded-2xl p-12 animate-fadeIn">
-      <h3 className="text-3xl font-bold text-primary-800 mb-8 text-center animate-slideInUp">{t('about.certifications.title')}</h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {certificationImages.map((cert, index) => (
-          <div key={index} className="bg-white p-6 rounded-xl text-center shadow-sm transform hover:scale-105 transition-transform duration-300" style={{ animationDelay: `${index * 100}ms` }}>
-            <img src={cert.image} alt={cert.name} className="mx-auto mb-3 w-20 h-20 object-contain" />
-            <p className="font-semibold text-primary-800">{cert.name}</p>
+    <div className="relative bg-gradient-to-br from-slate-50 via-white to-primary-50/30 rounded-3xl p-8 md:p-16 overflow-hidden animate-fadeIn">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary-100/20 to-transparent rounded-full -translate-y-48 translate-x-48"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-primary-200/10 to-transparent rounded-full translate-y-40 -translate-x-40"></div>
+
+      <div className="relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-3 bg-primary-100/50 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
+            <Award className="text-primary-600" size={24} />
+            <span className="text-primary-700 font-semibold uppercase tracking-wider text-sm">
+              {t('about.certifications.subtitle')}
+            </span>
           </div>
-        ))}
+
+          <h3 className="text-4xl md:text-5xl font-bold text-primary-800 mb-6 animate-slideInUp">
+            {t('about.certifications.title')}
+          </h3>
+
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed animate-slideInUp delay-100">
+            {t('about.certifications.description')}
+          </p>
+
+          <div className="w-32 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto mt-8 rounded-full"></div>
+        </div>
+
+        {/* Statistics Section */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50 transform hover:scale-105 hover:shadow-xl transition-all duration-300 group"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                {stat.icon}
+              </div>
+              <div className="text-3xl font-bold text-primary-800 mb-2 group-hover:text-primary-600 transition-colors">
+                {stat.value}
+              </div>
+              <div className="text-sm text-gray-600 font-medium">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Certifications Section */}
+        <div className="mb-20">
+          <h4 className="text-3xl font-bold text-primary-800 text-center mb-12 animate-slideInUp">
+            International Certifications
+          </h4>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certifications.map((cert: any, index: number) => (
+              <div
+                key={index}
+                className="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:border-primary-200 transform hover:-translate-y-2 transition-all duration-500 animate-fadeIn"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                {/* Icon and Badge */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    {getIcon(cert.icon)}
+                  </div>
+                  <div className="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    {cert.year}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
+                      {cert.type}
+                    </span>
+                  </div>
+
+                  <h5 className="text-xl font-bold text-gray-800 group-hover:text-primary-700 transition-colors">
+                    {cert.name}
+                  </h5>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    {cert.description}
+                  </p>
+                </div>
+
+                {/* Hover effect overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-primary-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Awards Section */}
+        <div>
+          <h4 className="text-3xl font-bold text-primary-800 text-center mb-12 animate-slideInUp">
+            Industry Awards & Recognition
+          </h4>
+
+          <div className="space-y-6">
+            {awards.map((award: any, index: number) => (
+              <div
+                key={index}
+                className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-2xl transition-all duration-500 animate-fadeIn ${
+                  index % 2 === 0
+                    ? 'bg-gradient-to-r from-white to-primary-50/30 border-l-4 border-primary-500'
+                    : 'bg-gradient-to-l from-white to-primary-50/30 border-r-4 border-primary-500 md:flex-row-reverse'
+                }`}
+                style={{ animationDelay: `${index * 250}ms` }}
+              >
+                {/* Award Badge */}
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-3xl shadow-xl animate-pulse">
+                    🏆
+                  </div>
+                </div>
+
+                {/* Award Content */}
+                <div className="flex-1 text-center md:text-left">
+                  <div className="flex flex-col md:flex-row md:items-center gap-2 mb-3">
+                    <h5 className="text-2xl font-bold text-gray-800">
+                      {award.name}
+                    </h5>
+                    <span className="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold self-center md:self-auto">
+                      {award.year}
+                    </span>
+                  </div>
+
+                  <p className="text-gray-600 mb-3">
+                    <span className="font-semibold text-primary-700">{award.organization}</span>
+                  </p>
+
+                  <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-medium">
+                    <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
+                    {award.category}
+                  </div>
+                </div>
+
+                {/* Decorative element */}
+                <div className={`hidden md:block w-16 h-16 rounded-full ${
+                  index % 2 === 0
+                    ? 'bg-gradient-to-r from-primary-200 to-primary-300'
+                    : 'bg-gradient-to-l from-primary-200 to-primary-300'
+                } opacity-20`}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-12 py-6 rounded-2xl shadow-xl inline-block">
+            <p className="text-lg font-semibold">
+              Excellence Through Continuous Recognition
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

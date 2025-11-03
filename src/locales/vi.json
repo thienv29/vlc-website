@@ -80,7 +80,97 @@
       }
     },
     "certifications": {
-      "title": "Chứng nhận & Giải thưởng"
+      "title": "Chứng nhận & Giải thưởng",
+      "subtitle": "Cam kết chất lượng và sự xuất sắc",
+      "description": "VLC Group tự hào sở hữu các chứng nhận quốc tế và giải thưởng ngành, khẳng định vị thế dẫn dắt trong lĩnh vực EPC và phát triển bền vững.",
+      "stats": {
+        "certifications": "15+ Chứng nhận quốc tế",
+        "awards": "25+ Giải thưởng ngành",
+        "years": "10 năm liên tiếp",
+        "recognition": "Uy tín quốc gia"
+      },
+      "certifications": [
+        {
+          "name": "ISO 9001:2015",
+          "type": "Chất lượng",
+          "description": "Hệ thống quản lý chất lượng quốc tế",
+          "year": "2015",
+          "icon": "quality"
+        },
+        {
+          "name": "ISO 14001:2015",
+          "type": "Môi trường",
+          "description": "Hệ thống quản lý môi trường",
+          "year": "2018",
+          "icon": "environment"
+        },
+        {
+          "name": "ISO 45001:2018",
+          "type": "An toàn",
+          "description": "Hệ thống quản lý an toàn lao động",
+          "year": "2020",
+          "icon": "safety"
+        },
+        {
+          "name": "ISO 50001:2018",
+          "type": "Năng lượng",
+          "description": "Hệ thống quản lý năng lượng",
+          "year": "2021",
+          "icon": "energy"
+        },
+        {
+          "name": "Green Building",
+          "type": "Xanh",
+          "description": "Chứng nhận công trình xanh",
+          "year": "2022",
+          "icon": "green"
+        },
+        {
+          "name": "ESG Excellence",
+          "type": "Bền vững",
+          "description": "Xuất sắc về ESG",
+          "year": "2023",
+          "icon": "sustainability"
+        }
+      ],
+      "awards": [
+        {
+          "name": "Top 10 Doanh nghiệp EPC Việt Nam",
+          "organization": "Bộ Công Thương",
+          "year": "2024",
+          "category": "Ngành"
+        },
+        {
+          "name": "Doanh nghiệp Xanh",
+          "organization": "Bộ Tài nguyên & Môi trường",
+          "year": "2023",
+          "category": "Môi trường"
+        },
+        {
+          "name": "Sáng tạo Công nghệ 4.0",
+          "organization": "Bộ Khoa học & Công nghệ",
+          "year": "2023",
+          "category": "Công nghệ"
+        },
+        {
+          "name": "Đối tác Tin cậy",
+          "organization": "Hiệp hội EPC Việt Nam",
+          "year": "2022",
+          "category": "Uy tín"
+        },
+        {
+          "name": "Top 50 Nhà thầu Hàng đầu",
+          "organization": "Vietnam Report",
+          "year": "2024",
+          "category": "Xếp hạng"
+        },
+        {
+          "name": "Giải thưởng Bền vững",
+          "organization": "Forbes Việt Nam",
+          "year": "2023",
+          "category": "Bền vững"
+        }
+      ]
     }
   },
   "services": {

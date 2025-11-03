@@ -80,7 +80,97 @@
       }
     },
     "certifications": {
-      "title": "Certifications & Awards"
+      "title": "Certifications & Awards",
+      "subtitle": "Commitment to Quality and Excellence",
+      "description": "VLC Group proudly holds international certifications and industry awards, affirming our leading position in EPC and sustainable development.",
+      "stats": {
+        "certifications": "15+ International Certifications",
+        "awards": "25+ Industry Awards",
+        "years": "10 Consecutive Years",
+        "recognition": "National Recognition"
+      },
+      "certifications": [
+        {
+          "name": "ISO 9001:2015",
+          "type": "Quality",
+          "description": "International Quality Management System",
+          "year": "2015",
+          "icon": "quality"
+        },
+        {
+          "name": "ISO 14001:2015",
+          "type": "Environment",
+          "description": "Environmental Management System",
+          "year": "2018",
+          "icon": "environment"
+        },
+        {
+          "name": "ISO 45001:2018",
+          "type": "Safety",
+          "description": "Occupational Health & Safety Management",
+          "year": "2020",
+          "icon": "safety"
+        },
+        {
+          "name": "ISO 50001:2018",
+          "type": "Energy",
+          "description": "Energy Management System",
+          "year": "2021",
+          "icon": "energy"
+        },
+        {
+          "name": "Green Building",
+          "type": "Green",
+          "description": "Green Building Certification",
+          "year": "2022",
+          "icon": "green"
+        },
+        {
+          "name": "ESG Excellence",
+          "type": "Sustainability",
+          "description": "ESG Excellence Award",
+          "year": "2023",
+          "icon": "sustainability"
+        }
+      ],
+      "awards": [
+        {
+          "name": "Top 10 EPC Companies in Vietnam",
+          "organization": "Ministry of Industry and Trade",
+          "year": "2024",
+          "category": "Industry"
+        },
+        {
+          "name": "Green Enterprise",
+          "organization": "Ministry of Natural Resources & Environment",
+          "year": "2023",
+          "category": "Environment"
+        },
+        {
+          "name": "Industry 4.0 Innovation",
+          "organization": "Ministry of Science & Technology",
+          "year": "2023",
+          "category": "Technology"
+        },
+        {
+          "name": "Trusted Partner",
+          "organization": "Vietnam EPC Association",
+          "year": "2022",
+          "category": "Trust"
+        },
+        {
+          "name": "Top 50 Leading Contractors",
+          "organization": "Vietnam Report",
+          "year": "2024",
+          "category": "Ranking"
+        },
+        {
+          "name": "Sustainability Award",
+          "organization": "Forbes Vietnam",
+          "year": "2023",
+          "category": "Sustainability"
+        }
+      ]
     }
   },
   "services": {
