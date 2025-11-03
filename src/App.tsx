@@ -3,11 +3,14 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
-import Testimonials from './components/Testimonials';
+import ContactInfo from './components/ContactInfo';
+import LeadershipQuotes from './components/LeadershipQuotes';
+import News from './components/News';
+import Partners from './components/Partners';
+import CTA from './components/CTA';
 import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Sustainability from './components/Sustainability';
-import News from './components/News';
 import NewsDetail from './components/NewsDetail';
 import Careers from './components/Careers';
 import Contact from './components/Contact';
@@ -26,10 +29,11 @@ function App() {
                 <Hero />
                 <About />
                 <Services />
-                <Testimonials />
-                <Projects />
+                <ContactInfo />
+                <LeadershipQuotes />
                 <News />
-                <Contact />
+                <Partners />
+                <CTA />
               </>
             } />
             <Route path="/about" element={<About fullPage />} />
