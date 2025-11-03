@@ -16,6 +16,8 @@ import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
+import Testimonials from './components/Testimonials';
+import ProjectShowcase from './components/ProjectShowcase';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
                 <Hero />
                 <About />
                 <Services />
+                <ProjectShowcase />
+                <Testimonials />
                 <ContactInfo />
                 <LeadershipQuotes />
                 <News />

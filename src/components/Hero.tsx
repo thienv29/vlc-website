@@ -1,21 +1,83 @@
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Award, Users, TrendingUp, Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
   const { t } = useTranslation();
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   const stats = [
-    { number: '500+', label: t('hero.stats.projects') },
-    { number: '20+', label: t('hero.stats.experience') },
-    { number: '98%', label: t('hero.stats.satisfaction') },
-    { number: '1000+', label: t('hero.stats.experts') },
+    { number: 500, suffix: '+', label: t('hero.stats.projects'), icon: TrendingUp, color: 'text-blue-400' },
+    { number: 20, suffix: '+', label: t('hero.stats.experience'), icon: Award, color: 'text-green-400' },
+    { number: 98, suffix: '%', label: t('hero.stats.satisfaction'), icon: Star, color: 'text-yellow-400' },
+    { number: 1000, suffix: '+', label: t('hero.stats.experts'), icon: Users, color: 'text-purple-400' },
   ];
+
+  // Animated counter hook
+  const useAnimatedCounter = (end: number, duration: number = 2000) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      let startTime: number;
+      let animationFrame: number;
+
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+
+        setCount(Math.floor(progress * end));
+
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate);
+        }
+      };
+
+      animationFrame = requestAnimationFrame(animate);
+
+      return () => {
+        if (animationFrame) {
+          cancelAnimationFrame(animationFrame);
+        }
+      };
+    }, [end, duration]);
+
+    return count;
+  };
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-500">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-800/90 via-transparent to-transparent" />
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className={`w-full h-full object-cover transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-30' : 'opacity-0'}`}
+          onLoadedData={() => setIsVideoLoaded(true)}
+        >
+          <source src="https://player.vimeo.com/external/370467937.sd.mp4?s=e90dcaba73c19e0e36f03406b47bbd6ab7cb8ba3&profile_id=165" type="video/mp4" />
+          {/* Fallback image if video doesn't load */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-500"></div>
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/80 via-primary-800/70 to-primary-600/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/95 via-transparent to-transparent"></div>
+      </div>
+
+      {/* Animated particles background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`
+            }}
+          />
+        ))}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
@@ -47,12 +109,23 @@ export default function Hero() {
         </div>
 
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto animate-fadeIn delay-300">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
-              <div className="text-sm text-gray-300">{stat.label}</div>
-            </div>
-          ))}
+          {stats.map((stat, index) => {
+            const animatedCount = useAnimatedCounter(stat.number, 2500 + index * 200);
+            return (
+              <div key={index} className="group text-center transform hover:scale-105 transition-all duration-300">
+                <div className="flex items-center justify-center mb-3">
+                  <stat.icon className={`w-8 h-8 ${stat.color} mr-2`} />
+                  <div className="text-4xl md:text-5xl font-bold text-white">
+                    {animatedCount}{stat.suffix}
+                  </div>
+                </div>
+                <div className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300">
+                  {stat.label}
+                </div>
+                <div className="w-12 h-1 bg-primary-400 mx-auto mt-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
