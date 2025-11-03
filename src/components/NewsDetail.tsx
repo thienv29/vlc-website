@@ -325,13 +325,13 @@ export default function NewsDetail() {
                       Chia sẻ:
                     </span>
                     <div className="flex gap-3">
-                      <button className="w-10 h-10 bg-[#1877F2] text-white rounded-full flex items-center justify-center hover:bg-[#1877F2]/90 transition-colors">
+                      <button className="w-10 h-10 bg-[#0F5132] text-white rounded-full flex items-center justify-center hover:bg-[#0F5132]/90 transition-colors">
                         <Facebook size={18} />
                       </button>
-                      <button className="w-10 h-10 bg-[#1DA1F2] text-white rounded-full flex items-center justify-center hover:bg-[#1DA1F2]/90 transition-colors">
+                      <button className="w-10 h-10 bg-[#1e5f3a] text-white rounded-full flex items-center justify-center hover:bg-[#1e5f3a]/90 transition-colors">
                         <Twitter size={18} />
                       </button>
-                      <button className="w-10 h-10 bg-[#0077B5] text-white rounded-full flex items-center justify-center hover:bg-[#0077B5]/90 transition-colors">
+                      <button className="w-10 h-10 bg-[#3CB371] text-white rounded-full flex items-center justify-center hover:bg-[#3CB371]/90 transition-colors">
                         <Linkedin size={18} />
                       </button>
                     </div>
