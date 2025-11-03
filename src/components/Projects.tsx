@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MapPin, Calendar, ArrowRight, CheckCircle, Clock, Search, SortAsc, SortDesc } from 'lucide-react';
 
 interface ProjectsProps {
@@ -247,7 +248,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
                 </div>
               </div>
 
-              <ProjectGrid projects={filteredAndSortedProjects} />
+              <ProjectGrid projects={filteredAndSortedProjects} fullPage={true} />
             </div>
           </div>
         </div>
@@ -300,7 +301,15 @@ function ProjectFilters({
   );
 }
 
-function ProjectGrid({ projects }: any) {
+function ProjectGrid({ projects, fullPage = false }: any) {
+  const navigate = useNavigate();
+
+  const handleProjectClick = (projectId: number) => {
+    if (fullPage) {
+      navigate(`/projects/${projectId}`);
+    }
+  };
+
   if (projects.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-16 px-8 text-center">
@@ -322,7 +331,8 @@ function ProjectGrid({ projects }: any) {
       {projects.map((project: any) => (
         <div
           key={project.id}
-          className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+          onClick={() => handleProjectClick(project.id)}
+          className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${fullPage ? 'cursor-pointer' : ''}`}
         >
           <div className="relative aspect-[4/3] overflow-hidden">
             <img
@@ -375,10 +385,12 @@ function ProjectGrid({ projects }: any) {
                 </span>
               </div>
 
-              <button className="text-[#3CB371] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                Xem chi tiết
-                <ArrowRight size={14} />
-              </button>
+              {fullPage && (
+                <button className="text-[#3CB371] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Xem chi tiết
+                  <ArrowRight size={14} />
+                </button>
+              )}
             </div>
           </div>
         </div>

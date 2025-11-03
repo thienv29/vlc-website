@@ -5,6 +5,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import Projects from './components/Projects';
+import ProjectDetail from './components/ProjectDetail';
 import Sustainability from './components/Sustainability';
 import News from './components/News';
 import Careers from './components/Careers';
@@ -33,6 +34,7 @@ function App() {
             <Route path="/about" element={<About fullPage />} />
             <Route path="/services" element={<Services fullPage />} />
             <Route path="/projects" element={<Projects fullPage />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/news" element={<News fullPage />} />
             <Route path="/careers" element={<Careers />} />
