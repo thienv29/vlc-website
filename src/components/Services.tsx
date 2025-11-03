@@ -14,7 +14,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
     {
       icon: Building2,
       title: t('services.services.epc.title'),
-      color: '#1E2A78',
+      color: '#0F5132',
       items: t('services.services.epc.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
@@ -35,7 +35,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
     {
       icon: ShoppingBag,
       title: t('services.services.products.title'),
-      color: '#1E2A78',
+      color: '#0F5132',
       items: t('services.services.products.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
@@ -45,7 +45,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
     return (
       <div className="pt-32 pb-20 bg-[#F5F7FA]">
         {/* Page Banner */}
-        <div className="relative bg-gradient-to-r from-[#1E2A78] to-[#3CB371] text-white py-20 mb-16">
+        <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white py-20 mb-16">
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative max-w-7xl mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">{t('services.title')}</h1>
@@ -69,7 +69,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
           <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
             {t('services.section')}
           </span>
-          <h2 className="text-4xl font-bold text-[#1E2A78] mt-4 mb-6">
+          <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-6">
             {t('services.sectionTitle')}
           </h2>
         </div>
@@ -86,7 +86,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
               >
                 <service.icon size={32} style={{ color: service.color }} />
               </div>
-              <h3 className="text-xl font-bold text-[#1E2A78] mb-4">{service.title}</h3>
+              <h3 className="text-xl font-bold text-[#0F5132] mb-4">{service.title}</h3>
               <ul className="space-y-2 mb-6">
                 {service.items.slice(0, 3).map((item: string, i: number) => (
                   <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
@@ -137,7 +137,7 @@ function ServiceTabs({ services, activeTab, setActiveTab }: any) {
               return <Icon size={40} style={{ color: services[activeTab].color }} />;
             })()}
           </div>
-          <h3 className="text-3xl font-bold text-[#1E2A78] mb-6">{services[activeTab].title}</h3>
+          <h3 className="text-3xl font-bold text-[#0F5132] mb-6">{services[activeTab].title}</h3>
           <ul className="space-y-4 mb-8">
             {services[activeTab].items.map((item: string, i: number) => (
               <li key={i} className="flex items-start gap-3">

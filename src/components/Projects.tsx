@@ -165,7 +165,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
     return (
       <div className="pt-32 pb-20 bg-[#F5F7FA]">
         {/* Page Banner */}
-        <div className="relative bg-gradient-to-r from-[#1E2A78] to-[#3CB371] text-white py-20 mb-16">
+        <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white py-20 mb-16">
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative max-w-7xl mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Dự án tiêu biểu</h1>
@@ -197,7 +197,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
                       placeholder="Tìm kiếm dự án..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E2A78] focus:border-[#1E2A78] bg-white"
+                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0F5132] focus:border-[#0F5132] bg-white"
                     />
                   </div>
 
@@ -236,7 +236,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
                     <select
                       value={sortBy}
                       onChange={(e) => setSortBy(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E2A78] focus:border-[#1E2A78] bg-white"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0F5132] focus:border-[#0F5132] bg-white"
                     >
                       <option value="year-desc">Năm giảm dần</option>
                       <option value="year-asc">Năm tăng dần</option>
@@ -263,7 +263,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
           <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
             Dự án
           </span>
-          <h2 className="text-4xl font-bold text-[#1E2A78] mt-4 mb-6">
+          <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-6">
             Dự án tiêu biểu
           </h2>
         </div>
@@ -280,7 +280,7 @@ function ProjectFilters({
 }: any) {
   return (
     <div className="bg-white p-6 rounded-2xl shadow-lg sticky top-8">
-      <h3 className="text-lg font-bold text-[#1E2A78] mb-6">Theo nhóm</h3>
+      <h3 className="text-lg font-bold text-[#0F5132] mb-6">Theo nhóm</h3>
 
       <div className="space-y-2">
         {categories.map((category: any) => (
@@ -289,7 +289,7 @@ function ProjectFilters({
             onClick={() => setSelectedCategory(category.id)}
             className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all text-sm ${
               selectedCategory === category.id
-                ? 'bg-[#1E2A78] text-white shadow-md'
+                ? 'bg-[#0F5132] text-white shadow-md'
                 : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
             }`}
           >
@@ -353,7 +353,7 @@ function ProjectGrid({ projects, fullPage = false }: any) {
           </div>
           <div className="p-4 flex flex-col justify-between  aspect-[6/3]" >
             <div>
-              <h3 className="text-lg font-bold text-[#1E2A78] group-hover:text-[#3CB371] transition-colors leading-tight mb-3">
+              <h3 className="text-lg font-bold text-[#0F5132] group-hover:text-[#3CB371] transition-colors leading-tight mb-3">
                 {project.title}
               </h3>
 

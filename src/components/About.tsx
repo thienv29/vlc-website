@@ -12,7 +12,7 @@ export default function About({ fullPage = false }: AboutProps) {
     return (
       <div className="pt-32 pb-20">
         {/* Page Banner */}
-        <div className="relative bg-gradient-to-r from-[#1E2A78] to-[#3CB371] text-white py-20 mb-16">
+        <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white py-20 mb-16">
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative max-w-7xl mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">{t('about.title')}</h1>
@@ -68,7 +68,7 @@ function AboutContent() {
         <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
           {t('about.section')}
         </span>
-        <h2 className="text-4xl font-bold text-[#1E2A78] mt-4 mb-6">
+        <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-6">
           {t('about.title2')}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-6">
@@ -106,18 +106,18 @@ function Timeline() {
 
   return (
     <div className="mb-20">
-      <h3 className="text-3xl font-bold text-[#1E2A78] mb-12 text-center">{t('about.timeline.title')}</h3>
+      <h3 className="text-3xl font-bold text-[#0F5132] mb-12 text-center">{t('about.timeline.title')}</h3>
       <div className="relative">
-        <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#1E2A78] to-[#3CB371]" />
+        <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#0F5132] to-[#3CB371]" />
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {milestones.map((milestone, index) => (
             <div key={index} className="relative text-center">
               <div className="mb-4 flex justify-center">
                 <div className="w-16 h-16 bg-white border-4 border-[#3CB371] rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-lg font-bold text-[#1E2A78]">{milestone.year}</span>
+                  <span className="text-lg font-bold text-[#0F5132]">{milestone.year}</span>
                 </div>
               </div>
-              <h4 className="font-semibold text-[#1E2A78] mb-1">{milestone.title}</h4>
+              <h4 className="font-semibold text-[#0F5132] mb-1">{milestone.title}</h4>
               <p className="text-sm text-gray-600">{milestone.desc}</p>
             </div>
           ))}
@@ -139,7 +139,7 @@ function Values() {
   return (
     <div className="mb-20 grid md:grid-cols-3 gap-8">
       {values.map((value, index) => (
-        <div key={index} className="bg-gradient-to-br from-[#1E2A78] to-[#2a3f8f] text-white p-8 rounded-2xl">
+        <div key={index} className="bg-gradient-to-br from-[#0F5132] to-[#1e5f3a] text-white p-8 rounded-2xl">
           <value.icon size={40} className="mb-4 text-[#3CB371]" />
           <h3 className="text-xl font-bold mb-3">{value.title}</h3>
           <p className="text-gray-200 leading-relaxed">{value.desc}</p>
@@ -154,12 +154,12 @@ function Certifications() {
 
   return (
     <div className="bg-[#F5F7FA] rounded-2xl p-12">
-      <h3 className="text-3xl font-bold text-[#1E2A78] mb-8 text-center">{t('about.certifications.title')}</h3>
+      <h3 className="text-3xl font-bold text-[#0F5132] mb-8 text-center">{t('about.certifications.title')}</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {['ISO 9001:2015', 'ISO 14001', 'OHSAS 18001', 'Green Building'].map((cert, index) => (
           <div key={index} className="bg-white p-6 rounded-xl text-center shadow-sm">
             <Award className="text-[#3CB371] mx-auto mb-3" size={40} />
-            <p className="font-semibold text-[#1E2A78]">{cert}</p>
+            <p className="font-semibold text-[#0F5132]">{cert}</p>
           </div>
         ))}
       </div>
