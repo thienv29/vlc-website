@@ -44,13 +44,18 @@ export default function Services({ fullPage = false }: ServicesProps) {
   if (fullPage) {
     return (
       <div className="pt-32 pb-20 bg-[#F5F7FA]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#1E2A78] mb-4">{t('services.title')}</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        {/* Page Banner */}
+        <div className="relative bg-gradient-to-r from-[#1E2A78] to-[#3CB371] text-white py-20 mb-16">
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="relative max-w-7xl mx-auto px-6 text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">{t('services.title')}</h1>
+            <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto">
               {t('services.subtitle')}
             </p>
           </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6">
           <ServiceTabs services={services} activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
       </div>

@@ -11,14 +11,18 @@ export default function About({ fullPage = false }: AboutProps) {
   if (fullPage) {
     return (
       <div className="pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#1E2A78] mb-4">{t('about.title')}</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        {/* Page Banner */}
+        <div className="relative bg-gradient-to-r from-[#1E2A78] to-[#3CB371] text-white py-20 mb-16">
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="relative max-w-7xl mx-auto px-6 text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">{t('about.title')}</h1>
+            <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto">
               {t('about.tagline')}
             </p>
           </div>
+        </div>
 
+        <div className="max-w-7xl mx-auto px-6">
           <AboutContent />
           <Timeline />
           <Values />
