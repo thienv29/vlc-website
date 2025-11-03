@@ -15,7 +15,7 @@ export default function CTA() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-[#0F5132] to-[#3CB371]">
+    <section className="py-24 bg-gradient-to-br from-primary-800 to-primary-500">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center text-white mb-12">
           <h2 className="text-4xl font-bold mb-6">
@@ -36,7 +36,7 @@ export default function CTA() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-[#3CB371]"
+                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-primary-400"
                   placeholder="Nguyễn Văn A"
                 />
               </div>
@@ -47,7 +47,7 @@ export default function CTA() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-[#3CB371]"
+                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-primary-400"
                   placeholder="email@example.com"
                 />
               </div>
@@ -60,7 +60,7 @@ export default function CTA() {
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-[#3CB371]"
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-primary-400"
                 placeholder="0901234567"
               />
             </div>
@@ -71,14 +71,14 @@ export default function CTA() {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-[#3CB371] resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-primary-400 resize-none"
                 placeholder="Mô tả ngắn gọn về dự án của bạn..."
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 bg-[#3CB371] text-white rounded-lg font-semibold hover:bg-[#34a563] transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-all flex items-center justify-center gap-2"
             >
               Gửi yêu cầu tư vấn
               <Send size={20} />

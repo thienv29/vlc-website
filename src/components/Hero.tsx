@@ -13,14 +13,14 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F5132] via-[#1e5f3a] to-[#3CB371]">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-500">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F5132]/90 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-800/90 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <div className="mb-6 inline-block">
-          <span className="px-4 py-2 bg-[#3CB371]/20 backdrop-blur-sm border border-[#3CB371]/30 rounded-full text-[#3CB371] text-sm font-medium">
+          <span className="px-4 py-2 bg-primary-500/20 backdrop-blur-sm border border-primary-500/30 rounded-full text-primary-500 text-sm font-medium">
             {t('hero.badge')}
           </span>
         </div>
@@ -28,7 +28,7 @@ export default function Hero() {
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           {t('hero.title')}
           <br />
-          <span className="text-[#3CB371]">{t('hero.subtitle')}</span>
+          <span className="text-primary-400">{t('hero.subtitle')}</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -36,7 +36,7 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="group px-8 py-4 bg-[#3CB371] text-white rounded-lg font-semibold text-lg hover:bg-[#34a563] transition-all flex items-center gap-2 shadow-lg shadow-[#3CB371]/30">
+          <button className="group px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 transition-all flex items-center gap-2 shadow-lg shadow-primary-500/30">
             {t('hero.exploreServices')}
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </button>
