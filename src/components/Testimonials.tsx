@@ -1,118 +1,99 @@
-import { useState } from 'react';
-import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-
-const testimonials = [
-  {
-    id: 1,
-    quote: "Văn Lang VLC không chỉ là một đối tác xây dựng, mà còn là người đồng hành tin cậy trong mọi dự án của chúng tôi. Sự chuyên nghiệp, uy tín và chất lượng luôn được đặt lên hàng đầu.",
-    name: "Ông Nguyễn Văn A",
-    position: "Tổng Giám đốc",
-    image: "/image-ceo.jpg"
-  },
-  {
-    id: 2,
-    quote: "Chúng tôi rất ấn tượng với khả năng hoàn thành dự án đúng tiến độ và vượt qua các tiêu chuẩn chất lượng. VLC Group thực sự là đối tác đáng tin cậy.",
-    name: "Bà Trần Thị B",
-    position: "Giám đốc Dự án",
-    image: "/image-ceo.jpg"
-  },
-  {
-    id: 3,
-    quote: "Với VLC, chúng tôi không chỉ nhận được sản phẩm chất lượng mà còn được hỗ trợ tận tình trong suốt quá trình hợp tác. Rất hài lòng!",
-    name: "Ông Lê Văn C",
-    position: "Chủ đầu tư",
-    image: "/image-ceo.jpg"
-  }
-];
+import { Star } from 'lucide-react';
 
 export default function Testimonials() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  const currentTestimonial = testimonials[currentSlide];
-
   return (
-    <section className="py-24 bg-[#F5F7FA] animate-fadeIn">
+    <section className="py-20 bg-gradient-to-br from-primary-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#1E2A78] mb-4 animate-slideInUp">Ý kiến khách hàng</h2>
-          <p className="text-xl text-gray-600 animate-slideInUp delay-100">
-            Những gì khách hàng nói về chúng tôi
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Khách hàng nói gì về chúng tôi
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Những đánh giá chân thực từ đối tác và khách hàng đã tin tưởng lựa chọn dịch vụ của VLC Group
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto relative">
-          <div className="bg-white rounded-2xl p-12 shadow-lg relative overflow-hidden">
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-primary-500 hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
-            >
-              <ChevronLeft className="text-[#1E2A78] w-6 h-6 group-hover:text-white" />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-primary-500 hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
-            >
-              <ChevronRight className="text-[#1E2A78] w-6 h-6 group-hover:text-white" />
-            </button>
-
-            {/* Testimonial Content */}
-            <div className="grid md:grid-cols-2 gap-12 items-stretch">
-              <div className="flex items-center justify-center animate-slideInUp">
-                <img
-                  src={currentTestimonial.image}
-                  alt={currentTestimonial.name}
-                  className="w-full h-full max-h-96 rounded-2xl object-cover shadow-lg transition-all duration-700 ease-out transform hover:scale-105"
-                  key={`image-${currentSlide}`}
-                />
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              name: "Nguyễn Văn Minh",
+              position: "Giám đốc kỹ thuật",
+              company: "Công ty TNHH Cơ điện Việt Nam",
+              content: "VLC Group đã hoàn thành dự án EPC nhà máy điện gió 50MW với chất lượng vượt trội. Đội ngũ chuyên nghiệp, tiến độ đúng hẹn và hỗ trợ kỹ thuật 24/7.",
+              rating: 5,
+              avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150"
+            },
+            {
+              name: "Trần Thị Lan",
+              position: "Phó Tổng Giám đốc",
+              company: "Tập đoàn Xây dựng Quốc tế",
+              content: "Dịch vụ bảo trì và vận hành của VLC Group giúp chúng tôi tối ưu hóa hiệu suất hệ thống. Tiết kiệm 30% chi phí vận hành hàng năm.",
+              rating: 5,
+              avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150"
+            },
+            {
+              name: "Lê Hoàng Anh",
+              position: "Trưởng phòng Môi trường",
+              company: "Công ty Cổ phần Đầu tư Bền vững",
+              content: "Quy trình tư vấn môi trường chuyên nghiệp, giúp doanh nghiệp chúng tôi hoàn thiện hồ sơ pháp lý nhanh chóng và tuân thủ đầy đủ các quy định.",
+              rating: 5,
+              avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150"
+            }
+          ].map((testimonial, index) => (
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+              {/* Rating */}
+              <div className="flex items-center gap-1 mb-6">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
               </div>
-              <div className="flex flex-col justify-center animate-slideInUp delay-100">
-                <Quote
-                  className="text-[#3CB371] w-12 h-12 mb-6"
-                  key={`quote-icon-${currentSlide}`}
+
+              {/* Content */}
+              <blockquote className="text-gray-700 mb-6 leading-relaxed italic">
+                "{testimonial.content}"
+              </blockquote>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
+                <img
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover shadow-md"
                 />
-                <blockquote
-                  className="text-xl text-gray-700 leading-relaxed mb-8 italic"
-                  key={`quote-${currentSlide}`}
-                >
-                  "{currentTestimonial.quote}"
-                </blockquote>
-                <div
-                  key={`name-${currentSlide}`}
-                >
-                  <h4 className="font-semibold text-[#1E2A78] text-lg mb-1">{currentTestimonial.name}</h4>
-                  <p className="text-gray-600">{currentTestimonial.position}</p>
+                <div>
+                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                  <div className="text-sm text-gray-600">{testimonial.position}</div>
+                  <div className="text-xs text-primary-600 font-medium">{testimonial.company}</div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Slide Indicators */}
-          <div className="flex justify-center mt-8 space-x-3">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 transform hover:scale-150 ${
-                  index === currentSlide
-                    ? 'bg-[#3CB371] scale-125'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
+              {/* Quote Icon */}
+              <div className="absolute top-4 right-4 text-primary-200">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center gap-8 px-8 py-4 bg-white rounded-2xl shadow-lg border border-gray-100">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary-600">98%</div>
+              <div className="text-sm text-gray-600">Khách hàng quay lại</div>
+            </div>
+            <div className="w-px h-12 bg-gray-200" />
+            <div className="text-center">
+              <div className="text-2xl font-bold text-green-600">4.9/5</div>
+              <div className="text-sm text-gray-600">Đánh giá trung bình</div>
+            </div>
+            <div className="w-px h-12 bg-gray-200" />
+            <div className="text-center">
+              <div className="text-2xl font-bold text-blue-600">24/7</div>
+              <div className="text-sm text-gray-600">Hỗ trợ kỹ thuật</div>
+            </div>
           </div>
         </div>
       </div>
