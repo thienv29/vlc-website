@@ -24,7 +24,7 @@ export default function Contact({ fullPage = false }: ContactProps) {
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#1E2A78] mb-4">Liên hệ với chúng tôi</h2>
+            <h2 className="text-5xl font-bold text-[#0F5132] mb-4">Liên hệ với chúng tôi</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Sẵn sàng hỗ trợ bạn 24/7
             </p>

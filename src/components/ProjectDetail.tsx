@@ -68,7 +68,7 @@ export default function ProjectDetail() {
   return (
     <div className="pt-32 pb-20 bg-[#F5F7FA]">
       {/* Page Banner */}
-      <div className="relative bg-gradient-to-r from-[#1E2A78] to-[#3CB371] text-white py-20 mb-16">
+      <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white py-20 mb-16">
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Chi tiết dự án</h1>
@@ -82,14 +82,14 @@ export default function ProjectDetail() {
         {/* Back Button */}
         <button
           onClick={() => navigate('/projects')}
-          className="flex items-center gap-2 text-[#1E2A78] hover:text-[#3CB371] transition-colors mb-8"
+          className="flex items-center gap-2 text-[#0F5132] hover:text-[#3CB371] transition-colors mb-8"
         >
           <ArrowLeft size={20} />
           <span className="font-medium">Quay lại danh sách dự án</span>
         </button>
 
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-r from-[#1E2A78] to-[#3CB371] text-white rounded-3xl overflow-hidden mb-12">
+        <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white rounded-3xl overflow-hidden mb-12">
           <div className="absolute inset-0 bg-black/30" />
           <div className="relative grid lg:grid-cols-2 gap-12 items-center p-12">
             <div>
@@ -182,24 +182,24 @@ export default function ProjectDetail() {
             </div>
 
             {/* Wastewater Treatment Type */}
-            <div className="bg-gradient-to-r from-[#3CB371]/5 to-[#1E2A78]/5 rounded-2xl p-8">
+            <div className="bg-gradient-to-r from-[#3CB371]/5 to-[#0F5132]/5 rounded-2xl p-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#3CB371]/10 rounded-2xl flex items-center justify-center">
                   <Droplets size={32} className="text-[#3CB371]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#1E2A78]">Loại hình xử lý nước thải</h3>
+                  <h3 className="text-xl font-bold text-[#0F5132]">Loại hình xử lý nước thải</h3>
                   <p className="text-gray-600">Công nghệ và phương pháp xử lý</p>
                 </div>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <p className="text-lg font-semibold text-[#1E2A78]">{project.details.treatmentType}</p>
+                <p className="text-lg font-semibold text-[#0F5132]">{project.details.treatmentType}</p>
               </div>
             </div>
 
             {/* Features */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-[#1E2A78] mb-6">Đặc điểm nổi bật</h2>
+              <h2 className="text-2xl font-bold text-[#0F5132] mb-6">Đặc điểm nổi bật</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {project.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
@@ -214,7 +214,7 @@ export default function ProjectDetail() {
 
             {/* Gallery */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-[#1E2A78] mb-6">Hình ảnh dự án</h2>
+              <h2 className="text-2xl font-bold text-[#0F5132] mb-6">Hình ảnh dự án</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {project.gallery.map((image, index) => (
                   <div key={index} className="group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md">
@@ -234,7 +234,7 @@ export default function ProjectDetail() {
           <div className="space-y-6">
             {/* Tags */}
             <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-lg font-bold text-[#1E2A78] mb-4">Thẻ dự án</h3>
+              <h3 className="text-lg font-bold text-[#0F5132] mb-4">Thẻ dự án</h3>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, index) => (
                   <span key={index} className="px-4 py-2 bg-[#3CB371]/10 text-[#3CB371] rounded-full text-sm font-medium border border-[#3CB371]/20">
@@ -245,7 +245,7 @@ export default function ProjectDetail() {
             </div>
 
             {/* Quick Stats */}
-            <div className="bg-gradient-to-br from-[#1E2A78] to-[#2a3f8f] text-white rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-[#0F5132] to-[#1e5f3a] text-white rounded-2xl p-6">
               <h3 className="text-lg font-bold mb-4">Thông tin nhanh</h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
@@ -268,7 +268,7 @@ export default function ProjectDetail() {
         {/* Related Projects */}
         <div className="mt-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1E2A78] mb-4">Dự án liên quan</h2>
+            <h2 className="text-3xl font-bold text-[#0F5132] mb-4">Dự án liên quan</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Khám phá các dự án tương tự trong danh mục của chúng tôi
             </p>
@@ -334,7 +334,7 @@ export default function ProjectDetail() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-[#1E2A78] group-hover:text-[#3CB371] transition-colors leading-tight mb-3">
+                  <h3 className="text-lg font-bold text-[#0F5132] group-hover:text-[#3CB371] transition-colors leading-tight mb-3">
                     {relatedProject.title}
                   </h3>
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
