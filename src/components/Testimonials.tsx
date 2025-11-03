@@ -43,11 +43,11 @@ export default function Testimonials() {
   const currentTestimonial = testimonials[currentSlide];
 
   return (
-    <section className="py-24 bg-[#F5F7FA]">
+    <section className="py-24 bg-[#F5F7FA] animate-fadeIn">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#1E2A78] mb-4">Ý kiến khách hàng</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-4xl font-bold text-[#1E2A78] mb-4 animate-slideInUp">Ý kiến khách hàng</h2>
+          <p className="text-xl text-gray-600 animate-slideInUp delay-100">
             Những gì khách hàng nói về chúng tôi
           </p>
         </div>
@@ -57,57 +57,40 @@ export default function Testimonials() {
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+              className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-primary-500 hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
             >
-              <ChevronLeft className="text-[#1E2A78] w-6 h-6" />
+              <ChevronLeft className="text-[#1E2A78] w-6 h-6 group-hover:text-white" />
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+              className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-primary-500 hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
             >
-              <ChevronRight className="text-[#1E2A78] w-6 h-6" />
+              <ChevronRight className="text-[#1E2A78] w-6 h-6 group-hover:text-white" />
             </button>
 
             {/* Testimonial Content */}
             <div className="grid md:grid-cols-2 gap-12 items-stretch">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center animate-slideInUp">
                 <img
                   src={currentTestimonial.image}
                   alt={currentTestimonial.name}
-                  className="w-full h-full max-h-96 rounded-2xl object-cover shadow-lg transition-all duration-700 ease-out transform hover:scale-105 opacity-0 animate-fade-in"
-                  style={{
-                    animation: 'fadeInSlideLeft 0.7s ease-out forwards',
-                    animationDelay: '0.1s'
-                  }}
+                  className="w-full h-full max-h-96 rounded-2xl object-cover shadow-lg transition-all duration-700 ease-out transform hover:scale-105"
                   key={`image-${currentSlide}`}
                 />
               </div>
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center animate-slideInUp delay-100">
                 <Quote
-                  className="text-[#3CB371] w-12 h-12 mb-6 opacity-0"
-                  style={{
-                    animation: 'fadeInSlideRight 0.6s ease-out forwards',
-                    animationDelay: '0.2s'
-                  }}
+                  className="text-[#3CB371] w-12 h-12 mb-6"
                   key={`quote-icon-${currentSlide}`}
                 />
                 <blockquote
-                  className="text-xl text-gray-700 leading-relaxed mb-8 italic opacity-0"
-                  style={{
-                    animation: 'fadeInSlideRight 0.6s ease-out forwards',
-                    animationDelay: '0.3s'
-                  }}
+                  className="text-xl text-gray-700 leading-relaxed mb-8 italic"
                   key={`quote-${currentSlide}`}
                 >
                   "{currentTestimonial.quote}"
                 </blockquote>
                 <div
-                  className="opacity-0"
-                  style={{
-                    animation: 'fadeInSlideRight 0.6s ease-out forwards',
-                    animationDelay: '0.4s'
-                  }}
                   key={`name-${currentSlide}`}
                 >
                   <h4 className="font-semibold text-[#1E2A78] text-lg mb-1">{currentTestimonial.name}</h4>
@@ -123,7 +106,7 @@ export default function Testimonials() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                className={`w-3 h-3 rounded-full transition-all duration-200 transform hover:scale-150 ${
                   index === currentSlide
                     ? 'bg-[#3CB371] scale-125'
                     : 'bg-gray-300 hover:bg-gray-400'

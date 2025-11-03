@@ -165,11 +165,11 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
     return (
       <div className="pt-32 pb-20 bg-[#F5F7FA]">
         {/* Page Banner */}
-        <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white py-20 mb-16">
+        <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white py-20 mb-16 animate-fadeIn">
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative max-w-7xl mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Dự án tiêu biểu</h1>
-            <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slideInUp">Dự án tiêu biểu</h1>
+            <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto animate-slideInUp delay-100">
               Hơn 500 dự án thành công trên toàn quốc
             </p>
           </div>
@@ -178,7 +178,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
         <div className="max-w-7xl mx-auto px-6">
 
           <div className="flex gap-8">
-            <div className="w-80 flex-shrink-0">
+            <div className="w-80 flex-shrink-0 animate-fadeIn">
               <ProjectFilters
                 categories={categories}
                 selectedCategory={selectedCategory}
@@ -187,7 +187,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
             </div>
             <div className="flex-1">
               {/* Top Controls within the project column */}
-              <div className="bg-white p-6 rounded-2xl shadow-lg mb-8">
+              <div className="bg-white p-6 rounded-2xl shadow-lg mb-8 animate-slideInUp">
                 <div className="grid md:grid-cols-4 gap-4">
                   {/* Search */}
                   <div className="relative">
@@ -257,13 +257,13 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
   }
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white animate-fadeIn">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
+          <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider animate-slideInUp">
             Dự án
           </span>
-          <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-6">
+          <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-6 animate-slideInUp delay-100">
             Dự án tiêu biểu
           </h2>
         </div>
@@ -279,19 +279,20 @@ function ProjectFilters({
   setSelectedCategory
 }: any) {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-lg sticky top-8">
+    <div className="bg-white p-6 rounded-2xl shadow-lg sticky top-8 animate-slideInUp">
       <h3 className="text-lg font-bold text-[#0F5132] mb-6">Theo nhóm</h3>
 
       <div className="space-y-2">
-        {categories.map((category: any) => (
+        {categories.map((category: any, index: number) => (
           <button
             key={category.id}
             onClick={() => setSelectedCategory(category.id)}
-            className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all text-sm ${
+            className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all text-sm transform hover:-translate-y-0.5 ${
               selectedCategory === category.id
                 ? 'bg-[#0F5132] text-white shadow-md'
                 : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
             }`}
+            style={{ animationDelay: `${index * 50}ms` }}
           >
             {category.label}
           </button>
@@ -312,7 +313,7 @@ function ProjectGrid({ projects, fullPage = false }: any) {
 
   if (projects.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-16 px-8 text-center">
+      <div className="flex flex-col items-center justify-center py-16 px-8 text-center animate-fadeIn">
         <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-6">
           <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-.98-5.5-2.5m.5-4.5a7.963 7.963 0 015.5-2.5c2.34 0 4.29.98 5.5 2.5m-.5 4.5H7" />
@@ -328,11 +329,12 @@ function ProjectGrid({ projects, fullPage = false }: any) {
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {projects.map((project: any) => (
+      {projects.map((project: any, index: number) => (
         <div
           key={project.id}
           onClick={() => handleProjectClick(project.id)}
-          className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${fullPage ? 'cursor-pointer' : ''}`}
+          className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-slideInUp`}
+          style={{ animationDelay: `${index * 100}ms` }}
         >
           <div className="relative aspect-[4/3] overflow-hidden">
             <img
