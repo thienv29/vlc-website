@@ -42,7 +42,7 @@ export default function Contact({ fullPage = false }: ContactProps) {
           <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
             Liên hệ
           </span>
-          <h2 className="text-4xl font-bold text-[#1E2A78] mt-4 mb-6">
+          <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-6">
             Bắt đầu dự án của bạn
           </h2>
         </div>
@@ -76,7 +76,7 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
 
   return (
     <div>
-      <div className="bg-gradient-to-br from-[#1E2A78] to-[#2a3f8f] rounded-3xl p-12 text-white mb-16">
+      <div className="bg-gradient-to-br from-[#0F5132] to-[#1e5f3a] rounded-3xl p-12 text-white mb-16">
         <div className="max-w-3xl mx-auto">
           <h3 className="text-3xl font-bold mb-4 text-center">Gửi yêu cầu tư vấn</h3>
           <p className="text-gray-200 text-center mb-8">
@@ -176,7 +176,7 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
       <div className="grid md:grid-cols-3 gap-8">
         {offices.map((office, index) => (
           <div key={index} className="bg-[#F5F7FA] rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-[#1E2A78] mb-6">{office.city}</h3>
+            <h3 className="text-2xl font-bold text-[#0F5132] mb-6">{office.city}</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="text-[#3CB371] flex-shrink-0 mt-1" size={20} />

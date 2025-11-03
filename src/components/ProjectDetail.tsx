@@ -56,8 +56,8 @@ export default function ProjectDetail() {
       default:
         return {
           text: 'Đang lên kế hoạch',
-          color: 'text-blue-800',
-          bgColor: 'bg-blue-100',
+          color: 'text-green-800',
+          bgColor: 'bg-green-100',
           icon: Clock
         };
     }
