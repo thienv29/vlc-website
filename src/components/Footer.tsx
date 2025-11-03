@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1E2A78] text-white">
+    <footer className="bg-[#0F5132] text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-white to-[#3CB371] rounded-lg flex items-center justify-center">
-                <span className="text-[#1E2A78] font-bold text-xl">VLC</span>
-              </div>
+              <img
+                src="/logowebsite.png"
+                alt="VLC Group Logo"
+                className="w-12 h-12 object-contain bg-white rounded-lg p-1"
+              />
               <div>
                 <h3 className="font-bold text-xl">VLC GROUP</h3>
                 <p className="text-xs text-gray-300">Building Sustainable Future</p>

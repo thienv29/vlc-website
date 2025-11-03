@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Sustainability from './components/Sustainability';
 import News from './components/News';
+import NewsDetail from './components/NewsDetail';
 import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -37,6 +38,7 @@ function App() {
             <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/news" element={<News fullPage />} />
+            <Route path="/news/:id" element={<NewsDetail />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact fullPage />} />
           </Routes>

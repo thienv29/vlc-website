@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Calendar, ArrowRight, TrendingUp } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface NewsProps {
   fullPage?: boolean;
@@ -71,7 +72,7 @@ export default function News({ fullPage = false }: NewsProps) {
       <div className="pt-32 pb-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#1E2A78] mb-4">Tin tức & Sự kiện</h2>
+            <h2 className="text-5xl font-bold text-[#0F5132] mb-4">Tin tức & Sự kiện</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Cập nhật những hoạt động mới nhất của VLC Group
             </p>
@@ -91,7 +92,7 @@ export default function News({ fullPage = false }: NewsProps) {
             <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
               Tin tức
             </span>
-            <h2 className="text-4xl font-bold text-[#1E2A78] mt-4">
+            <h2 className="text-4xl font-bold text-[#0F5132] mt-4">
               Hoạt động nổi bật
             </h2>
           </div>
@@ -113,7 +114,7 @@ function NewsTabs({ activeTab, setActiveTab }: any) {
         onClick={() => setActiveTab('company')}
         className={`px-8 py-3 rounded-full font-semibold transition-all ${
           activeTab === 'company'
-            ? 'bg-[#1E2A78] text-white shadow-lg'
+            ? 'bg-[#0F5132] text-white shadow-lg'
             : 'bg-white text-gray-700 hover:bg-gray-50'
         }`}
       >
@@ -134,6 +135,8 @@ function NewsTabs({ activeTab, setActiveTab }: any) {
 }
 
 function NewsGrid({ news, compact = false }: any) {
+  const navigate = useNavigate();
+
   if (compact) {
     return (
       <div className="grid md:grid-cols-3 gap-8">
@@ -148,7 +151,10 @@ function NewsGrid({ news, compact = false }: any) {
 
   return (
     <div className="space-y-8">
-      <div className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-xl">
+      <div
+        className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl transition-shadow"
+        onClick={() => navigate(`/news/${featured.id}`)}
+      >
         <div className="aspect-[4/3]">
           <img src={featured.image} alt={featured.title} className="w-full h-full object-cover" />
         </div>
@@ -162,7 +168,7 @@ function NewsGrid({ news, compact = false }: any) {
               {featured.date}
             </span>
           </div>
-          <h3 className="text-3xl font-bold text-[#1E2A78] mb-4">{featured.title}</h3>
+          <h3 className="text-3xl font-bold text-[#0F5132] mb-4">{featured.title}</h3>
           <p className="text-gray-600 mb-6 leading-relaxed">{featured.excerpt}</p>
           <button className="text-[#3CB371] font-semibold flex items-center gap-2 hover:gap-3 transition-all">
             Đọc thêm
@@ -181,8 +187,13 @@ function NewsGrid({ news, compact = false }: any) {
 }
 
 function NewsCard({ news }: any) {
+  const navigate = useNavigate();
+
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer">
+    <div
+      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+      onClick={() => navigate(`/news/${news.id}`)}
+    >
       <div className="relative aspect-[16/9] overflow-hidden">
         <img
           src={news.image}
@@ -190,7 +201,7 @@ function NewsCard({ news }: any) {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-[#1E2A78]">
+          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-[#0F5132]">
             {news.category}
           </span>
         </div>
@@ -200,7 +211,7 @@ function NewsCard({ news }: any) {
           <Calendar size={16} className="text-[#3CB371]" />
           {news.date}
         </div>
-        <h3 className="text-lg font-bold text-[#1E2A78] mb-2 line-clamp-2 group-hover:text-[#3CB371] transition-colors">
+        <h3 className="text-lg font-bold text-[#0F5132] mb-2 line-clamp-2 group-hover:text-[#3CB371] transition-colors">
           {news.title}
         </h3>
         <p className="text-sm text-gray-600 line-clamp-2 mb-4">{news.excerpt}</p>
