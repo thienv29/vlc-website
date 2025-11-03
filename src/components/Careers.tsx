@@ -71,7 +71,7 @@ export default function Careers() {
   ];
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-24 pb-20">
       <div className="relative mb-20">
         <div className="aspect-[21/9] overflow-hidden">
           <img

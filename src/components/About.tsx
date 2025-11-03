@@ -290,7 +290,7 @@ function Timeline() {
         })}
 
         {/* Progress indicator */}
-        <div className="text-center mt-24 mb-8">
+        <div className="text-center mt-24 mb-8 relative z-10">
           <div className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-12 py-6 rounded-full shadow-xl inline-block">
             <span className="font-bold text-lg">20 năm phát triển liên tục</span>
           </div>
