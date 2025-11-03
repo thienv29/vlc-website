@@ -43,7 +43,7 @@ export default function About({ fullPage = false }: AboutProps) {
 
   if (fullPage) {
     return (
-      <div className="pt-32 pb-20">
+      <div className="pt-24 pb-20">
         {/* Page Banner */}
         <div className="relative bg-gradient-to-r from-primary-800 to-primary-500 text-white py-20 mb-16 animate-fadeIn">
           <div className="absolute inset-0 bg-black/20" />

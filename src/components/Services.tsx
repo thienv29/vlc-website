@@ -78,7 +78,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
     };
 
     return (
-      <div className="pt-32 pb-20 bg-gray-50">
+      <div className="pt-24 pb-20 bg-gray-50">
         {/* Banner Section */}
         <div className="relative h-96 bg-gradient-to-r from-primary-800 to-primary-600 text-white overflow-hidden animate-fadeIn">
           <div className="absolute inset-0 bg-black/50" />
