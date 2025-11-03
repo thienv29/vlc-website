@@ -80,7 +80,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
     return (
       <div className="pt-32 pb-20 bg-gray-50">
         {/* Banner Section */}
-        <div className="relative h-96 bg-gradient-to-r from-blue-600 to-blue-800 text-white overflow-hidden">
+        <div className="relative h-96 bg-gradient-to-r from-primary-800 to-primary-600 text-white overflow-hidden">
           <div className="absolute inset-0 bg-black/50" />
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -95,7 +95,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
               </h1>
               <button
                 onClick={() => scrollToSection('services-overview')}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105"
               >
                 {t('services.banner.cta')}
                 <ChevronDown size={20} />
@@ -132,7 +132,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
                   <button
                     onClick={() => scrollToSection(`service-${service.id}`)}
-                    className="text-blue-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all"
+                    className="text-primary-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all"
                   >
                     {t('services.learnMore')}
                     <ArrowRight size={16} />
@@ -158,13 +158,13 @@ export default function Services({ fullPage = false }: ServicesProps) {
   }
 
   return (
-    <section className="py-24 bg-[#F5F7FA]">
+    <section className="py-24 bg-primary-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
+          <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">
             {t('services.section')}
           </span>
-          <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-6">
+          <h2 className="text-4xl font-bold text-primary-800 mt-4 mb-6">
             {t('services.sectionTitle')}
           </h2>
         </div>
@@ -181,16 +181,16 @@ export default function Services({ fullPage = false }: ServicesProps) {
               >
                 <service.icon size={32} style={{ color: service.color }} />
               </div>
-              <h3 className="text-xl font-bold text-[#0F5132] mb-4">{service.title}</h3>
+              <h3 className="text-xl font-bold text-primary-800 mb-4">{service.title}</h3>
               <ul className="space-y-2 mb-6">
                 {service.items.slice(0, 3).map((item: string, i: number) => (
                   <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
-                    <span className="text-[#3CB371] mt-1">•</span>
+                    <span className="text-primary-600 mt-1">•</span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <button className="text-[#3CB371] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+              <button className="text-primary-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                 {t('services.learnMore')}
                 <ArrowRight size={16} />
               </button>
@@ -224,8 +224,8 @@ function ServiceDetailSection({ service }: any) {
             <ul className="space-y-3">
               {service.detailedContent.process?.map((item: string, i: number) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-blue-600 text-sm font-semibold">{i + 1}</span>
+                  <div className="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-primary-600 text-sm font-semibold">{i + 1}</span>
                   </div>
                   <span className="text-gray-700">{item}</span>
                 </li>
@@ -268,12 +268,12 @@ function ServiceDetailSection({ service }: any) {
             className="w-full h-64 object-cover"
           />
         </div>
-        <div className="bg-blue-50 rounded-2xl p-6">
+        <div className="bg-primary-50 rounded-2xl p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-4">Chứng nhận & Chứng chỉ</h4>
           <div className="grid grid-cols-2 gap-4">
             <div className="text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <span className="text-blue-600 font-bold">ISO</span>
+              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <span className="text-primary-600 font-bold">ISO</span>
               </div>
               <span className="text-sm text-gray-700">ISO 9001:2015</span>
             </div>
@@ -308,8 +308,8 @@ function ServiceDetailSection({ service }: any) {
             <ul className="space-y-3">
               {service.detailedContent.operations?.map((item: string, i: number) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-blue-600 text-sm font-semibold">{i + 1}</span>
+                  <div className="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-primary-600 text-sm font-semibold">{i + 1}</span>
                   </div>
                   <span className="text-gray-700">{item}</span>
                 </li>
@@ -346,8 +346,8 @@ function ServiceDetailSection({ service }: any) {
           <div className="space-y-4">
             {service.detailedContent.projects?.map((project: string, i: number) => (
               <div key={i} className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 text-sm font-semibold">{i + 1}</span>
+                <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                  <span className="text-primary-600 text-sm font-semibold">{i + 1}</span>
                 </div>
                 <span className="text-gray-700">{project}</span>
               </div>
@@ -391,8 +391,8 @@ function ServiceDetailSection({ service }: any) {
             <ul className="space-y-3">
               {service.detailedContent.process?.map((item: string, i: number) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-blue-600 text-sm font-semibold">{i + 1}</span>
+                  <div className="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-primary-600 text-sm font-semibold">{i + 1}</span>
                   </div>
                   <span className="text-gray-700">{item}</span>
                 </li>
@@ -442,14 +442,14 @@ function ServiceDetailSection({ service }: any) {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {service.detailedContent.products?.map((product: any, i: number) => (
           <div key={i} className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-              <span className="text-blue-600 text-lg">📦</span>
+            <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <span className="text-primary-600 text-lg">📦</span>
             </div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h4>
             <p className="text-gray-600 text-sm mb-4">{product.description}</p>
             <div className="flex items-center justify-between">
-              <span className="text-blue-600 font-medium">{product.category}</span>
-              <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
+              <span className="text-primary-600 font-medium">{product.category}</span>
+              <button className="text-primary-600 hover:text-primary-800 text-sm font-medium">
                 Chi tiết →
               </button>
             </div>
