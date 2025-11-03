@@ -7,16 +7,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="mb-6">
               <img
                 src="/logowebsite.png"
                 alt="VLC Group Logo"
-                className="w-12 h-12 object-contain bg-white rounded-lg p-1"
+                className="h-16 w-auto object-contain bg-white rounded-lg p-1"
               />
-              <div>
-                <h3 className="font-bold text-xl">VLC GROUP</h3>
-                <p className="text-xs text-gray-300">Building Sustainable Future</p>
-              </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
               Đối tác tin cậy trong lĩnh vực EPC và phát triển bền vững,

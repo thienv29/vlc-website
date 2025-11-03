@@ -41,21 +41,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-3 cursor-pointer"
+          className="cursor-pointer"
         >
           <img
             src="/logowebsite.png"
             alt="VLC Group Logo"
-            className="w-12 h-12 object-contain"
+            className="h-16 w-auto object-contain"
           />
-          <div>
-            <h1 className={`font-bold text-xl ${shouldHaveSolidBg ? 'text-[#0F5132]' : 'text-white'}`}>
-              {t('header.companyName')}
-            </h1>
-            <p className={`text-xs ${shouldHaveSolidBg ? 'text-gray-600' : 'text-gray-200'}`}>
-              {t('header.tagline')}
-            </p>
-          </div>
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
