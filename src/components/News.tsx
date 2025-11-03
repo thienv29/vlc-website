@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Calendar, ArrowRight, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import PageWrapper from './PageWrapper';
 
 interface NewsProps {
   fullPage?: boolean;
@@ -69,7 +70,7 @@ export default function News({ fullPage = false }: NewsProps) {
 
   if (fullPage) {
     return (
-      <div className="pt-32 pb-20 bg-[#F5F7FA]">
+      <PageWrapper>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-[#0F5132] mb-4">Tin tức & Sự kiện</h2>
@@ -80,7 +81,7 @@ export default function News({ fullPage = false }: NewsProps) {
           <NewsTabs activeTab={activeTab} setActiveTab={setActiveTab} />
           <NewsGrid news={displayNews} />
         </div>
-      </div>
+      </PageWrapper>
     );
   }
 

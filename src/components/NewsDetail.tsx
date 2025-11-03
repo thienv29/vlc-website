@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, Share2, Facebook, Twitter, Linkedin, Clock, User, Tag } from 'lucide-react';
+import PageWrapper from './PageWrapper';
 
 export default function NewsDetail() {
   const { id } = useParams();
@@ -216,7 +217,7 @@ export default function NewsDetail() {
 
   if (!newsItem) {
     return (
-      <div className="pt-32 pb-20 bg-[#F5F7FA]">
+      <PageWrapper>
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl font-bold text-[#0F5132] mb-4">Không tìm thấy bài viết</h1>
           <p className="text-gray-600 mb-8">Bài viết bạn tìm kiếm không tồn tại hoặc đã bị xóa.</p>
@@ -227,14 +228,14 @@ export default function NewsDetail() {
             Quay lại trang tin tức
           </button>
         </div>
-      </div>
+      </PageWrapper>
     );
   }
 
   const relatedNewsItems = allNews.filter(item => newsItem.relatedNews.includes(item.id));
 
   return (
-    <div className="pt-32 pb-20 bg-[#F5F7FA]">
+    <PageWrapper>
       {/* Page Banner */}
       <div className="relative bg-gradient-to-r from-[#0F5132] to-[#1e5f3a] text-white py-20 mb-16">
         <div className="absolute inset-0 bg-black/20" />
@@ -415,6 +416,6 @@ export default function NewsDetail() {
           </div>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }

@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, MapPin, Calendar, CheckCircle, Clock, Building2, User, Wrench, Droplets } from 'lucide-react';
+import PageWrapper from './PageWrapper';
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -66,13 +67,13 @@ export default function ProjectDetail() {
   const statusInfo = getStatusInfo(project.status);
 
   return (
-    <div className="pt-32 pb-20 bg-[#F5F7FA]">
+    <PageWrapper>
       {/* Page Banner */}
       <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white py-20 mb-16">
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Chi tiết dự án</h1>
-          <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto">
+          <h1 className="text-4xl md-text-5xl font-bold mb-6">Chi tiết dự án</h1>
+          <p className="text-xl md-text-2xl text-gray-100 max-w-3xl mx-auto">
             {project.title}
           </p>
         </div>
@@ -357,6 +358,6 @@ export default function ProjectDetail() {
           </div>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }

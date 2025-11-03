@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Calendar, ArrowRight, CheckCircle, Clock, Search, SortAsc, SortDesc } from 'lucide-react';
+import PageWrapper from './PageWrapper';
 
 interface ProjectsProps {
   fullPage?: boolean;
@@ -163,7 +164,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
 
   if (fullPage) {
     return (
-      <div className="pt-32 pb-20 bg-[#F5F7FA]">
+      <PageWrapper>
         {/* Page Banner */}
         <div className="relative bg-gradient-to-r from-[#0F5132] to-[#3CB371] text-white py-20 mb-16 animate-fadeIn">
           <div className="absolute inset-0 bg-black/20" />
@@ -252,7 +253,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
             </div>
           </div>
         </div>
-      </div>
+      </PageWrapper>
     );
   }
 
