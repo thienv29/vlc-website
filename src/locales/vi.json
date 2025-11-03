@@ -90,41 +90,137 @@
     "sectionTitle": "Giải pháp toàn diện cho dự án của bạn",
     "learnMore": "Tìm hiểu thêm",
     "requestQuote": "Yêu cầu báo giá",
+    "banner": {
+      "title": "Giải pháp tổng thể EPC & Dịch vụ kỹ thuật toàn diện",
+      "cta": "Xem dịch vụ"
+    },
+    "overview": {
+      "title": "Dịch vụ chính của chúng tôi",
+      "subtitle": "Khám phá các giải pháp chuyên nghiệp cho mọi nhu cầu kỹ thuật và công nghiệp"
+    },
     "services": {
       "epc": {
         "title": "Tổng thầu EPC",
+        "description": "Dịch vụ tổng thầu EPC toàn diện từ thiết kế, cung ứng đến thi công và vận hành.",
         "items": [
           "Thiết kế kỹ thuật chi tiết",
           "Cung ứng thiết bị & vật tư",
           "Thi công lắp đặt chuyên nghiệp",
           "Nghiệm thu và bàn giao"
+        ],
+        "process": [
+          "Khảo sát và lập kế hoạch dự án",
+          "Thiết kế kỹ thuật chi tiết",
+          "Cung ứng thiết bị và vật tư",
+          "Thi công và lắp đặt",
+          "Kiểm tra và nghiệm thu",
+          "Bàn giao và bảo hành"
+        ],
+        "standards": [
+          "Tuân thủ tiêu chuẩn quốc tế ISO 9001:2015",
+          "Đảm bảo chất lượng và an toàn",
+          "Cam kết tiến độ và ngân sách",
+          "Bảo hành dài hạn"
+        ],
+        "packages": [
+          "EPC Cơ bản",
+          "EPC Nâng cao",
+          "EPC Tổng thể",
+          "EPC Tư vấn"
         ]
       },
       "maintenance": {
         "title": "Vận hành & Bảo trì",
+        "description": "Dịch vụ vận hành 24/7 và bảo trì định kỳ cho các hệ thống công nghiệp.",
         "items": [
           "Vận hành hệ thống 24/7",
           "Bảo trì định kỳ & khẩn cấp",
           "Tối ưu hóa hiệu suất",
           "Đào tạo vận hành cho khách hàng"
+        ],
+        "operations": [
+          "Giám sát hệ thống 24/7",
+          "Điều khiển tự động",
+          "Theo dõi hiệu suất",
+          "Báo cáo định kỳ"
+        ],
+        "maintenance": [
+          "Bảo trì định kỳ theo lịch",
+          "Sửa chữa khẩn cấp",
+          "Nâng cấp và cải tiến",
+          "Kiểm tra an toàn"
+        ],
+        "projects": [
+          "Nhà máy điện gió 50MW",
+          "Trạm biến áp 220kV",
+          "Hệ thống xử lý nước thải",
+          "Kho chứa LPG 10.000 tấn"
         ]
       },
       "environment": {
-        "title": "Tư vấn Môi trường",
+        "title": "Tư vấn thủ tục môi trường",
+        "description": "Hỗ trợ doanh nghiệp hoàn thiện hồ sơ môi trường và tuân thủ pháp luật.",
         "items": [
           "Đánh giá tác động môi trường",
           "Giải pháp xử lý nước thải",
           "Quản lý chất thải công nghiệp",
           "Chứng nhận xanh & bền vững"
+        ],
+        "consulting": [
+          "Đánh giá tác động môi trường (EIA)",
+          "Đề xuất giải pháp xử lý",
+          "Lập báo cáo môi trường",
+          "Hỗ trợ xin giấy phép"
+        ],
+        "process": [
+          "Thu thập thông tin và khảo sát",
+          "Phân tích và đánh giá",
+          "Đề xuất giải pháp",
+          "Lập hồ sơ và báo cáo",
+          "Hỗ trợ phê duyệt",
+          "Giám sát thực hiện"
         ]
       },
       "products": {
-        "title": "Sản phẩm & Công nghệ",
+        "title": "Sản phẩm thương mại & công nghệ",
+        "description": "Cung cấp thiết bị, công nghệ và giải pháp tiên tiến cho ngành công nghiệp.",
         "items": [
           "Thiết bị năng lượng tái tạo",
           "Hệ thống điều khiển thông minh",
           "Giải pháp IoT & tự động hóa",
           "Phần mềm quản lý dự án"
+        ],
+        "products": [
+          {
+            "name": "Turbine gió công nghiệp",
+            "description": "Thiết bị phát điện gió hiệu suất cao cho các dự án năng lượng tái tạo",
+            "category": "Năng lượng"
+          },
+          {
+            "name": "Hệ thống SCADA",
+            "description": "Giải pháp giám sát và điều khiển tự động cho nhà máy",
+            "category": "Tự động hóa"
+          },
+          {
+            "name": "Thiết bị biến áp",
+            "description": "Biến áp công nghiệp chất lượng cao cho lưới điện",
+            "category": "Điện lực"
+          },
+          {
+            "name": "Phần mềm ERP",
+            "description": "Giải pháp quản lý doanh nghiệp toàn diện",
+            "category": "Phần mềm"
+          },
+          {
+            "name": "Hệ thống IoT",
+            "description": "Giải pháp Internet of Things cho giám sát thông minh",
+            "category": "Công nghệ"
+          },
+          {
+            "name": "Thiết bị lọc bụi",
+            "description": "Hệ thống lọc bụi công nghiệp tiên tiến",
+            "category": "Môi trường"
+          }
         ]
       }
     }

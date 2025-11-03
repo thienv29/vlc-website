@@ -90,41 +90,137 @@
     "sectionTitle": "Comprehensive solutions for your project",
     "learnMore": "Learn More",
     "requestQuote": "Request Quote",
+    "banner": {
+      "title": "Comprehensive EPC Solutions & Full Technical Services",
+      "cta": "View Services"
+    },
+    "overview": {
+      "title": "Our Main Services",
+      "subtitle": "Discover professional solutions for all technical and industrial needs"
+    },
     "services": {
       "epc": {
         "title": "EPC Contracting",
+        "description": "Comprehensive EPC contracting services from design, procurement to construction and operation.",
         "items": [
           "Detailed technical design",
           "Equipment & material supply",
           "Professional installation",
           "Commissioning and handover"
+        ],
+        "process": [
+          "Project survey and planning",
+          "Detailed technical design",
+          "Equipment and material procurement",
+          "Construction and installation",
+          "Testing and commissioning",
+          "Handover and warranty"
+        ],
+        "standards": [
+          "Compliance with international ISO 9001:2015 standards",
+          "Quality and safety assurance",
+          "Commitment to schedule and budget",
+          "Long-term warranty"
+        ],
+        "packages": [
+          "Basic EPC",
+          "Advanced EPC",
+          "Full EPC",
+          "Consulting EPC"
         ]
       },
       "maintenance": {
         "title": "Operations & Maintenance",
+        "description": "24/7 operation services and regular maintenance for industrial systems.",
         "items": [
           "24/7 system operation",
           "Regular & emergency maintenance",
           "Performance optimization",
           "Customer operation training"
+        ],
+        "operations": [
+          "24/7 system monitoring",
+          "Automatic control",
+          "Performance tracking",
+          "Regular reporting"
+        ],
+        "maintenance": [
+          "Scheduled regular maintenance",
+          "Emergency repairs",
+          "Upgrades and improvements",
+          "Safety inspections"
+        ],
+        "projects": [
+          "50MW Wind Power Plant",
+          "220kV Substation",
+          "Wastewater Treatment System",
+          "10,000 Ton LPG Storage"
         ]
       },
       "environment": {
         "title": "Environmental Consulting",
+        "description": "Supporting businesses in completing environmental documentation and legal compliance.",
         "items": [
           "Environmental impact assessment",
           "Wastewater treatment solutions",
           "Industrial waste management",
           "Green & sustainability certification"
+        ],
+        "consulting": [
+          "Environmental Impact Assessment (EIA)",
+          "Treatment solution recommendations",
+          "Environmental reporting",
+          "Permit application support"
+        ],
+        "process": [
+          "Information collection and survey",
+          "Analysis and assessment",
+          "Solution recommendations",
+          "Documentation and reporting",
+          "Approval support",
+          "Implementation monitoring"
         ]
       },
       "products": {
-        "title": "Products & Technology",
+        "title": "Commercial Products & Technology",
+        "description": "Providing advanced equipment, technology and solutions for the industrial sector.",
         "items": [
           "Renewable energy equipment",
           "Smart control systems",
           "IoT & automation solutions",
           "Project management software"
+        ],
+        "products": [
+          {
+            "name": "Industrial Wind Turbine",
+            "description": "High-performance wind power generation equipment for renewable energy projects",
+            "category": "Energy"
+          },
+          {
+            "name": "SCADA System",
+            "description": "Automated monitoring and control solution for factories",
+            "category": "Automation"
+          },
+          {
+            "name": "Transformer Equipment",
+            "description": "High-quality industrial transformers for power grids",
+            "category": "Power"
+          },
+          {
+            "name": "ERP Software",
+            "description": "Comprehensive business management solution",
+            "category": "Software"
+          },
+          {
+            "name": "IoT System",
+            "description": "Internet of Things solution for smart monitoring",
+            "category": "Technology"
+          },
+          {
+            "name": "Dust Filtration Equipment",
+            "description": "Advanced industrial dust filtration systems",
+            "category": "Environment"
+          }
         ]
       }
     }
