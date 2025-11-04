@@ -12,16 +12,11 @@ interface PostDetailProps {
 export default function PostDetail({ showSidebar = true }: PostDetailProps) {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [readingProgress, setReadingProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const articleRef = useRef<HTMLDivElement>(null);
   const [tableOfContents, setTableOfContents] = useState<{ id: string; text: string; level: number }[]>([]);
 
-
-
   const newsId = parseInt(id || '1');
-
-  // Try to get news item from news data first, then services data
   const newsItem = getNewsById(newsId) || getServiceById(newsId);
 
   if (!newsItem) {
@@ -43,24 +38,8 @@ export default function PostDetail({ showSidebar = true }: PostDetailProps) {
 
   const relatedNewsItems = getRelatedNews(newsId, newsItem.relatedNews) || getRelatedServices(newsId, newsItem.relatedNews) || [];
 
-  // Reading progress and table of contents effects
+  // Table of contents effects
   useEffect(() => {
-    const handleScroll = () => {
-      if (!articleRef.current) return;
-
-      const article = articleRef.current;
-      const scrollTop = window.scrollY;
-      const articleTop = article.offsetTop;
-      const articleHeight = article.offsetHeight;
-      const windowHeight = window.innerHeight;
-
-      const scrollProgress = Math.min(
-        Math.max((scrollTop - articleTop + windowHeight) / (articleHeight + windowHeight), 0),
-        1
-      );
-      setReadingProgress(scrollProgress * 100);
-    };
-
     const generateTableOfContents = () => {
       if (!articleRef.current) return;
 
@@ -79,9 +58,6 @@ export default function PostDetail({ showSidebar = true }: PostDetailProps) {
 
     // Generate TOC after content is rendered
     setTimeout(generateTableOfContents, 100);
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -124,14 +100,6 @@ export default function PostDetail({ showSidebar = true }: PostDetailProps) {
 
   return (
     <PageWrapper>
-      {/* Reading Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
-        <div
-          className="h-full bg-[#3CB371] transition-all duration-150 ease-out"
-          style={{ width: `${readingProgress}%` }}
-        />
-      </div>
-
       {/* Compact Header */}
       <div className="bg-white border-b border-gray-100 py-6">
         <div className="max-w-7xl mx-auto px-6">

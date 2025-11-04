@@ -8,7 +8,6 @@ import { getServiceById, getRelatedServices } from '../data/servicesData';
 export default function PostDetailStatic() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [readingProgress, setReadingProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const articleRef = useRef<HTMLDivElement>(null);
 
@@ -34,27 +33,7 @@ export default function PostDetailStatic() {
     );
   }
 
-  // Reading progress effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!articleRef.current) return;
 
-      const article = articleRef.current;
-      const scrollTop = window.scrollY;
-      const articleTop = article.offsetTop;
-      const articleHeight = article.offsetHeight;
-      const windowHeight = window.innerHeight;
-
-      const scrollProgress = Math.min(
-        Math.max((scrollTop - articleTop + windowHeight) / (articleHeight + windowHeight), 0),
-        1
-      );
-      setReadingProgress(scrollProgress * 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsVisible(true);

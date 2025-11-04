@@ -5,16 +5,16 @@ import About from './components/About';
 import Services from './components/Services';
 import ContactInfo from './components/ContactInfo';
 import LeadershipQuotes from './components/LeadershipQuotes';
-import News from './components/News';
+import Post from './components/Post';
 import Partners from './components/Partners';
 import CTA from './components/CTA';
 import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Sustainability from './components/Sustainability';
-import NewsDetail from './components/NewsDetail';
-import NewsDetailStatic from './components/NewsDetailStatic';
-import NewsInternal from './components/NewsInternal';
-import NewsCommunity from './components/NewsCommunity';
+import PostDetail from './components/PostDetail';
+import PostDetailStatic from './components/PostDetailStatic';
+import PostInternal from './components/PostInternal';
+import PostCommunity from './components/PostCommunity';
 import Careers from './components/Careers';
 import JobDetail from './components/JobDetail';
 import Contact from './components/Contact';
@@ -41,7 +41,7 @@ function App() {
                 <Testimonials />
                 <ContactInfo />
                 <LeadershipQuotes />
-                <News />
+                <Post />
                 <Partners />
                 <CTA />
               </>
@@ -51,11 +51,11 @@ function App() {
             <Route path="/projects" element={<Projects fullPage />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/sustainability" element={<Sustainability />} />
-            <Route path="/news" element={<News fullPage />} />
-            <Route path="/news/internal" element={<NewsInternal />} />
-            <Route path="/news/community" element={<NewsCommunity />} />
-            <Route path="/news/:id" element={<NewsDetail showSidebar={true} />} />
-            <Route path="/services/:id" element={<NewsDetailStatic />} />
+            <Route path="/news" element={<Post fullPage />} />
+            <Route path="/news/internal" element={<PostInternal />} />
+            <Route path="/news/community" element={<PostCommunity />} />
+            <Route path="/news/:id" element={<PostDetail showSidebar={true} />} />
+            <Route path="/services/:id" element={<PostDetailStatic />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:id" element={<JobDetail />} />
             <Route path="/contact" element={<Contact fullPage />} />
