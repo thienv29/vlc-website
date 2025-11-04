@@ -116,112 +116,111 @@ export default function JobDetail() {
 
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-12">
             {/* Job Header */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="border-b border-gray-200 pb-8">
               <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                 <div>
-                  <h1 className="text-3xl font-bold text-accent-800 mb-2">{job.title}</h1>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                  <h1 className="text-4xl font-bold text-accent-800 mb-4">{job.title}</h1>
+                  <div className="flex flex-wrap gap-6 text-gray-600 mb-4">
                     <div className="flex items-center gap-2">
-                      <MapPin size={16} className="text-primary-600" />
-                      {job.location}
+                      <MapPin size={18} className="text-primary-600" />
+                      <span className="font-medium">{job.location}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Clock size={16} className="text-primary-600" />
-                      {job.type}
+                      <Clock size={18} className="text-primary-600" />
+                      <span className="font-medium">{job.type}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Briefcase size={16} className="text-primary-600" />
-                      {job.level}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <DollarSign size={16} className="text-primary-600" />
-                      {job.salary}
+                      <DollarSign size={18} className="text-primary-600" />
+                      <span className="font-medium">{job.salary}</span>
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="px-4 py-2 bg-primary-500/10 text-primary-600 rounded-full text-sm font-semibold">
+                  <span className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-semibold">
                     {job.level}
                   </span>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-4 bg-gray-50 rounded-xl">
-                  <Users size={24} className="text-primary-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-500">Bộ phận</p>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div className="p-4">
+                  <Users size={20} className="text-primary-600 mx-auto mb-2" />
+                  <p className="text-sm text-gray-500 uppercase tracking-wide">Bộ phận</p>
                   <p className="font-semibold text-accent-800">{job.department}</p>
                 </div>
-                <div className="text-center p-4 bg-gray-50 rounded-xl">
-                  <Clock size={24} className="text-primary-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-500">Hạn nộp</p>
+                <div className="p-4">
+                  <Clock size={20} className="text-primary-600 mx-auto mb-2" />
+                  <p className="text-sm text-gray-500 uppercase tracking-wide">Hạn nộp</p>
                   <p className="font-semibold text-accent-800">{job.applicationDeadline}</p>
                 </div>
-                <div className="text-center p-4 bg-gray-50 rounded-xl">
-                  <Briefcase size={24} className="text-primary-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-500">Kinh nghiệm</p>
+                <div className="p-4">
+                  <Briefcase size={20} className="text-primary-600 mx-auto mb-2" />
+                  <p className="text-sm text-gray-500 uppercase tracking-wide">Kinh nghiệm</p>
                   <p className="font-semibold text-accent-800">{job.level}</p>
                 </div>
               </div>
             </div>
 
-            {/* Job Description */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-accent-800 mb-6">Mô tả công việc</h2>
-              <p className="text-gray-700 leading-relaxed mb-6">{job.description}</p>
-            </div>
+            {/* Job Details */}
+            <div className="space-y-10">
+              {/* Job Description */}
+              <div>
+                <h2 className="text-2xl font-bold text-accent-800 mb-4">Mô tả công việc</h2>
+                <p className="text-gray-700 leading-relaxed text-lg">{job.description}</p>
+              </div>
 
-            {/* Responsibilities */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-accent-800 mb-6">Trách nhiệm chính</h2>
-              <ul className="space-y-3">
-                {job.responsibilities.map((responsibility, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-primary-600 font-semibold text-sm">{index + 1}</span>
-                    </div>
-                    <span className="text-gray-700">{responsibility}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              {/* Responsibilities */}
+              <div>
+                <h2 className="text-2xl font-bold text-accent-800 mb-6">Trách nhiệm chính</h2>
+                <ul className="space-y-4">
+                  {job.responsibilities.map((responsibility, index) => (
+                    <li key={index} className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-primary-700 font-semibold text-sm">{index + 1}</span>
+                      </div>
+                      <span className="text-gray-700 leading-relaxed">{responsibility}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Requirements */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-accent-800 mb-6">Yêu cầu ứng viên</h2>
-              <ul className="space-y-3">
-                {job.requirements.map((requirement, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-accent-600 font-semibold text-sm">{index + 1}</span>
-                    </div>
-                    <span className="text-gray-700">{requirement}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              {/* Requirements */}
+              <div>
+                <h2 className="text-2xl font-bold text-accent-800 mb-6">Yêu cầu ứng viên</h2>
+                <ul className="space-y-4">
+                  {job.requirements.map((requirement, index) => (
+                    <li key={index} className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-accent-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-accent-700 font-semibold text-sm">{index + 1}</span>
+                      </div>
+                      <span className="text-gray-700 leading-relaxed">{requirement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Benefits */}
-            <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-accent-800 mb-6">Quyền lợi</h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {job.benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
-                    <div className="w-8 h-8 rounded-full bg-primary-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-primary-600 font-semibold text-sm">✓</span>
-                    </div>
-                    <span className="text-gray-700 font-medium">{benefit}</span>
-                  </div>
-                ))}
+              {/* Benefits */}
+              <div>
+                <h2 className="text-2xl font-bold text-accent-800 mb-6">Quyền lợi</h2>
+                <ul className="space-y-3">
+                  {job.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary-700 font-bold text-xs">✓</span>
+                      </div>
+                      <span className="text-gray-700 leading-relaxed">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
 
           {/* Application Form Sidebar */}
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl p-6 shadow-lg sticky top-8">
+            <div className="bg-white rounded-xl p-6 border border-gray-200 sticky top-8">
               <h3 className="text-xl font-bold text-accent-800 mb-6">Ứng tuyển ngay</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
