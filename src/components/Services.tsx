@@ -245,11 +245,17 @@ export default function Services({ fullPage = false }: ServicesProps) {
                       </div>
                     </div>
 
-                    {/* CTA Button */}
+                      {/* CTA Button */}
                     <div className="flex items-center justify-between">
-                      <button className="group/btn inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                      <button
+                        onClick={() => {
+                          const articleId = service.id === 'epc' ? 19 : service.id === 'maintenance' ? 20 : service.id === 'environment' ? 21 : 22;
+                          window.location.href = `/news/static/${articleId}`;
+                        }}
+                        className="group/btn inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                      >
                         <span>{t('services.learnMore')}</span>
-                        <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform duration-300" />
+                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
                       </button>
 
                       {/* Service Badge */}

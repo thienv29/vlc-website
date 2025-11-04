@@ -12,6 +12,7 @@ import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Sustainability from './components/Sustainability';
 import NewsDetail from './components/NewsDetail';
+import NewsDetailStatic from './components/NewsDetailStatic';
 import NewsInternal from './components/NewsInternal';
 import NewsCommunity from './components/NewsCommunity';
 import Careers from './components/Careers';
@@ -53,7 +54,8 @@ function App() {
             <Route path="/news" element={<News fullPage />} />
             <Route path="/news/internal" element={<NewsInternal />} />
             <Route path="/news/community" element={<NewsCommunity />} />
-            <Route path="/news/:id" element={<NewsDetail />} />
+            <Route path="/news/static/:id" element={<NewsDetailStatic />} />
+            <Route path="/news/:id" element={<NewsDetail showSidebar={true} />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:id" element={<JobDetail />} />
             <Route path="/contact" element={<Contact fullPage />} />
