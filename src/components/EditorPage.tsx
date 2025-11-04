@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import TipTapEditor from './TipTapEditor'
 import { useTranslation } from 'react-i18next'
-import { servicesData } from '../data/servicesData'
-import { newsData } from '../data/newsData'
+import { postsData } from '../data/postsData'
 
 const EditorPage = () => {
   const { t } = useTranslation()
@@ -45,10 +44,11 @@ const EditorPage = () => {
     setSelectedContent(selectedContent)
   }
 
-  const allContent = [
-    ...servicesData.map(item => ({ type: 'Service', title: item.title, content: item.content })),
-    ...newsData.map(item => ({ type: 'News', title: item.title, content: item.content }))
-  ]
+  const allContent = postsData.map(item => ({
+    type: item.category === 'Dịch vụ' ? 'Dịch vụ' : `Tin tức ${item.subCategory === 'internal' ? '(Nội bộ)' : '(Công cộng)'}`,
+    title: item.title,
+    content: item.content
+  }))
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
