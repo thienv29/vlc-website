@@ -36,13 +36,16 @@ export default function Partners() {
   ];
 
   const partners = [
-    { name: 'Vingroup', logo: 'https://via.placeholder.com/120x60/1E40AF/FFFFFF?text=Vingroup', category: 'Tập đoàn' },
-    { name: 'FPT', logo: 'https://via.placeholder.com/120x60/DC2626/FFFFFF?text=FPT', category: 'Công nghệ' },
-    { name: 'PetroVietnam', logo: 'https://via.placeholder.com/120x60/059669/FFFFFF?text=PetroVN', category: 'Năng lượng' },
-    { name: 'EVN', logo: 'https://via.placeholder.com/120x60/7C3AED/FFFFFF?text=EVN', category: 'Điện lực' },
-    { name: 'Viettel', logo: 'https://via.placeholder.com/120x60/EA580C/FFFFFF?text=Viettel', category: 'Viễn thông' },
-    { name: 'Masan Group', logo: 'https://via.placeholder.com/120x60/0891B2/FFFFFF?text=Masan', category: 'Tập đoàn' },
+    { name: 'BIDV', logo: '/logo-partner/Logo-BIDV-.webp', category: 'Ngân hàng' },
+    { name: 'CBBank', logo: '/logo-partner/Logo-CBBank.webp', category: 'Ngân hàng' },
+    { name: 'VBSP', logo: '/logo-partner/Logo-Ngan-hang-Chinh-sach-xa-hoi-VBSP.webp', category: 'Ngân hàng' },
+    { name: 'Ngân hàng Nhà nước', logo: '/logo-partner/logo-ngan-hang-nha-nuoc-viet-nam.webp', category: 'Ngân hàng' },
+    { name: 'Quỹ tín dụng nhân dân', logo: '/logo-partner/logo-quy-tin-dung-nhan-dan.webp', category: 'Tài chính' },
+    { name: 'Techcombank', logo: '/logo-partner/Logo-TCB-V.webp', category: 'Ngân hàng' },
   ];
+
+  // Duplicate partners for infinite scroll effect
+  const duplicatedPartners = [...partners, ...partners, ...partners];
 
   const stats = [
     { number: '200+', label: 'Đối tác chiến lược', icon: Building2 },
@@ -131,28 +134,30 @@ export default function Partners() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="group bg-white hover:bg-gray-50 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer border border-gray-100 animate-slideInUp"
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              <div className="aspect-[3/2] flex items-center justify-center mb-3">
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-              <div className="text-center">
-                <div className="text-xs text-gray-500 mb-1">{partner.category}</div>
-                <div className="text-sm font-medium text-gray-900 group-hover:text-primary-600 transition-colors">
-                  {partner.name}
+        {/* Infinite Scrolling Partners */}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-scroll">
+            {duplicatedPartners.map((partner, index) => (
+              <div
+                key={`${partner.name}-${index}`}
+                className="flex-shrink-0 w-48 mx-4 group bg-white hover:bg-gray-50 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer border border-gray-100"
+              >
+                <div className="aspect-[3/2] flex items-center justify-center mb-3">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-w-full max-h-full object-contain transition-all duration-300"
+                  />
+                </div>
+                <div className="text-center">
+                  <div className="text-xs text-gray-500 mb-1">{partner.category}</div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-primary-600 transition-colors">
+                    {partner.name}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Trust Badge */}
