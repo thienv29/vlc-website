@@ -33,7 +33,16 @@ export default function Header() {
   const navItems: NavItem[] = [
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
-    { path: '/services', label: t('nav.services') },
+    {
+      path: '/services',
+      label: t('nav.services'),
+      submenu: [
+        { path: '/services/19', label: 'Dịch vụ EPC toàn diện' },
+        { path: '/services/20', label: 'Dịch vụ bảo trì và vận hành' },
+        { path: '/services/21', label: 'Tư vấn môi trường' },
+        { path: '/services/22', label: 'Sản phẩm và công nghệ tiên tiến' }
+      ]
+    },
     {
       path: '/projects',
       label: t('nav.projects'),
