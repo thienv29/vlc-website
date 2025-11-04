@@ -133,11 +133,11 @@ export default function Header() {
     const positionClass = level === 1 ? 'left-0 top-full' : 'left-full top-0';
 
     return (
-      <div className={`absolute ${positionClass} mt-2 ${widthClass} bg-white shadow-lg rounded-md border border-gray-200 py-2 z-50`}>
+      <div className={`absolute ${positionClass} mt-2 ${widthClass} bg-white shadow-lg rounded-md border border-gray-200  z-50`}>
         {items.map((item) => (
           <div key={item.path} className="relative group">
             {item.submenu && item.submenu.length > 0 ? (
-              <div className="flex items-center justify-between px-4 py-2 hover:bg-gray-50">
+              <div className="flex items-center justify-between px-4 py-3 hover:bg-gray-50">
                 <span className="text-sm font-medium text-gray-900">{item.label}</span>
                 <ChevronRight size={12} className="text-gray-400" />
                 <div className="absolute left-full top-0 ml-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
