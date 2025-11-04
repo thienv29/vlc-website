@@ -23,6 +23,7 @@ import Chatbox from './components/Chatbox';
 import Testimonials from './components/Testimonials';
 import ProjectShowcase from './components/ProjectShowcase';
 import ScrollToTop from './components/ScrollToTop';
+import EditorPage from './components/EditorPage';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:id" element={<JobDetail />} />
             <Route path="/contact" element={<Contact fullPage />} />
+            <Route path="/editor" element={<EditorPage />} />
           </Routes>
         </main>
         <Footer />
