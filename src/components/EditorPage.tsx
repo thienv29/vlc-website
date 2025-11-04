@@ -1,14 +1,54 @@
 import { useState } from 'react'
 import TipTapEditor from './TipTapEditor'
 import { useTranslation } from 'react-i18next'
+import { servicesData } from '../data/servicesData'
+import { newsData } from '../data/newsData'
 
 const EditorPage = () => {
   const { t } = useTranslation()
-  const [content, setContent] = useState('<h1>Chào mừng đến với TipTap Editor!</h1><p>Bắt đầu viết nội dung của bạn ở đây...</p>')
+  const [content, setContent] = useState(`
+<h1>Chào mừng đến với TipTap Editor!</h1>
+
+<p><strong>Đây là một editor văn bản phong phú</strong> được xây dựng với TipTap. Bạn có thể:</p>
+
+<ul>
+  <li><strong>Định dạng văn bản:</strong> <em>in nghiêng</em>, <s>gạch ngang</s>, <code>code</code></li>
+  <li>Tạo <strong>danh sách</strong> có thứ tự và không thứ tự</li>
+  <li>Thêm <strong>tiêu đề</strong> với các cấp độ khác nhau</li>
+</ul>
+
+<h2>Tính năng chính</h2>
+
+<p>Editor hỗ trợ đầy đủ các tính năng:</p>
+
+<ul>
+  <li>🖼️ <strong>Chèn hình ảnh</strong> từ URL</li>
+  <li>🔗 <strong>Tạo liên kết</strong> với text tùy chỉnh</li>
+  <li>🎥 <strong>Nhúng video</strong> YouTube và các nền tảng khác</li>
+  <li>↩️ <strong>Undo/Redo</strong> để hoàn tác</li>
+</ul>
+
+<blockquote>
+  <p>"TipTap giúp tạo nội dung đẹp và chuyên nghiệp một cách dễ dàng!"</p>
+</blockquote>
+
+<p>Hãy thử chỉnh sửa nội dung này và khám phá các tính năng của editor!</p>
+  `.trim())
+  const [selectedContent, setSelectedContent] = useState('')
 
   const handleContentChange = (newContent: string) => {
     setContent(newContent)
   }
+
+  const loadContent = (selectedContent: string) => {
+    setContent(selectedContent)
+    setSelectedContent(selectedContent)
+  }
+
+  const allContent = [
+    ...servicesData.map(item => ({ type: 'Service', title: item.title, content: item.content })),
+    ...newsData.map(item => ({ type: 'News', title: item.title, content: item.content }))
+  ]
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -20,6 +60,39 @@ const EditorPage = () => {
             </h1>
             <p className="text-gray-600">
               Một editor văn bản phong phú được xây dựng với TipTap
+            </p>
+          </div>
+
+          {/* Content Loader */}
+          <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-lg font-semibold text-gray-900">📂 Tải nội dung có sẵn để edit:</h3>
+              <button
+                onClick={() => loadContent('<h1>Nội dung mới</h1><p>Bắt đầu viết nội dung của bạn...</p>')}
+                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+              >
+                ✏️ Tạo mới
+              </button>
+            </div>
+            <select
+              value={selectedContent}
+              onChange={(e) => {
+                const selected = allContent.find(item => item.content === e.target.value)
+                if (selected) {
+                  loadContent(selected.content)
+                }
+              }}
+              className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="">-- Chọn nội dung để edit --</option>
+              {allContent.map((item, index) => (
+                <option key={index} value={item.content}>
+                  {item.type}: {item.title.substring(0, 50)}...
+                </option>
+              ))}
+            </select>
+            <p className="text-sm text-gray-600 mt-2">
+              Chọn một bài viết từ danh sách để load vào editor và chỉnh sửa, hoặc tạo nội dung mới
             </p>
           </div>
 
@@ -60,6 +133,7 @@ const EditorPage = () => {
             </h3>
             <ul className="list-disc list-inside text-blue-800 space-y-1">
               <li>Định dạng văn bản: <strong>Bold</strong>, <em>Italic</em>, <s>Strike</s>, Code</li>
+              <li><strong>🎨 Thay đổi màu chữ</strong> với color picker</li>
               <li>Danh sách có thứ tự và không thứ tự</li>
               <li>Định dạng tiêu đề (H1, H2, H3)</li>
               <li>Blockquotes và code blocks</li>

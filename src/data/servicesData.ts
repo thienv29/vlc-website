@@ -223,7 +223,7 @@ export const servicesData: ServiceItem[] = [
         Trung tâm điều khiển hiện đại của VLC Group với công nghệ AI giám sát tự động:
       </p>
       <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">24</div>
             <h3 class="font-bold text-green-800">Giám sát liên tục</h3>
@@ -235,7 +235,7 @@ export const servicesData: ServiceItem[] = [
             <li>• AI phát hiện sự cố sớm</li>
           </ul>
         </div>
-        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
+        <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">7</div>
             <h3 class="font-bold text-green-800">Phản ứng tức thời</h3>
@@ -256,7 +256,7 @@ export const servicesData: ServiceItem[] = [
       <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-8">
         <div class="grid md:grid-cols-3 gap-6">
           <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl">
+            <div class="w-16 h-16 bg-purple-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl">
               🤖
             </div>
             <h4 class="font-bold text-green-800 mb-2">AI Analytics</h4>
@@ -405,7 +405,7 @@ export const servicesData: ServiceItem[] = [
         VLC Group cung cấp bộ giải pháp tư vấn môi trường 360 độ:
       </p>
       <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
+        <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-green-500 text-white rounded-2xl flex items-center justify-center text-xl">📋</div>
             <h3 class="font-bold text-green-800">Đánh giá tác động môi trường</h3>
@@ -417,7 +417,7 @@ export const servicesData: ServiceItem[] = [
             <li>• Hỗ trợ phê duyệt từ cơ quan chức năng</li>
           </ul>
         </div>
-        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-blue-500 text-white rounded-2xl flex items-center justify-center text-xl">📊</div>
             <h3 class="font-bold text-green-800">Báo cáo môi trường định kỳ</h3>

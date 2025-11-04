@@ -4,6 +4,8 @@ import Placeholder from '@tiptap/extension-placeholder'
 import CharacterCount from '@tiptap/extension-character-count'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
+import { TextStyle } from '@tiptap/extension-text-style'
+import { Color } from '@tiptap/extension-color'
 import { useEffect, useState } from 'react'
 
 interface TipTapEditorProps {
@@ -40,6 +42,8 @@ const TipTapEditor = ({
           class: 'text-blue-600 hover:text-blue-800 underline',
         },
       }),
+      TextStyle,
+      Color,
     ],
     content,
     onUpdate: ({ editor }) => {
@@ -129,6 +133,15 @@ const TipTapEditor = ({
           >
             Code
           </button>
+
+          {/* Color Picker */}
+          <input
+            type="color"
+            onChange={(e) => editor?.chain().focus().setColor(e.target.value).run()}
+            value={editor?.getAttributes('textStyle').color || '#000000'}
+            className="w-8 h-8 rounded border border-gray-300 cursor-pointer"
+            title="Chọn màu chữ"
+          />
 
           <div className="w-px h-6 bg-gray-300 mx-1"></div>
 
