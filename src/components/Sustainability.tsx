@@ -5,19 +5,19 @@ export default function Sustainability() {
     <div className="pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative mb-20">
-          <div className="aspect-[21/9] rounded-3xl overflow-hidden">
+          <div className="aspect-[21/9] overflow-hidden rounded-3xl">
             <img
               src="https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1920"
               alt="Sustainability"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-3xl"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#3CB371]/90 to-[#0F5132]/80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#3CB371]/90 to-[#0F5132]/80 rounded-3xl" />
             <div className="absolute inset-0 flex items-center justify-center text-center text-white px-6">
               <div>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slideInUp">
                   Phát triển bền vững
                 </h1>
-                <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+                <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-slideInUp delay-100">
                   Cam kết xây dựng tương lai xanh và trách nhiệm với cộng đồng
                 </p>
               </div>
