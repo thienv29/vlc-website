@@ -13,16 +13,19 @@ import ProjectDetail from './components/ProjectDetail';
 import Sustainability from './components/Sustainability';
 import NewsDetail from './components/NewsDetail';
 import Careers from './components/Careers';
+import JobDetail from './components/JobDetail';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
 import Testimonials from './components/Testimonials';
 import ProjectShowcase from './components/ProjectShowcase';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#F5F7FA]">
+      <ScrollToTop />
+      <div className="min-h-screen bg-gray-50">
         <Header />
         <main>
           <Routes>
@@ -48,6 +51,7 @@ function App() {
             <Route path="/news" element={<News fullPage />} />
             <Route path="/news/:id" element={<NewsDetail />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/careers/:id" element={<JobDetail />} />
             <Route path="/contact" element={<Contact fullPage />} />
           </Routes>
         </main>

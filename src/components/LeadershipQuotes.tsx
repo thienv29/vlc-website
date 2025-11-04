@@ -58,7 +58,7 @@ export default function LeadershipQuotes() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-slideInUp">
             Tầm nhìn từ <span className="text-primary-600">lãnh đạo</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slideInUp delay-100 leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slideInUp delay-50 leading-relaxed">
             Những nhà lãnh đạo với tầm nhìn chiến lược, dẫn dắt VLC Group phát triển bền vững và đổi mới không ngừng
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function LeadershipQuotes() {
             <div
               key={leader.id}
               className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 animate-slideInUp"
-              style={{ animationDelay: `${index * 200}ms` }}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Header with focus area */}
               <div className={`${leader.bgColor} px-6 py-4 border-b border-gray-100`}>
@@ -133,22 +133,22 @@ export default function LeadershipQuotes() {
         {/* Bottom Stats */}
         <div className="bg-gradient-to-r from-primary-600 to-primary-500 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="animate-fadeIn" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-fadeIn" style={{ animationDelay: '0.1s' }}>
               <Users className="w-8 h-8 text-primary-300 mx-auto mb-3" />
               <div className="text-2xl font-bold mb-1">50+</div>
               <div className="text-primary-100 text-sm">Năm lãnh đạo</div>
             </div>
-            <div className="animate-fadeIn" style={{ animationDelay: '0.4s' }}>
+            <div className="animate-fadeIn" style={{ animationDelay: '0.2s' }}>
               <Award className="w-8 h-8 text-primary-300 mx-auto mb-3" />
               <div className="text-2xl font-bold mb-1">15+</div>
               <div className="text-primary-100 text-sm">Chứng nhận</div>
             </div>
-            <div className="animate-fadeIn" style={{ animationDelay: '0.6s' }}>
+            <div className="animate-fadeIn" style={{ animationDelay: '0.3s' }}>
               <TrendingUp className="w-8 h-8 text-primary-300 mx-auto mb-3" />
               <div className="text-2xl font-bold mb-1">500+</div>
               <div className="text-primary-100 text-sm">Dự án thành công</div>
             </div>
-            <div className="animate-fadeIn" style={{ animationDelay: '0.8s' }}>
+            <div className="animate-fadeIn" style={{ animationDelay: '0.4s' }}>
               <Target className="w-8 h-8 text-primary-300 mx-auto mb-3" />
               <div className="text-2xl font-bold mb-1">100%</div>
               <div className="text-primary-100 text-sm">Cam kết chất lượng</div>

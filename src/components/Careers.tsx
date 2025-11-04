@@ -1,6 +1,9 @@
 import { MapPin, Clock, ArrowRight, Heart, TrendingUp, Award, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Careers() {
+  const navigate = useNavigate();
+
   const jobs = [
     {
       id: 1,
@@ -129,6 +132,7 @@ export default function Careers() {
             {jobs.map((job) => (
               <div
                 key={job.id}
+                onClick={() => navigate(`/careers/${job.id}`)}
                 className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary-500"
               >
                 <div className="flex justify-between items-start mb-4">
@@ -150,10 +154,10 @@ export default function Careers() {
                     {job.type}
                   </div>
                 </div>
-                <button className="w-full py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-all flex items-center justify-center gap-2 group-hover:gap-3">
+                <div className="w-full py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-all flex items-center justify-center gap-2 group-hover:gap-3">
                   Ứng tuyển ngay
                   <ArrowRight size={20} />
-                </button>
+                </div>
               </div>
             ))}
           </div>
