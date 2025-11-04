@@ -172,61 +172,6 @@ export default function Services({ fullPage = false }: ServicesProps) {
           </div>
         </div>
 
-        {/* Statistics Section */}
-        <section id="stats-section" className="py-20 bg-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-green-50 opacity-50" />
-          <div className="relative max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Thành tựu & Số liệu nổi bật
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Hơn 20 năm kinh nghiệm và sự tin tưởng từ hàng nghìn khách hàng trên toàn quốc
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              {[
-                { icon: Users, value: '1000+', label: 'Khách hàng tin cậy', desc: 'Doanh nghiệp đã hợp tác', color: 'from-blue-500 to-blue-600' },
-                { icon: Award, value: '25+', label: 'Giải thưởng ngành', desc: 'Sự công nhận chất lượng', color: 'from-green-500 to-green-600' },
-                { icon: TrendingUp, value: '98%', label: 'Tỷ lệ hài lòng', desc: 'Khách hàng đánh giá 5 sao', color: 'from-purple-500 to-purple-600' },
-                { icon: Shield, value: '15+', label: 'Chứng nhận quốc tế', desc: 'ISO & các tiêu chuẩn', color: 'from-orange-500 to-orange-600' }
-              ].map((stat, index) => (
-                <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
-                    <stat.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                  <div className="text-lg font-semibold text-gray-800 mb-1">{stat.label}</div>
-                  <div className="text-sm text-gray-600">{stat.desc}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Additional Stats Row */}
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { icon: Globe, value: '20+', label: 'Năm kinh nghiệm', desc: 'Trong lĩnh vực EPC' },
-                { icon: Clock, value: '24/7', label: 'Hỗ trợ kỹ thuật', desc: 'Dịch vụ khẩn cấp' },
-                { icon: Target, value: '500+', label: 'Dự án hoàn thành', desc: 'Giải pháp toàn diện' }
-              ].map((stat, index) => (
-                <div key={index} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-all">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                      <stat.icon className="w-6 h-6 text-primary-600" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                      <div className="text-sm font-medium text-gray-800">{stat.label}</div>
-                      <div className="text-xs text-gray-600">{stat.desc}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Section 1: Service Overview Cards */}
         <section id="services-overview" className="py-20 bg-gradient-to-br from-gray-50 to-white animate-fadeIn">
           <div className="max-w-7xl mx-auto px-6">
@@ -317,6 +262,61 @@ export default function Services({ fullPage = false }: ServicesProps) {
 
                   {/* Hover Effect Border */}
                   <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-primary-300 transition-all duration-500" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Statistics Section */}
+        <section id="stats-section" className="py-20 bg-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-green-50 opacity-50" />
+          <div className="relative max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Thành tựu & Số liệu nổi bật
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Hơn 20 năm kinh nghiệm và sự tin tưởng từ hàng nghìn khách hàng trên toàn quốc
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {[
+                { icon: Users, value: '1000+', label: 'Khách hàng tin cậy', desc: 'Doanh nghiệp đã hợp tác', color: 'from-blue-500 to-blue-600' },
+                { icon: Award, value: '25+', label: 'Giải thưởng ngành', desc: 'Sự công nhận chất lượng', color: 'from-green-500 to-green-600' },
+                { icon: TrendingUp, value: '98%', label: 'Tỷ lệ hài lòng', desc: 'Khách hàng đánh giá 5 sao', color: 'from-purple-500 to-purple-600' },
+                { icon: Shield, value: '15+', label: 'Chứng nhận quốc tế', desc: 'ISO & các tiêu chuẩn', color: 'from-orange-500 to-orange-600' }
+              ].map((stat, index) => (
+                <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
+                    <stat.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-lg font-semibold text-gray-800 mb-1">{stat.label}</div>
+                  <div className="text-sm text-gray-600">{stat.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Additional Stats Row */}
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { icon: Globe, value: '20+', label: 'Năm kinh nghiệm', desc: 'Trong lĩnh vực EPC' },
+                { icon: Clock, value: '24/7', label: 'Hỗ trợ kỹ thuật', desc: 'Dịch vụ khẩn cấp' },
+                { icon: Target, value: '500+', label: 'Dự án hoàn thành', desc: 'Giải pháp toàn diện' }
+              ].map((stat, index) => (
+                <div key={index} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-all">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                      <stat.icon className="w-6 h-6 text-primary-600" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
+                      <div className="text-sm font-medium text-gray-800">{stat.label}</div>
+                      <div className="text-xs text-gray-600">{stat.desc}</div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
