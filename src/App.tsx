@@ -12,6 +12,8 @@ import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Sustainability from './components/Sustainability';
 import NewsDetail from './components/NewsDetail';
+import NewsInternal from './components/NewsInternal';
+import NewsCommunity from './components/NewsCommunity';
 import Careers from './components/Careers';
 import JobDetail from './components/JobDetail';
 import Contact from './components/Contact';
@@ -49,6 +51,8 @@ function App() {
             <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/news" element={<News fullPage />} />
+            <Route path="/news/internal" element={<NewsInternal />} />
+            <Route path="/news/community" element={<NewsCommunity />} />
             <Route path="/news/:id" element={<NewsDetail />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:id" element={<JobDetail />} />
