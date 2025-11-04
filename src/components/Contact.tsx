@@ -76,57 +76,63 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
 
   return (
     <div>
-      <div className="bg-gradient-to-br from-[#0F5132] to-[#1e5f3a] rounded-3xl p-12 text-white mb-16">
-        <div className="max-w-3xl mx-auto">
-          <h3 className="text-3xl font-bold mb-4 text-center">Gửi yêu cầu tư vấn</h3>
-          <p className="text-gray-200 text-center mb-8">
-            Điền thông tin bên dưới, chúng tôi sẽ liên hệ trong vòng 24h
-          </p>
+      <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-12 mb-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-[#3CB371]/10 text-[#3CB371] px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Mail size={16} />
+              Liên hệ với chúng tôi
+            </div>
+            <h3 className="text-3xl font-bold text-[#0F5132] mb-4">Gửi yêu cầu tư vấn</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Điền thông tin bên dưới, chúng tôi sẽ liên hệ trong vòng 24h để hỗ trợ bạn tốt nhất
+            </p>
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">Họ và tên *</label>
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="block text-sm font-semibold text-[#0F5132]">Họ và tên *</label>
                 <input
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#3CB371]"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] placeholder-gray-400 focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all"
                   placeholder="Nguyễn Văn A"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Email *</label>
+              <div className="space-y-2">
+                <label className="block text-sm font-semibold text-[#0F5132]">Email *</label>
                 <input
                   type="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#3CB371]"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] placeholder-gray-400 focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all"
                   placeholder="email@example.com"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">Số điện thoại *</label>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="block text-sm font-semibold text-[#0F5132]">Số điện thoại *</label>
                 <input
                   type="tel"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#3CB371]"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] placeholder-gray-400 focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all"
                   placeholder="0901234567"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Dịch vụ quan tâm</label>
+              <div className="space-y-2">
+                <label className="block text-sm font-semibold text-[#0F5132]">Dịch vụ quan tâm</label>
                 <select
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#3CB371]"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all bg-white"
                 >
                   <option value="">Chọn dịch vụ</option>
                   <option value="epc">Tổng thầu EPC</option>
@@ -137,25 +143,30 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-2">Nội dung *</label>
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-[#0F5132]">Nội dung *</label>
               <textarea
                 required
                 rows={6}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#3CB371] resize-none"
+                className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] placeholder-gray-400 focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all resize-none"
                 placeholder="Mô tả chi tiết về nhu cầu của bạn..."
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full py-4 bg-[#3CB371] text-white rounded-lg font-semibold hover:bg-[#34a563] transition-all flex items-center justify-center gap-2"
-            >
-              Gửi yêu cầu
-              <Send size={20} />
-            </button>
+            <div className="text-center pt-4">
+              <button
+                type="submit"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#3CB371] to-[#0F5132] text-white rounded-xl font-semibold hover:from-[#0F5132] hover:to-[#3CB371] transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <Send size={20} />
+                Gửi yêu cầu tư vấn
+              </button>
+              <p className="text-sm text-gray-500 mt-4">
+                Chúng tôi cam kết bảo mật thông tin của bạn
+              </p>
+            </div>
           </form>
         </div>
       </div>
