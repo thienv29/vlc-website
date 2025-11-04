@@ -15,8 +15,8 @@ function useScrollAnimation() {
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.3, // Increased from 0.1 to 0.3 for earlier triggering
+        rootMargin: '50px 0px -50px 0px' // Changed from -100px to -50px and added 50px top margin
       }
     );
 
@@ -215,8 +215,8 @@ function Timeline() {
                   index % 2 === 0 ? 'md:mr-16 ml-auto' : 'md:ml-16'
                 } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{
-                  transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-                  transitionDelay: isVisible ? `${index * 150}ms` : '0ms'
+                  transition: 'opacity 0.3s ease-out, transform 0.3s ease-out',
+                  transitionDelay: isVisible ? `${index * 100}ms` : '0ms'
                 }}
               >
                 {/* Image Section */}
@@ -374,33 +374,10 @@ function Certifications() {
           <div className="w-32 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto mt-8 rounded-full"></div>
         </div>
 
-        {/* Statistics Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50 transform hover:scale-105 hover:shadow-xl transition-all duration-300 group"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                {stat.icon}
-              </div>
-              <div className="text-3xl font-bold text-primary-800 mb-2 group-hover:text-primary-600 transition-colors">
-                {stat.value}
-              </div>
-              <div className="text-sm text-gray-600 font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+       
 
         {/* Certifications Section */}
         <div className="mb-20">
-          <h4 className="text-3xl font-bold text-primary-800 text-center mb-12 animate-slideInUp">
-            International Certifications
-          </h4>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certifications.map((cert: any, index: number) => (
               <div

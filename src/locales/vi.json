@@ -7,7 +7,17 @@
     "sustainability": "Phát triển bền vững",
     "news": "Tin tức",
     "careers": "Tuyển dụng",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "newsSubmenu": {
+      "internal": "Tin nội bộ",
+      "community": "Tin cộng đồng"
+    },
+    "projectsSubmenu": {
+      "group1": "Nhóm dự án 1",
+      "group2": "Nhóm dự án 2",
+      "group1Projects": "Danh sách dự án nhóm 1",
+      "group2Projects": "Danh sách dự án nhóm 2"
+    }
   },
   "header": {
     "companyName": "VLC GROUP",

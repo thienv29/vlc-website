@@ -7,7 +7,17 @@
     "sustainability": "Sustainability",
     "news": "News",
     "careers": "Careers",
-    "contact": "Contact"
+    "contact": "Contact",
+    "newsSubmenu": {
+      "internal": "Internal News",
+      "community": "Community News"
+    },
+    "projectsSubmenu": {
+      "group1": "Project Group 1",
+      "group2": "Project Group 2",
+      "group1Projects": "Group 1 Project List",
+      "group2Projects": "Group 2 Project List"
+    }
   },
   "header": {
     "companyName": "VLC GROUP",
