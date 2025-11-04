@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Building2, Wrench, Leaf, ShoppingBag, ArrowRight, ChevronDown, CheckCircle, Star, Award, Users, TrendingUp, Shield, Zap, Globe, Clock, Target } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { servicesData } from '../data/servicesData';
 
 interface ServicesProps {
   fullPage?: boolean;
@@ -250,7 +251,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
                       <button
                         onClick={() => {
                           const articleId = service.id === 'epc' ? 19 : service.id === 'maintenance' ? 20 : service.id === 'environment' ? 21 : 22;
-                          window.location.href = `/news/static/${articleId}`;
+                          window.location.href = `/services/${articleId}`;
                         }}
                         className="group/btn inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                       >

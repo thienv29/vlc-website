@@ -54,8 +54,8 @@ function App() {
             <Route path="/news" element={<News fullPage />} />
             <Route path="/news/internal" element={<NewsInternal />} />
             <Route path="/news/community" element={<NewsCommunity />} />
-            <Route path="/news/static/:id" element={<NewsDetailStatic />} />
             <Route path="/news/:id" element={<NewsDetail showSidebar={true} />} />
+            <Route path="/services/:id" element={<NewsDetailStatic />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:id" element={<JobDetail />} />
             <Route path="/contact" element={<Contact fullPage />} />

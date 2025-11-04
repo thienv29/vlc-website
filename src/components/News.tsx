@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import PageWrapper from './PageWrapper';
+import { getInternalNews, getPublicNews } from '../data/newsData';
 
 interface NewsProps {
   fullPage?: boolean;
@@ -13,154 +14,8 @@ export default function News({ fullPage = false }: NewsProps) {
   const itemsPerPage = 6;
 
   const news = {
-    company: [
-      {
-        id: 1,
-        title: 'VLC Group ký kết hợp tác chiến lược với tập đoàn năng lượng quốc tế',
-        excerpt: 'Thỏa thuận hợp tác sẽ mở ra cơ hội phát triển các dự án năng lượng tái tạo quy mô lớn...',
-        date: '15/03/2024',
-        category: 'Đối tác',
-        image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 2,
-        title: 'Khánh thành nhà máy điện mặt trời 100MW tại Ninh Thuận',
-        excerpt: 'Dự án được hoàn thành đúng tiến độ với công nghệ tiên tiến và hiệu suất cao...',
-        date: '10/03/2024',
-        category: 'Dự án',
-        image: 'https://images.pexels.com/photos/371900/pexels-photo-371900.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 3,
-        title: 'VLC Group nhận chứng nhận ISO 14001:2015 về quản lý môi trường',
-        excerpt: 'Cam kết mạnh mẽ trong việc bảo vệ môi trường và phát triển bền vững...',
-        date: '05/03/2024',
-        category: 'Chứng nhận',
-        image: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 7,
-        title: 'Đầu tư 500 tỷ đồng vào công nghệ xử lý nước thải tiên tiến',
-        excerpt: 'VLC Group tiếp tục đầu tư mạnh vào công nghệ xanh, hướng tới mục tiêu phát triển bền vững...',
-        date: '28/02/2024',
-        category: 'Đầu tư',
-        image: 'https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 8,
-        title: 'Mở rộng thị trường sang Đông Nam Á với dự án năng lượng tái tạo',
-        excerpt: 'VLC Group chính thức mở rộng hoạt động kinh doanh sang các nước Đông Nam Á...',
-        date: '20/02/2024',
-        category: 'Mở rộng',
-        image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 9,
-        title: 'Hợp tác với Đại học Quốc gia Hà Nội trong nghiên cứu khoa học',
-        excerpt: 'Chương trình hợp tác nghiên cứu sẽ tập trung vào các giải pháp công nghệ xanh...',
-        date: '15/02/2024',
-        category: 'Nghiên cứu',
-        image: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 10,
-        title: 'VLC Group đạt doanh thu kỷ lục trong quý IV/2023',
-        excerpt: 'Với doanh thu tăng 35% so với cùng kỳ, VLC Group tiếp tục khẳng định vị thế dẫn đầu...',
-        date: '10/02/2024',
-        category: 'Tài chính',
-        image: 'https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 11,
-        title: 'Triển khai hệ thống quản lý chất lượng ISO 9001:2015',
-        excerpt: 'VLC Group hoàn thành triển khai hệ thống quản lý chất lượng trên toàn bộ các đơn vị...',
-        date: '05/02/2024',
-        category: 'Chất lượng',
-        image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 12,
-        title: 'Khởi công dự án nhà máy điện gió ngoài khơi 200MW',
-        excerpt: 'Dự án được kỳ vọng sẽ đóng góp đáng kể vào lưới điện quốc gia trong tương lai...',
-        date: '01/02/2024',
-        category: 'Dự án',
-        image: 'https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-    ],
-    community: [
-      {
-        id: 4,
-        title: 'Trao tặng 1000 suất học bổng cho học sinh vượt khó',
-        excerpt: 'Chương trình "Sáng tỏ tương lai" đã trao học bổng cho học sinh xuất sắc tại 10 tỉnh thành...',
-        date: '12/03/2024',
-        category: 'Giáo dục',
-        image: 'https://images.pexels.com/photos/8197525/pexels-photo-8197525.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 5,
-        title: 'Chiến dịch trồng 10,000 cây xanh tại miền Trung',
-        excerpt: 'Hưởng ứng chiến dịch "Vì một Việt Nam xanh", VLC Group cùng cộng đồng trồng cây...',
-        date: '08/03/2024',
-        category: 'Môi trường',
-        image: 'https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 6,
-        title: 'Khám bệnh miễn phí cho 2000 người dân vùng cao',
-        excerpt: 'Đoàn y bác sĩ VLC Group đã mang y tế đến với đồng bào các dân tộc thiểu số...',
-        date: '01/03/2024',
-        category: 'Y tế',
-        image: 'https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 13,
-        title: 'Chương trình "Nâng bước em tới trường" tại vùng sâu vùng xa',
-        excerpt: 'VLC Group phối hợp với địa phương xây dựng 50 phòng học cho các trường tiểu học...',
-        date: '25/02/2024',
-        category: 'Giáo dục',
-        image: 'https://images.pexels.com/photos/8197526/pexels-photo-8197526.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 14,
-        title: 'Hỗ trợ xây dựng 20 giếng khoan nước sạch cho vùng khô hạn',
-        excerpt: 'Giải quyết vấn đề thiếu nước sinh hoạt cho hơn 5000 hộ dân tại các tỉnh miền Trung...',
-        date: '20/02/2024',
-        category: 'Nước sạch',
-        image: 'https://images.pexels.com/photos/1072825/pexels-photo-1072825.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 15,
-        title: 'Đào tạo nghề miễn phí cho 500 thanh niên nông thôn',
-        excerpt: 'Chương trình đào tạo kỹ năng nghề nghiệp nhằm tạo cơ hội việc làm bền vững...',
-        date: '15/02/2024',
-        category: 'Đào tạo',
-        image: 'https://images.pexels.com/photos/8197527/pexels-photo-8197527.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 16,
-        title: 'Xây dựng trung tâm y tế tại huyện nghèo',
-        excerpt: 'Trung tâm y tế hiện đại với đầy đủ trang thiết bị khám chữa bệnh...',
-        date: '10/02/2024',
-        category: 'Y tế',
-        image: 'https://images.pexels.com/photos/7579832/pexels-photo-7579832.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 17,
-        title: 'Phát triển mô hình nông nghiệp sạch tại các tỉnh phía Bắc',
-        excerpt: 'Hỗ trợ nông dân chuyển đổi sang phương thức canh tác bền vững và thân thiện môi trường...',
-        date: '05/02/2024',
-        category: 'Nông nghiệp',
-        image: 'https://images.pexels.com/photos/1072826/pexels-photo-1072826.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-      {
-        id: 18,
-        title: 'Chương trình bảo vệ động vật hoang dã quý hiếm',
-        excerpt: 'Hợp tác với các tổ chức quốc tế bảo tồn đa dạng sinh học Việt Nam...',
-        date: '01/02/2024',
-        category: 'Môi trường',
-        image: 'https://images.pexels.com/photos/1072827/pexels-photo-1072827.jpeg?auto=compress&cs=tinysrgb&w=800',
-      },
-    ],
+    company: getInternalNews(),
+    community: getPublicNews(),
   };
 
   const currentNews = activeTab === 'company' ? news.company : news.community;
