@@ -64,7 +64,7 @@ export default function PostDetailStatic() {
     <PageWrapper>
       {/* Clean Static Page Layout */}
       <div className="min-h-screen bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-16">
           {/* Page Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3CB371]/10 text-[#3CB371] rounded-full text-sm font-medium mb-6">
@@ -92,7 +92,7 @@ export default function PostDetailStatic() {
           </div>
 
           {/* Content */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl">
+          <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl">
             {/* Article Content */}
             <div
               className="prose prose-xl max-w-none prose-headings:text-[#0F5132] prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-blockquote:border-[#3CB371] prose-blockquote:text-gray-800 prose-blockquote:bg-[#3CB371]/5 prose-blockquote:p-6 prose-blockquote:rounded-lg"

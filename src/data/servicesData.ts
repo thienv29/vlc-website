@@ -25,40 +25,83 @@ export const servicesData: ServiceItem[] = [
     readTime: '6 phút đọc',
     content: `
       <p className="text-lg text-gray-700 leading-relaxed mb-6">
-        Dịch vụ EPC (Engineering, Procurement and Construction) là giải pháp toàn diện mà VLC Group cung cấp
-        cho các doanh nghiệp muốn đầu tư vào các dự án năng lượng tái tạo và công nghiệp.
+        <strong>Dịch vụ EPC (Engineering, Procurement và Construction)</strong> là giải pháp "trọn gói" hàng đầu mà VLC Group cung cấp
+        cho các doanh nghiệp muốn đầu tư vào các dự án năng lượng tái tạo, công nghiệp và hạ tầng. Với hơn 15 năm kinh nghiệm
+        và đội ngũ kỹ sư chuyên nghiệp, chúng tôi cam kết mang đến giải pháp đầu tư hiệu quả nhất cho khách hàng.
       </p>
 
-      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Quy trình EPC chuyên nghiệp</h2>
+      <div className="bg-gradient-to-r from-[#3CB371]/10 to-[#0F5132]/10 rounded-2xl p-6 mb-8">
+        <h3 className="text-lg font-bold text-[#0F5132] mb-3">Tại sao chọn VLC Group?</h3>
+        <ul className="space-y-2 text-gray-700">
+          <li className="flex items-center gap-3">
+            <span className="text-[#3CB371] font-bold">✓</span>
+            <span>Giảm 30-40% chi phí so với phương thức triển khai riêng lẻ</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-[#3CB371] font-bold">✓</span>
+            <span>Tiết kiệm 25% thời gian triển khai dự án</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-[#3CB371] font-bold">✓</span>
+            <span>Đảm bảo chất lượng và tiến độ với hợp đồng trách nhiệm</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Quy trình EPC 4 bước chuẩn quốc tế</h2>
       <p className="text-gray-700 leading-relaxed mb-6">
-        VLC Group cung cấp dịch vụ EPC toàn diện với quy trình chuẩn mực quốc tế:
+        VLC Group triển khai dự án theo quy trình EPC chuẩn mực quốc tế, đảm bảo hiệu quả và chất lượng tối ưu:
       </p>
-      <ul className="space-y-3 mb-6">
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[#3CB371]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-[#3CB371] font-bold text-sm">1</span>
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-white border-l-4 border-[#3CB371] p-6 rounded-r-lg shadow-sm">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-8 bg-[#3CB371] text-white rounded-full flex items-center justify-center font-bold">1</div>
+            <h3 className="font-bold text-[#0F5132]">Engineering - Thiết kế</h3>
           </div>
-          <span>Thiết kế kỹ thuật chi tiết và tối ưu</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[#3CB371]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-[#3CB371] font-bold text-sm">2</span>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>• Phân tích kỹ thuật chi tiết</li>
+            <li>• Thiết kế tối ưu về mặt kỹ thuật và kinh tế</li>
+            <li>• Lập hồ sơ thiết kế thi công</li>
+            <li>• Đánh giá rủi ro và biện pháp phòng ngừa</li>
+          </ul>
+        </div>
+        <div className="bg-white border-l-4 border-[#3CB371] p-6 rounded-r-lg shadow-sm">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-8 bg-[#3CB371] text-white rounded-full flex items-center justify-center font-bold">2</div>
+            <h3 className="font-bold text-[#0F5132]">Procurement - Thu mua</h3>
           </div>
-          <span>Thu mua vật tư và thiết bị chất lượng cao</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[#3CB371]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-[#3CB371] font-bold text-sm">3</span>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>• Lựa chọn nhà cung cấp uy tín</li>
+            <li>• Đàm phán giá cả tối ưu</li>
+            <li>• Kiểm soát chất lượng vật tư thiết bị</li>
+            <li>• Quản lý logistics và giao nhận</li>
+          </ul>
+        </div>
+        <div className="bg-white border-l-4 border-[#3CB371] p-6 rounded-r-lg shadow-sm">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-8 bg-[#3CB371] text-white rounded-full flex items-center justify-center font-bold">3</div>
+            <h3 className="font-bold text-[#0F5132]">Construction - Thi công</h3>
           </div>
-          <span>Thi công xây dựng theo tiêu chuẩn quốc tế</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[#3CB371]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-[#3CB371] font-bold text-sm">4</span>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>• Quản lý đội ngũ thi công chuyên nghiệp</li>
+            <li>• Giám sát chất lượng 24/7</li>
+            <li>• Tuân thủ an toàn lao động</li>
+            <li>• Báo cáo tiến độ hàng tuần</li>
+          </ul>
+        </div>
+        <div className="bg-white border-l-4 border-[#3CB371] p-6 rounded-r-lg shadow-sm">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-8 bg-[#3CB371] text-white rounded-full flex items-center justify-center font-bold">4</div>
+            <h3 className="font-bold text-[#0F5132]">Commissioning - Nghiệm thu</h3>
           </div>
-          <span>Nghiệm thu và bàn giao dự án hoàn chỉnh</span>
-        </li>
-      </ul>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li>• Nghiệm thu từng hạng mục</li>
+            <li>• Chạy thử và hiệu chỉnh</li>
+            <li>• Đào tạo vận hành cho khách hàng</li>
+            <li>• Bàn giao dự án hoàn chỉnh</li>
+          </ul>
+        </div>
+      </div>
 
       <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Tiêu chuẩn chất lượng</h2>
       <ul className="space-y-3 mb-6">
@@ -167,40 +210,92 @@ export const servicesData: ServiceItem[] = [
     readTime: '5 phút đọc',
     content: `
       <p className="text-lg text-gray-700 leading-relaxed mb-6">
-        Dịch vụ bảo trì và vận hành chuyên nghiệp là yếu tố quan trọng quyết định hiệu quả và tuổi thọ
-        của các hệ thống năng lượng tái tạo.
+        <strong>Dịch vụ bảo trì và vận hành 24/7</strong> là "lá chắn" bảo vệ hệ thống năng lượng của bạn.
+        Với trung tâm điều khiển hiện đại và đội ngũ kỹ thuật chuyên nghiệp, chúng tôi đảm bảo hệ thống
+        luôn vận hành ổn định, hiệu quả tối ưu và tuổi thọ kéo dài.
       </p>
 
-      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Quy trình vận hành</h2>
+      <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-6 mb-8 border border-orange-200">
+        <h3 className="text-lg font-bold text-[#0F5132] mb-3 flex items-center gap-2">
+          <span className="text-2xl">🚨</span>
+          Thực tế đáng buồn
+        </h3>
+        <ul className="space-y-2 text-gray-700">
+          <li className="flex items-center gap-3">
+            <span className="text-orange-500 font-bold">⚠️</span>
+            <span>70% hệ thống ngừng hoạt động do thiếu bảo trì định kỳ</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-orange-500 font-bold">⚠️</span>
+            <span>Hiệu suất giảm 20-30% sau 2 năm không bảo trì</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-orange-500 font-bold">⚠️</span>
+            <span>Chi phí sửa chữa khẩn cấp cao gấp 5-10 lần bảo trì định kỳ</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Hệ thống giám sát thông minh 24/7</h2>
       <p className="text-gray-700 leading-relaxed mb-6">
-        VLC Group cung cấp dịch vụ vận hành chuyên nghiệp với quy trình chuẩn mực:
+        Trung tâm điều khiển hiện đại của VLC Group với công nghệ AI giám sát tự động:
       </p>
-      <ul className="space-y-3 mb-6">
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[#3CB371]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-[#3CB371] font-bold text-sm">1</span>
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">24</div>
+            <h3 className="font-bold text-[#0F5132]">Giám sát liên tục</h3>
           </div>
-          <span>Giám sát hệ thống 24/7</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[#3CB371]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-[#3CB371] font-bold text-sm">2</span>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>• Camera HD quan sát realtime</li>
+            <li>• Cảm biến nhiệt độ, độ ẩm, rung động</li>
+            <li>• Giám sát dòng điện, hiệu suất</li>
+            <li>• AI phát hiện sự cố sớm</li>
+          </ul>
+        </div>
+        <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">7</div>
+            <h3 className="font-bold text-[#0F5132]">Phản ứng tức thời</h3>
           </div>
-          <span>Bảo trì định kỳ theo lịch</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[#3CB371]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-[#3CB371] font-bold text-sm">3</span>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>• Đội kỹ thuật trực 24/7</li>
+            <li>• Phản ứng trong 30 phút</li>
+            <li>• Xe kỹ thuật dự phòng</li>
+            <li>• Linh kiện thay thế dự trữ</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Bảo trì dự đoán - Công nghệ tiên tiến</h2>
+      <p className="text-gray-700 leading-relaxed mb-6">
+        Sử dụng AI và Big Data để dự đoán và ngăn ngừa sự cố trước khi xảy ra:
+      </p>
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-8">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl">
+              🤖
+            </div>
+            <h4 className="font-bold text-[#0F5132] mb-2">AI Analytics</h4>
+            <p className="text-sm text-gray-600">Phân tích dữ liệu thời gian thực</p>
           </div>
-          <span>Sửa chữa khẩn cấp</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-[#3CB371]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-[#3CB371] font-bold text-sm">4</span>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl">
+              📊
+            </div>
+            <h4 className="font-bold text-[#0F5132] mb-2">Big Data</h4>
+            <p className="text-sm text-gray-600">Dự đoán xu hướng hỏng hóc</p>
           </div>
-          <span>Báo cáo hiệu suất hàng tháng</span>
-        </li>
-      </ul>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl">
+              🔮
+            </div>
+            <h4 className="font-bold text-[#0F5132] mb-2">Predictive</h4>
+            <p className="text-sm text-gray-600">Ngăn ngừa sự cố 90%</p>
+          </div>
+        </div>
+      </div>
 
       <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Dịch vụ bảo trì</h2>
       <ul className="space-y-3 mb-6">
@@ -293,40 +388,90 @@ export const servicesData: ServiceItem[] = [
     readTime: '4 phút đọc',
     content: `
       <p className="text-lg text-gray-700 leading-relaxed mb-6">
-        Với hơn 20 năm kinh nghiệm trong lĩnh vực môi trường, VLC Group cung cấp dịch vụ tư vấn
-        chuyên nghiệp giúp doanh nghiệp tuân thủ các quy định pháp luật và phát triển bền vững.
+        <strong>"Môi trường là tương lai"</strong> - Với hơn 20 năm kinh nghiệm, VLC Group là đối tác tin cậy
+        giúp doanh nghiệp của bạn "xanh hóa" hoạt động sản xuất, tuân thủ pháp luật và phát triển bền vững.
+        Chúng tôi không chỉ giúp bạn tránh phạt mà còn tạo lợi thế cạnh tranh trên thị trường xanh.
       </p>
 
-      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Dịch vụ tư vấn môi trường</h2>
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 mb-8 border border-green-200">
+        <h3 className="text-lg font-bold text-[#0F5132] mb-3 flex items-center gap-2">
+          <span className="text-2xl">💡</span>
+          Cơ hội vàng cho doanh nghiệp
+        </h3>
+        <ul className="space-y-2 text-gray-700">
+          <li className="flex items-center gap-3">
+            <span className="text-green-500 font-bold">🎯</span>
+            <span>Tiết kiệm 50-70% chi phí xử phạt vi phạm môi trường</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-green-500 font-bold">🎯</span>
+            <span>Nâng cao hình ảnh thương hiệu "xanh" thu hút khách hàng</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-green-500 font-bold">🎯</span>
+            <span>Được ưu tiên trong đấu thầu dự án xanh</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-green-500 font-bold">🎯</span>
+            <span>Tiếp cận nguồn vốn ưu đãi từ các tổ chức quốc tế</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Dịch vụ tư vấn môi trường toàn diện</h2>
       <p className="text-gray-700 leading-relaxed mb-6">
-        Các dịch vụ chính bao gồm:
+        VLC Group cung cấp bộ giải pháp tư vấn môi trường 360 độ:
       </p>
-      <ul className="space-y-3 mb-6">
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-green-600 text-sm">🌱</span>
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-green-500 text-white rounded-2xl flex items-center justify-center text-xl">📋</div>
+            <h3 className="font-bold text-[#0F5132]">Đánh giá tác động môi trường</h3>
           </div>
-          <span>Đánh giá tác động môi trường (EIA)</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-green-600 text-sm">🌱</span>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>• EIA đầy đủ theo quy định pháp luật</li>
+            <li>• Đánh giá rủi ro môi trường chi tiết</li>
+            <li>• Đề xuất biện pháp giảm thiểu tối ưu</li>
+            <li>• Hỗ trợ phê duyệt từ cơ quan chức năng</li>
+          </ul>
+        </div>
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-blue-500 text-white rounded-2xl flex items-center justify-center text-xl">📊</div>
+            <h3 className="font-bold text-[#0F5132]">Báo cáo môi trường định kỳ</h3>
           </div>
-          <span>Lập báo cáo môi trường định kỳ</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-green-600 text-sm">🌱</span>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>• Báo cáo quan trắc môi trường hàng quý</li>
+            <li>• Báo cáo đánh giá hiệu quả BVMT</li>
+            <li>• Báo cáo sự cố môi trường (nếu có)</li>
+            <li>• Tư vấn cải thiện chỉ số môi trường</li>
+          </ul>
+        </div>
+        <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-purple-500 text-white rounded-2xl flex items-center justify-center text-xl">🔬</div>
+            <h3 className="font-bold text-[#0F5132]">Xử lý nước thải & khí thải</h3>
           </div>
-          <span>Tư vấn xử lý nước thải và khí thải</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <span className="text-green-600 text-sm">🌱</span>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>• Tư vấn công nghệ xử lý tối ưu</li>
+            <li>• Lựa chọn thiết bị phù hợp</li>
+            <li>• Thiết kế hệ thống xử lý</li>
+            <li>• Giám sát hiệu quả vận hành</li>
+          </ul>
+        </div>
+        <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-xl">📄</div>
+            <h3 className="font-bold text-[#0F5132]">Cấp phép & pháp lý</h3>
           </div>
-          <span>Hỗ trợ xin cấp phép môi trường</span>
-        </li>
-      </ul>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>• Xin giấy phép xả thải</li>
+            <li>• Xin giấy phép khai thác nước ngầm</li>
+            <li>• Tư vấn pháp lý môi trường</li>
+            <li>• Đại diện làm việc với cơ quan chức năng</li>
+          </ul>
+        </div>
+      </div>
 
       <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Quy trình hỗ trợ</h2>
       <p className="text-gray-700 leading-relaxed mb-6">
@@ -389,52 +534,133 @@ export const servicesData: ServiceItem[] = [
     readTime: '5 phút đọc',
     content: `
       <p className="text-lg text-gray-700 leading-relaxed mb-6">
-        VLC Group cung cấp các sản phẩm và công nghệ tiên tiến nhất trên thị trường,
-        giúp khách hàng nâng cao hiệu quả sản xuất và chất lượng sản phẩm.
+        <strong>"Công nghệ tạo nên sự khác biệt"</strong> - VLC Group là nhà cung cấp giải pháp công nghệ hàng đầu Việt Nam,
+        mang đến các sản phẩm tiên tiến nhất từ các thương hiệu quốc tế. Chúng tôi không chỉ bán sản phẩm mà còn
+        cung cấp giải pháp tổng thể giúp doanh nghiệp tối ưu hóa quy trình sản xuất và nâng cao năng lực cạnh tranh.
       </p>
 
-      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Danh mục sản phẩm nổi bật</h2>
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8 border border-blue-200">
+        <h3 className="text-lg font-bold text-[#0F5132] mb-3 flex items-center gap-2">
+          <span className="text-2xl">🚀</span>
+          Ưu thế cạnh tranh
+        </h3>
+        <ul className="space-y-2 text-gray-700">
+          <li className="flex items-center gap-3">
+            <span className="text-blue-500 font-bold">💎</span>
+            <span>Công nghệ tiên tiến nhất từ các thương hiệu top đầu thế giới</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-blue-500 font-bold">💎</span>
+            <span>Giải pháp tùy chỉnh phù hợp với từng ngành nghề</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-blue-500 font-bold">💎</span>
+            <span>Hỗ trợ kỹ thuật 24/7 và bảo hành dài hạn</span>
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="text-blue-500 font-bold">💎</span>
+            <span>Tiết kiệm 20-40% chi phí vận hành so với giải pháp thông thường</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-bold text-[#0F5132] mb-4">Danh mục sản phẩm flagship</h2>
       <p className="text-gray-700 leading-relaxed mb-6">
-        Các sản phẩm chủ lực:
+        Bộ sưu tập các sản phẩm công nghệ hàng đầu được tin dùng bởi hàng nghìn doanh nghiệp:
       </p>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all">
-          <div className="w-12 h-12 bg-[#3CB371]/10 rounded-lg flex items-center justify-center mb-4 shadow-sm">
-            <span className="text-[#3CB371] text-lg">📦</span>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 rounded-3xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1">
+          <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg text-2xl">
+            💧
           </div>
-          <h4 className="text-lg font-semibold text-[#0F5132] mb-2">Hệ thống lọc nước công nghiệp</h4>
-          <p className="text-gray-600 text-sm mb-4">Công nghệ lọc tiên tiến, hiệu suất cao</p>
-          <div className="flex items-center justify-between">
-            <span className="text-[#3CB371] font-medium">Công suất: 1-1000 m³/h</span>
-            <button className="text-[#3CB371] hover:text-[#3CB371]/80 text-sm font-medium">
-              Chi tiết →
-            </button>
+          <h4 className="text-lg font-bold text-[#0F5132] mb-3">Hệ thống lọc nước công nghiệp</h4>
+          <p className="text-gray-600 text-sm mb-4 leading-relaxed">Công nghệ RO tiên tiến, xử lý nước biển thành nước tinh khiết đạt chuẩn WHO</p>
+          <div className="space-y-2 mb-4">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Công suất:</span>
+              <span className="font-semibold text-[#3CB371]">1-1000 m³/h</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Tiết kiệm:</span>
+              <span className="font-semibold text-green-600">60% nước thải</span>
+            </div>
           </div>
+          <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all">
+            Xem chi tiết
+          </button>
         </div>
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all">
-          <div className="w-12 h-12 bg-[#3CB371]/10 rounded-lg flex items-center justify-center mb-4 shadow-sm">
-            <span className="text-[#3CB371] text-lg">☀️</span>
+        <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border border-yellow-200 rounded-3xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1">
+          <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg text-2xl">
+            ☀️
           </div>
-          <h4 className="text-lg font-semibold text-[#0F5132] mb-2">Thiết bị năng lượng mặt trời</h4>
-          <p className="text-gray-600 text-sm mb-4">Tấm pin mặt trời thế hệ mới</p>
-          <div className="flex items-center justify-between">
-            <span className="text-[#3CB371] font-medium">Hiệu suất: 22-23%</span>
-            <button className="text-[#3CB371] hover:text-[#3CB371]/80 text-sm font-medium">
-              Chi tiết →
-            </button>
+          <h4 className="text-lg font-bold text-[#0F5132] mb-3">Thiết bị năng lượng mặt trời</h4>
+          <p className="text-gray-600 text-sm mb-4 leading-relaxed">Tấm pin thế hệ mới với hiệu suất 22-23%, tuổi thọ lên đến 30 năm</p>
+          <div className="space-y-2 mb-4">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Hiệu suất:</span>
+              <span className="font-semibold text-[#3CB371]">22-23%</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Bảo hành:</span>
+              <span className="font-semibold text-green-600">25 năm</span>
+            </div>
           </div>
+          <button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-2 rounded-xl font-semibold hover:from-yellow-600 hover:to-orange-600 transition-all">
+            Xem chi tiết
+          </button>
         </div>
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all">
-          <div className="w-12 h-12 bg-[#3CB371]/10 rounded-lg flex items-center justify-center mb-4 shadow-sm">
-            <span className="text-[#3CB371] text-lg">⚡</span>
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-3xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1">
+          <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-pink-500 text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg text-2xl">
+            ⚡
           </div>
-          <h4 className="text-lg font-semibold text-[#0F5132] mb-2">Hệ thống biến tần</h4>
-          <p className="text-gray-600 text-sm mb-4">Tiết kiệm năng lượng tối ưu</p>
-          <div className="flex items-center justify-between">
-            <span className="text-[#3CB371] font-medium">Công suất: 0.75-500kW</span>
-            <button className="text-[#3CB371] hover:text-[#3CB371]/80 text-sm font-medium">
-              Chi tiết →
-            </button>
+          <h4 className="text-lg font-bold text-[#0F5132] mb-3">Hệ thống biến tần</h4>
+          <p className="text-gray-600 text-sm mb-4 leading-relaxed">Biến tần vector điều khiển, tiết kiệm điện năng lên đến 50%</p>
+          <div className="space-y-2 mb-4">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Công suất:</span>
+              <span className="font-semibold text-[#3CB371]">0.75-500kW</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Tiết kiệm:</span>
+              <span className="font-semibold text-green-600">30-50%</span>
+            </div>
+          </div>
+          <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all">
+            Xem chi tiết
+          </button>
+        </div>
+      </div>
+
+      <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-3xl p-8 mb-8 border border-indigo-200">
+        <h3 className="text-2xl font-bold text-[#0F5132] mb-6 text-center">Công nghệ 4.0 - Tương lai của ngành công nghiệp</h3>
+        <div className="grid md:grid-cols-4 gap-6">
+          <div className="text-center">
+            <div className="w-20 h-20 bg-gradient-to-br from-indigo-400 to-purple-500 text-white rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-xl text-3xl">
+              🤖
+            </div>
+            <h4 className="font-bold text-[#0F5132] mb-2">AI & Machine Learning</h4>
+            <p className="text-sm text-gray-600">Tự động hóa quy trình, tối ưu hóa hiệu suất</p>
+          </div>
+          <div className="text-center">
+            <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 text-white rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-xl text-3xl">
+              🌐
+            </div>
+            <h4 className="font-bold text-[#0F5132] mb-2">IoT & Big Data</h4>
+            <p className="text-sm text-gray-600">Kết nối thông minh, phân tích dữ liệu realtime</p>
+          </div>
+          <div className="text-center">
+            <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-red-500 text-white rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-xl text-3xl">
+              🔄
+            </div>
+            <h4 className="font-bold text-[#0F5132] mb-2">Industry 4.0</h4>
+            <p className="text-sm text-gray-600">Nhà máy thông minh, sản xuất linh hoạt</p>
+          </div>
+          <div className="text-center">
+            <div className="w-20 h-20 bg-gradient-to-br from-red-400 to-orange-500 text-white rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-xl text-3xl">
+              🔒
+            </div>
+            <h4 className="font-bold text-[#0F5132] mb-2">Cybersecurity</h4>
+            <p className="text-sm text-gray-600">Bảo mật hệ thống, an toàn thông tin</p>
           </div>
         </div>
       </div>

@@ -147,7 +147,7 @@ export default function PostDetail({ showSidebar = true }: PostDetailProps) {
       <div className={`${showSidebar ? 'max-w-7xl' : 'max-w-4xl'} mx-auto px-6 py-8`}>
 
         {/* Main Article */}
-        <div className={`grid ${showSidebar ? 'lg:grid-cols-3' : ''} gap-12`}>
+        <div className={`grid ${showSidebar ? 'lg:grid-cols-3' : ''} gap-8`}>
           {/* Article Content */}
           <div className={`${showSidebar ? 'lg:col-span-2' : ''}`}>
             <article
