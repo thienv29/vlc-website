@@ -1,8 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
+
+// Navigation item interface
+interface NavItem {
+  path: string;
+  label: string;
+  hasSubmenu?: boolean;
+  submenu?: NavItem[];
+}
 
 export default function Header() {
   const location = useLocation();
@@ -10,7 +18,8 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [mobileExpandedItems, setMobileExpandedItems] = useState<Set<string>>(new Set());
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
@@ -21,7 +30,8 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
+  // Dynamic navigation structure
+  const navItems: NavItem[] = [
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
     { path: '/services', label: t('nav.services') },
@@ -30,20 +40,8 @@ export default function Header() {
       label: t('nav.projects'),
       hasSubmenu: true,
       submenu: [
-        {
-          label: t('nav.projectsSubmenu.group1'),
-          path: '/projects/group1',
-          submenuItems: [
-            { path: '/projects/group1', label: t('nav.projectsSubmenu.group1Projects') }
-          ]
-        },
-        {
-          label: t('nav.projectsSubmenu.group2'),
-          path: '/projects/group2',
-          submenuItems: [
-            { path: '/projects/group2', label: t('nav.projectsSubmenu.group2Projects') }
-          ]
-        }
+        { path: '/projects', label: t('nav.projectsSubmenu.group1') },
+        { path: '/projects', label: t('nav.projectsSubmenu.group2') }
       ]
     },
     { path: '/sustainability', label: t('nav.sustainability') },
@@ -52,8 +50,8 @@ export default function Header() {
       label: t('nav.news'),
       hasSubmenu: true,
       submenu: [
-        { path: '/news/internal', label: t('nav.newsSubmenu.internal') },
-        { path: '/news/community', label: t('nav.newsSubmenu.community') }
+        { path: '/news', label: t('nav.newsSubmenu.internal') },
+        { path: '/news', label: t('nav.newsSubmenu.community') }
       ]
     },
     { path: '/careers', label: t('nav.careers') },
@@ -63,18 +61,102 @@ export default function Header() {
   const shouldHaveSolidBg = !isHomePage || isScrolled;
 
   const handleMouseEnter = (dropdownKey: string) => {
-    if (dropdownTimeout) {
-      clearTimeout(dropdownTimeout);
-      setDropdownTimeout(null);
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
     }
     setActiveDropdown(dropdownKey);
   };
 
   const handleMouseLeave = () => {
-    const timeout = setTimeout(() => {
+    dropdownTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 150); // 150ms delay before closing
-    setDropdownTimeout(timeout);
+    }, 200); // Slightly longer delay for stability
+  };
+
+  const toggleMobileItem = (path: string) => {
+    const newExpanded = new Set(mobileExpandedItems);
+    if (newExpanded.has(path)) {
+      newExpanded.delete(path);
+    } else {
+      newExpanded.add(path);
+    }
+    setMobileExpandedItems(newExpanded);
+  };
+
+  // Recursive function to render submenu items
+  const renderSubmenu = (items: NavItem[], level: number = 1, parentPath: string = ''): JSX.Element => {
+    return (
+      <div className={`space-y-1 ${level > 1 ? 'ml-4' : ''}`}>
+        {items.map((item) => (
+          <div key={item.path}>
+            {item.hasSubmenu ? (
+              <div>
+                <button
+                  onClick={() => toggleMobileItem(item.path)}
+                  className="flex items-center justify-between w-full text-left py-2 px-3 text-gray-600 hover:text-primary-600 hover:bg-gray-50 rounded"
+                >
+                  <span className="text-sm font-medium">{item.label}</span>
+                  <ChevronRight
+                    size={14}
+                    className={`transition-transform ${mobileExpandedItems.has(item.path) ? 'rotate-90' : ''}`}
+                  />
+                </button>
+                {mobileExpandedItems.has(item.path) && (
+                  <div className="mt-1">
+                    {renderSubmenu(item.submenu!, level + 1, item.path)}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block text-sm py-2 px-3 text-gray-600 hover:text-primary-600 hover:bg-gray-50 rounded ${
+                  location.pathname === item.path ? 'text-primary-600 bg-primary-50' : ''
+                }`}
+              >
+                {item.label}
+              </Link>
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  // Recursive function to render desktop dropdown
+  const renderDesktopDropdown = (items: NavItem[], level: number = 1): JSX.Element => {
+    const widthClass = level === 1 ? 'w-64' : 'w-56';
+    const positionClass = level === 1 ? 'left-0 top-full' : 'left-full top-0';
+
+    return (
+      <div className={`absolute ${positionClass} mt-2 ${widthClass} bg-white shadow-lg rounded-md border border-gray-200 py-2 z-50`}>
+        {items.map((item) => (
+          <div key={item.path} className="relative group">
+            {item.hasSubmenu ? (
+              <div className="flex items-center justify-between px-4 py-2 hover:bg-gray-50">
+                <span className="text-sm font-medium text-gray-900">{item.label}</span>
+                <ChevronRight size={12} className="text-gray-400" />
+                <div className="absolute left-full top-0 ml-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  {renderDesktopDropdown(item.submenu!, level + 1)}
+                </div>
+              </div>
+            ) : (
+              <Link
+                to={item.path}
+                className={`block text-sm text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-4 py-2 ${
+                  location.pathname === item.path ? 'text-primary-600 bg-primary-50' : ''
+                }`}
+                onClick={() => setActiveDropdown(null)}
+              >
+                {item.label}
+              </Link>
+            )}
+          </div>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -106,7 +188,8 @@ export default function Header() {
                     onMouseEnter={() => handleMouseEnter(item.path)}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <button
+                    <Link
+                      to={item.path}
                       className={`text-sm font-medium transition-colors relative group flex items-center gap-1 ${
                         location.pathname.startsWith(item.path)
                           ? shouldHaveSolidBg
@@ -129,48 +212,15 @@ export default function Header() {
                           location.pathname.startsWith(item.path) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                         }`}
                       />
-                    </button>
+                    </Link>
 
-                    {activeDropdown === item.path && (
+                    {activeDropdown === item.path && item.submenu && (
                       <div
-                        className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-md border border-gray-200 py-2 z-50"
+                        className="absolute top-full left-0 z-50"
                         onMouseEnter={() => handleMouseEnter(item.path)}
                         onMouseLeave={handleMouseLeave}
                       >
-                        {item.submenu.map((submenuItem: any, index) => (
-                          <div key={index} className="relative px-4 py-2 group">
-                            {submenuItem.submenuItems ? (
-                              <div className="flex items-center justify-between">
-                                <div className="font-medium text-gray-900">{submenuItem.label}</div>
-                                <ChevronDown size={12} className="text-gray-400 rotate-[-90deg]" />
-                                <div className="absolute left-full top-0 ml-2 w-48 bg-white shadow-lg rounded-md border border-gray-200 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                  {submenuItem.submenuItems.map((subItem: any) => (
-                                    <Link
-                                      key={subItem.path}
-                                      to={subItem.path}
-                                      className={`block text-sm text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-3 py-2 ${
-                                        location.pathname === subItem.path ? 'text-primary-600 bg-primary-50' : ''
-                                      }`}
-                                      onClick={() => setActiveDropdown(null)}
-                                    >
-                                      {subItem.label}
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            ) : (
-                              <Link
-                                to={submenuItem.path}
-                                className={`block text-sm text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-2 py-1 rounded ${
-                                  location.pathname === submenuItem.path ? 'text-primary-600 bg-primary-50' : ''
-                                }`}
-                                onClick={() => setActiveDropdown(null)}
-                              >
-                                {submenuItem.label}
-                              </Link>
-                            )}
-                          </div>
-                        ))}
+                        {renderDesktopDropdown(item.submenu)}
                       </div>
                     )}
                   </div>
@@ -222,46 +272,20 @@ export default function Header() {
         <div className="lg:hidden bg-white shadow-xl">
           <nav className="flex flex-col px-6 py-4">
             {navItems.map((item) => {
-              if (item.hasSubmenu) {
+              if (item.hasSubmenu && item.submenu) {
                 return (
                   <div key={item.path} className="border-b border-gray-100">
-                    <div className="py-3 text-sm font-medium text-gray-700">
+                    <Link
+                      to={item.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`block py-3 text-sm font-medium ${
+                        location.pathname === item.path ? 'text-primary-600' : 'text-gray-700'
+                      }`}
+                    >
                       {item.label}
-                    </div>
-                    <div className="ml-4 mb-2 space-y-1">
-                      {item.submenu.map((submenuItem: any, index) => (
-                        <div key={index}>
-                          {submenuItem.submenuItems ? (
-                            <div>
-                              <div className="text-sm font-medium text-gray-900 py-1">{submenuItem.label}</div>
-                              <div className="ml-4 space-y-1">
-                                {submenuItem.submenuItems.map((subItem: any) => (
-                                  <Link
-                                    key={subItem.path}
-                                    to={subItem.path}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className={`block text-sm py-2 pl-2 text-gray-600 hover:text-primary-600 ${
-                                      location.pathname === subItem.path ? 'text-primary-600' : ''
-                                    }`}
-                                  >
-                                    {subItem.label}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          ) : (
-                            <Link
-                              to={submenuItem.path}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className={`block text-sm py-2 pl-2 text-gray-600 hover:text-primary-600 ${
-                                location.pathname === submenuItem.path ? 'text-primary-600' : ''
-                              }`}
-                            >
-                              {submenuItem.label}
-                            </Link>
-                          )}
-                        </div>
-                      ))}
+                    </Link>
+                    <div className="mb-2">
+                      {renderSubmenu(item.submenu)}
                     </div>
                   </div>
                 );
