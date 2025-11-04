@@ -8,7 +8,6 @@ import LanguageSwitcher from './LanguageSwitcher';
 interface NavItem {
   path: string;
   label: string;
-  hasSubmenu?: boolean;
   submenu?: NavItem[];
 }
 
@@ -38,7 +37,6 @@ export default function Header() {
     {
       path: '/projects',
       label: t('nav.projects'),
-      hasSubmenu: true,
       submenu: [
         { path: '/projects', label: t('nav.projectsSubmenu.group1') },
         { path: '/projects', label: t('nav.projectsSubmenu.group2') }
@@ -48,7 +46,6 @@ export default function Header() {
     {
       path: '/news',
       label: t('nav.news'),
-      hasSubmenu: true,
       submenu: [
         { path: '/news', label: t('nav.newsSubmenu.internal') },
         { path: '/news', label: t('nav.newsSubmenu.community') }
@@ -90,7 +87,7 @@ export default function Header() {
       <div className={`space-y-1 ${level > 1 ? 'ml-4' : ''}`}>
         {items.map((item) => (
           <div key={item.path}>
-            {item.hasSubmenu ? (
+            {item.submenu && item.submenu.length > 0 ? (
               <div>
                 <button
                   onClick={() => toggleMobileItem(item.path)}
@@ -104,7 +101,7 @@ export default function Header() {
                 </button>
                 {mobileExpandedItems.has(item.path) && (
                   <div className="mt-1">
-                    {renderSubmenu(item.submenu!, level + 1, item.path)}
+                    {renderSubmenu(item.submenu, level + 1, item.path)}
                   </div>
                 )}
               </div>
@@ -134,12 +131,12 @@ export default function Header() {
       <div className={`absolute ${positionClass} mt-2 ${widthClass} bg-white shadow-lg rounded-md border border-gray-200 py-2 z-50`}>
         {items.map((item) => (
           <div key={item.path} className="relative group">
-            {item.hasSubmenu ? (
+            {item.submenu && item.submenu.length > 0 ? (
               <div className="flex items-center justify-between px-4 py-2 hover:bg-gray-50">
                 <span className="text-sm font-medium text-gray-900">{item.label}</span>
                 <ChevronRight size={12} className="text-gray-400" />
                 <div className="absolute left-full top-0 ml-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  {renderDesktopDropdown(item.submenu!, level + 1)}
+                  {renderDesktopDropdown(item.submenu, level + 1)}
                 </div>
               </div>
             ) : (
@@ -180,7 +177,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {navItems.map((item) => {
-              if (item.hasSubmenu) {
+              if (item.submenu && item.submenu.length > 0) {
                 return (
                   <div
                     key={item.path}
@@ -272,7 +269,7 @@ export default function Header() {
         <div className="lg:hidden bg-white shadow-xl">
           <nav className="flex flex-col px-6 py-4">
             {navItems.map((item) => {
-              if (item.hasSubmenu && item.submenu) {
+              if (item.submenu && item.submenu.length > 0) {
                 return (
                   <div key={item.path} className="border-b border-gray-100">
                     <Link
