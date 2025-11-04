@@ -24,8 +24,8 @@ export default function Contact({ fullPage = false }: ContactProps) {
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#0F5132] mb-4">Liên hệ với chúng tôi</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-5xl font-bold text-[#0F5132] mb-4 animate-slideInUp">Liên hệ với chúng tôi</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto animate-slideInUp delay-100">
               Sẵn sàng hỗ trợ bạn 24/7
             </p>
           </div>
@@ -76,16 +76,16 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
 
   return (
     <div>
-      <div className="bg-gradient-to-br from-[#0F5132] to-[#1e5f3a] rounded-3xl p-12 text-white mb-16">
+      <div className="bg-gradient-to-br from-[#0F5132] to-[#1e5f3a] rounded-3xl p-12 text-white mb-16 animate-fadeIn">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-3xl font-bold mb-4 text-center">Gửi yêu cầu tư vấn</h3>
-          <p className="text-gray-200 text-center mb-8">
+          <h3 className="text-3xl font-bold mb-4 text-center animate-slideInUp">Gửi yêu cầu tư vấn</h3>
+          <p className="text-gray-200 text-center mb-8 animate-slideInUp delay-100">
             Điền thông tin bên dưới, chúng tôi sẽ liên hệ trong vòng 24h
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 animate-slideInUp delay-200">
             <div className="grid md:grid-cols-2 gap-6">
-              <div>
+              <div className="animate-fadeIn" style={{ animationDelay: '0.4s' }}>
                 <label className="block text-sm font-medium mb-2">Họ và tên *</label>
                 <input
                   type="text"
@@ -96,7 +96,7 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
                   placeholder="Nguyễn Văn A"
                 />
               </div>
-              <div>
+              <div className="animate-fadeIn" style={{ animationDelay: '0.5s' }}>
                 <label className="block text-sm font-medium mb-2">Email *</label>
                 <input
                   type="email"
@@ -110,7 +110,7 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div>
+              <div className="animate-fadeIn" style={{ animationDelay: '0.6s' }}>
                 <label className="block text-sm font-medium mb-2">Số điện thoại *</label>
                 <input
                   type="tel"
@@ -121,7 +121,7 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
                   placeholder="0901234567"
                 />
               </div>
-              <div>
+              <div className="animate-fadeIn" style={{ animationDelay: '0.7s' }}>
                 <label className="block text-sm font-medium mb-2">Dịch vụ quan tâm</label>
                 <select
                   value={formData.subject}
@@ -137,7 +137,7 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
               </div>
             </div>
 
-            <div>
+            <div className="animate-fadeIn" style={{ animationDelay: '0.8s' }}>
               <label className="block text-sm font-medium mb-2">Nội dung *</label>
               <textarea
                 required
@@ -151,7 +151,8 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
 
             <button
               type="submit"
-              className="w-full py-4 bg-[#3CB371] text-white rounded-lg font-semibold hover:bg-[#34a563] transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 bg-[#3CB371] text-white rounded-lg font-semibold hover:bg-[#34a563] transition-all flex items-center justify-center gap-2 animate-fadeIn"
+              style={{ animationDelay: '0.9s' }}
             >
               Gửi yêu cầu
               <Send size={20} />
@@ -175,18 +176,18 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
 
       <div className="grid md:grid-cols-3 gap-8">
         {offices.map((office, index) => (
-          <div key={index} className="bg-[#F5F7FA] rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-[#0F5132] mb-6">{office.city}</h3>
+          <div key={index} className="bg-[#F5F7FA] rounded-2xl p-8 animate-slideInUp" style={{ animationDelay: `${index * 200}ms` }}>
+            <h3 className="text-2xl font-bold text-[#0F5132] mb-6 animate-fadeIn" style={{ animationDelay: `${index * 200 + 200}ms` }}>{office.city}</h3>
             <div className="space-y-4">
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 animate-fadeIn" style={{ animationDelay: `${index * 200 + 400}ms` }}>
                 <MapPin className="text-[#3CB371] flex-shrink-0 mt-1" size={20} />
                 <span className="text-gray-600 text-sm">{office.address}</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 animate-fadeIn" style={{ animationDelay: `${index * 200 + 600}ms` }}>
                 <Phone className="text-[#3CB371] flex-shrink-0" size={20} />
                 <span className="text-gray-600 text-sm">{office.phone}</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 animate-fadeIn" style={{ animationDelay: `${index * 200 + 800}ms` }}>
                 <Mail className="text-[#3CB371] flex-shrink-0" size={20} />
                 <span className="text-gray-600 text-sm">{office.email}</span>
               </div>

@@ -85,13 +85,13 @@ export default function Careers() {
           <div className="absolute inset-0 bg-gradient-to-r from-accent-800/90 to-primary-500/80" />
           <div className="absolute inset-0 flex items-center justify-center text-center text-white px-6">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slideInUp">
                 Cùng phát triển bền vững cùng VLC
               </h1>
-              <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+              <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 animate-slideInUp delay-100">
                 Tham gia đội ngũ hơn 1000+ chuyên gia, xây dựng tương lai xanh và thịnh vượng
               </p>
-              <button className="px-8 py-4 bg-white text-accent-800 rounded-lg font-semibold hover:bg-gray-100 transition-all">
+              <button className="px-8 py-4 bg-white text-accent-800 rounded-lg font-semibold hover:bg-gray-100 transition-all animate-slideInUp delay-200">
                 Khám phá cơ hội
               </button>
             </div>

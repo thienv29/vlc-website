@@ -184,8 +184,8 @@ export default function News({ fullPage = false }: NewsProps) {
        <div className="pt-32 pb-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center my-16">
-            <h2 className="text-5xl font-bold text-[#0F5132] mb-4">Tin tức & Sự kiện</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-5xl font-bold text-[#0F5132] mb-4 animate-slideInUp">Tin tức & Sự kiện</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto animate-slideInUp delay-100">
               Cập nhật những hoạt động mới nhất của VLC Group
             </p>
           </div>
@@ -228,10 +228,10 @@ export default function News({ fullPage = false }: NewsProps) {
 
 function NewsTabs({ activeTab, setActiveTab }: any) {
   return (
-    <div className="flex gap-4 mb-12 justify-center">
+    <div className="flex gap-4 mb-12 justify-center animate-fadeIn">
       <button
         onClick={() => setActiveTab('company')}
-        className={`px-8 py-3 rounded-full font-semibold transition-all ${
+        className={`px-8 py-3 rounded-full font-semibold transition-all animate-slideInLeft ${
           activeTab === 'company'
             ? 'bg-[#0F5132] text-white shadow-lg'
             : 'bg-white text-gray-700 hover:bg-gray-50'
@@ -241,7 +241,7 @@ function NewsTabs({ activeTab, setActiveTab }: any) {
       </button>
       <button
         onClick={() => setActiveTab('community')}
-        className={`px-8 py-3 rounded-full font-semibold transition-all ${
+        className={`px-8 py-3 rounded-full font-semibold transition-all animate-slideInRight ${
           activeTab === 'community'
             ? 'bg-[#3CB371] text-white shadow-lg'
             : 'bg-white text-gray-700 hover:bg-gray-50'
@@ -269,16 +269,16 @@ function NewsGrid({ news, compact = false }: any) {
   const [featured, ...rest] = news;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 animate-fadeIn">
       <div
-        className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl transition-shadow"
+        className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl transition-shadow animate-slideInUp"
         onClick={() => navigate(`/news/${featured.id}`)}
       >
         <div className="aspect-[4/3]">
           <img src={featured.image} alt={featured.title} className="w-full h-full object-cover" />
         </div>
         <div className="p-12">
-          <div className="flex items-center gap-4 mb-4">
+          <div className="flex items-center gap-4 mb-4 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
             <span className="px-3 py-1 bg-[#3CB371]/10 text-[#3CB371] rounded-full text-sm font-medium">
               {featured.category}
             </span>
@@ -287,9 +287,9 @@ function NewsGrid({ news, compact = false }: any) {
               {featured.date}
             </span>
           </div>
-          <h3 className="text-3xl font-bold text-[#0F5132] mb-4">{featured.title}</h3>
-          <p className="text-gray-600 mb-6 leading-relaxed">{featured.excerpt}</p>
-          <button className="text-[#3CB371] font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+          <h3 className="text-3xl font-bold text-[#0F5132] mb-4 animate-fadeIn" style={{ animationDelay: '0.5s' }}>{featured.title}</h3>
+          <p className="text-gray-600 mb-6 leading-relaxed animate-fadeIn" style={{ animationDelay: '0.7s' }}>{featured.excerpt}</p>
+          <button className="text-[#3CB371] font-semibold flex items-center gap-2 hover:gap-3 transition-all animate-fadeIn" style={{ animationDelay: '0.9s' }}>
             Đọc thêm
             <ArrowRight size={20} />
           </button>
@@ -297,20 +297,21 @@ function NewsGrid({ news, compact = false }: any) {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {rest.map((item: any) => (
-          <NewsCard key={item.id} news={item} />
+        {rest.map((item: any, index: number) => (
+          <NewsCard key={item.id} news={item} index={index} />
         ))}
       </div>
     </div>
   );
 }
 
-function NewsCard({ news }: any) {
+function NewsCard({ news, index = 0 }: any) {
   const navigate = useNavigate();
 
   return (
     <div
-      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer animate-slideInUp"
+      style={{ animationDelay: `${index * 100}ms` }}
       onClick={() => navigate(`/news/${news.id}`)}
     >
       <div className="relative aspect-[16/9] overflow-hidden">
@@ -320,21 +321,21 @@ function NewsCard({ news }: any) {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-[#0F5132]">
+          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-[#0F5132] animate-fadeIn" style={{ animationDelay: `${index * 100 + 200}ms` }}>
             {news.category}
           </span>
         </div>
       </div>
       <div className="p-6">
-        <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
+        <div className="flex items-center gap-2 text-sm text-gray-600 mb-3 animate-fadeIn" style={{ animationDelay: `${index * 100 + 300}ms` }}>
           <Calendar size={16} className="text-[#3CB371]" />
           {news.date}
         </div>
-        <h3 className="text-lg font-bold text-[#0F5132] mb-2 line-clamp-2 group-hover:text-[#3CB371] transition-colors">
+        <h3 className="text-lg font-bold text-[#0F5132] mb-2 line-clamp-2 group-hover:text-[#3CB371] transition-colors animate-fadeIn" style={{ animationDelay: `${index * 100 + 400}ms` }}>
           {news.title}
         </h3>
-        <p className="text-sm text-gray-600 line-clamp-2 mb-4">{news.excerpt}</p>
-        <button className="text-[#3CB371] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+        <p className="text-sm text-gray-600 line-clamp-2 mb-4 animate-fadeIn" style={{ animationDelay: `${index * 100 + 500}ms` }}>{news.excerpt}</p>
+        <button className="text-[#3CB371] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all animate-fadeIn" style={{ animationDelay: `${index * 100 + 600}ms` }}>
           Đọc thêm
           <ArrowRight size={16} />
         </button>
