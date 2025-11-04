@@ -18,14 +18,14 @@ export default function LanguageSwitcher({ hasSolidBackground = true }: Language
   };
 
   const textColor = hasSolidBackground ? 'text-gray-700' : 'text-white';
-  const hoverColor = hasSolidBackground ? 'hover:text-[#3CB371]' : 'hover:text-gray-200';
+  const hoverColor = hasSolidBackground ? 'hover:text-primary-600' : 'hover:text-gray-200';
 
   return (
     <div className="relative group">
       <button className={`flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg border-2 ${
         hasSolidBackground
-          ? 'border-[#3CB371] bg-[#3CB371] text-white hover:bg-white hover:text-[#3CB371]'
-          : 'border-white bg-transparent text-white hover:bg-white hover:text-[#1E2A78]'
+          ? 'border-primary-600 bg-primary-600 text-white hover:bg-white hover:text-primary-600'
+          : 'border-white bg-transparent text-white hover:bg-white hover:text-accent-900'
       }`}>
         <Globe size={16} />
         <span className="hidden sm:inline">{t('common.language')}</span>
@@ -38,7 +38,7 @@ export default function LanguageSwitcher({ hasSolidBackground = true }: Language
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
             className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg ${
-              i18n.language === lang.code ? 'text-[#3CB371] font-medium' : 'text-gray-700'
+              i18n.language === lang.code ? 'text-primary-600 font-medium' : 'text-gray-700'
             }`}
           >
             {lang.name}

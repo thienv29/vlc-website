@@ -41,9 +41,9 @@ export default function CTA() {
   ];
 
   const contactInfo = [
-    { icon: Phone, label: 'Hotline', value: '1900 XXX XXX', color: 'text-green-400' },
-    { icon: Mail, label: 'Email', value: 'info@vlc-group.vn', color: 'text-blue-400' },
-    { icon: MapPin, label: 'Địa chỉ', value: 'TP.HCM & Hà Nội', color: 'text-red-400' }
+    { icon: Phone, label: 'Hotline', value: '1900 XXX XXX', color: 'text-primary-400' },
+    { icon: Mail, label: 'Email', value: 'info@vlc-group.vn', color: 'text-accent-500' },
+    { icon: MapPin, label: 'Địa chỉ', value: 'TP.HCM & Hà Nội', color: 'text-secondary-400' }
   ];
 
   return (

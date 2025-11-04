@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F5132] text-white">
+    <footer className="bg-primary-900 text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
@@ -19,13 +19,13 @@ export default function Footer() {
               mang đến giá trị vượt trội cho khách hàng và cộng đồng.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#3CB371] transition-colors">
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#3CB371] transition-colors">
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#3CB371] transition-colors">
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
                 <Youtube size={20} />
               </a>
             </div>
@@ -43,7 +43,7 @@ export default function Footer() {
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-gray-300 hover:text-[#3CB371] transition-colors text-sm"
+                    className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
                     {item.label}
                   </Link>
@@ -63,19 +63,19 @@ export default function Footer() {
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-gray-300 hover:text-[#3CB371] transition-colors text-sm"
+                    className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <a href="#" className="text-gray-300 hover:text-[#3CB371] transition-colors text-sm">
+                <a href="#" className="text-gray-300 hover:text-primary-400 transition-colors text-sm">
                   Chính sách bảo mật
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-[#3CB371] transition-colors text-sm">
+                <a href="#" className="text-gray-300 hover:text-primary-400 transition-colors text-sm">
                   Điều khoản sử dụng
                 </a>
               </li>
@@ -86,17 +86,17 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6">Liên hệ</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="text-[#3CB371] flex-shrink-0 mt-1" size={18} />
+                <MapPin className="text-primary-400 flex-shrink-0 mt-1" size={18} />
                 <span className="text-gray-300 text-sm">
                   123 Đường ABC, Quận Cầu Giấy, Hà Nội
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="text-[#3CB371] flex-shrink-0" size={18} />
+                <Phone className="text-primary-400 flex-shrink-0" size={18} />
                 <span className="text-gray-300 text-sm">(024) 1234 5678</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="text-[#3CB371] flex-shrink-0" size={18} />
+                <Mail className="text-primary-400 flex-shrink-0" size={18} />
                 <span className="text-gray-300 text-sm">contact@vlcgroup.vn</span>
               </div>
             </div>
@@ -107,9 +107,9 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Email của bạn"
-                  className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#3CB371]"
+                  className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-primary-400"
                 />
-                <button className="px-4 py-2 bg-[#3CB371] rounded-lg hover:bg-[#34a563] transition-colors">
+                <button className="px-4 py-2 bg-primary-600 rounded-lg hover:bg-primary-500 transition-colors">
                   <Mail size={18} />
                 </button>
               </div>

@@ -15,8 +15,8 @@ export default function Services({ fullPage = false }: ServicesProps) {
       icon: Building2,
       title: t('services.services.epc.title'),
       description: t('services.services.epc.description'),
-      color: '#2563EB', // Industrial blue
-      bgColor: '#EFF6FF', // Light blue background
+      color: 'rgb(37 99 235)', // Industrial blue - accent-600
+      bgColor: 'rgb(239 246 255)', // Light blue background - accent-50
       items: t('services.services.epc.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800',
       detailedContent: {
@@ -30,8 +30,8 @@ export default function Services({ fullPage = false }: ServicesProps) {
       icon: Wrench,
       title: t('services.services.maintenance.title'),
       description: t('services.services.maintenance.description'),
-      color: '#1E40AF', // Darker blue
-      bgColor: '#EEF2FF', // Light blue background
+      color: 'rgb(30 64 175)', // Darker blue - accent-700
+      bgColor: 'rgb(238 242 255)', // Light blue background - accent-50
       items: t('services.services.maintenance.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/3862135/pexels-photo-3862135.jpeg?auto=compress&cs=tinysrgb&w=800',
       detailedContent: {
@@ -45,8 +45,8 @@ export default function Services({ fullPage = false }: ServicesProps) {
       icon: Leaf,
       title: t('services.services.environment.title'),
       description: t('services.services.environment.description'),
-      color: '#1E40AF', // Darker blue
-      bgColor: '#EEF2FF', // Light blue background
+      color: 'rgb(30 64 175)', // Darker blue - accent-700
+      bgColor: 'rgb(238 242 255)', // Light blue background - accent-50
       items: t('services.services.environment.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800',
       detailedContent: {
@@ -59,8 +59,8 @@ export default function Services({ fullPage = false }: ServicesProps) {
       icon: ShoppingBag,
       title: t('services.services.products.title'),
       description: t('services.services.products.description'),
-      color: '#2563EB', // Industrial blue
-      bgColor: '#EFF6FF', // Light blue background
+      color: 'rgb(37 99 235)', // Industrial blue - accent-600
+      bgColor: 'rgb(239 246 255)', // Light blue background - accent-50
       items: t('services.services.products.items', { returnObjects: true }) as string[],
       image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800',
       detailedContent: {
@@ -85,10 +85,10 @@ export default function Services({ fullPage = false }: ServicesProps) {
     };
 
     const stats = [
-      { icon: Users, value: '1000+', label: 'Khách hàng tin cậy', color: 'text-blue-600' },
-      { icon: Award, value: '25+', label: 'Giải thưởng ngành', color: 'text-green-600' },
-      { icon: TrendingUp, value: '98%', label: 'Tỷ lệ hài lòng', color: 'text-purple-600' },
-      { icon: Shield, value: 'ISO 9001', label: 'Chứng nhận chất lượng', color: 'text-orange-600' }
+      { icon: Users, value: '1000+', label: 'Khách hàng tin cậy', color: 'text-accent-600' },
+      { icon: Award, value: '25+', label: 'Giải thưởng ngành', color: 'text-primary-600' },
+      { icon: TrendingUp, value: '98%', label: 'Tỷ lệ hài lòng', color: 'text-accent-700' },
+      { icon: Shield, value: 'ISO 9001', label: 'Chứng nhận chất lượng', color: 'text-secondary-600' }
     ];
 
     return (

@@ -7,10 +7,10 @@ export default function Hero() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   const stats = [
-    { number: 500, suffix: '+', label: t('hero.stats.projects'), icon: TrendingUp, color: 'text-blue-400' },
-    { number: 20, suffix: '+', label: t('hero.stats.experience'), icon: Award, color: 'text-green-400' },
-    { number: 98, suffix: '%', label: t('hero.stats.satisfaction'), icon: Star, color: 'text-yellow-400' },
-    { number: 1000, suffix: '+', label: t('hero.stats.experts'), icon: Users, color: 'text-purple-400' },
+    { number: 500, suffix: '+', label: t('hero.stats.projects'), icon: TrendingUp, color: 'text-accent-500' },
+    { number: 20, suffix: '+', label: t('hero.stats.experience'), icon: Award, color: 'text-primary-400' },
+    { number: 98, suffix: '%', label: t('hero.stats.satisfaction'), icon: Star, color: 'text-secondary-400' },
+    { number: 1000, suffix: '+', label: t('hero.stats.experts'), icon: Users, color: 'text-accent-600' },
   ];
 
   // Animated counter hook

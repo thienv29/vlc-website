@@ -59,16 +59,16 @@ export default function Header() {
                 className={`text-sm font-medium transition-colors relative group ${
                   location.pathname === item.path
                     ? shouldHaveSolidBg
-                      ? 'text-[#3CB371]'
+                      ? 'text-primary-600'
                       : 'text-white'
                     : shouldHaveSolidBg
-                    ? 'text-gray-700 hover:text-[#3CB371]'
+                    ? 'text-gray-700 hover:text-primary-600'
                     : 'text-gray-200 hover:text-white'
                 }`}
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-[#3CB371] transform transition-transform ${
+                  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-primary-600 transform transition-transform ${
                     location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   }`}
                 />
@@ -101,7 +101,7 @@ export default function Header() {
                 to={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`text-left py-3 text-sm font-medium border-b border-gray-100 ${
-                  location.pathname === item.path ? 'text-[#3CB371]' : 'text-gray-700'
+                  location.pathname === item.path ? 'text-primary-600' : 'text-gray-700'
                 }`}
               >
                 {item.label}
