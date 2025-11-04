@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import PageWrapper from './PageWrapper';
 
 export default function NewsCommunity() {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
@@ -103,7 +104,7 @@ export default function NewsCommunity() {
         <div className="space-y-8 animate-fadeIn">
           <div
             className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl transition-shadow animate-slideInUp"
-            onClick={() => window.location.href = `/news/${featured.id}`}
+            onClick={() => navigate(`/news/${featured.id}`)}
           >
             <div className="aspect-[4/3]">
               <img src={featured.image} alt={featured.title} className="w-full h-full object-cover" />
@@ -147,11 +148,13 @@ export default function NewsCommunity() {
 }
 
 function NewsCard({ news, index = 0 }: any) {
+  const navigate = useNavigate();
+
   return (
     <div
       className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer animate-slideInUp"
       style={{ animationDelay: `${index * 100}ms` }}
-      onClick={() => window.location.href = `/news/${news.id}`}
+      onClick={() => navigate(`/news/${news.id}`)}
     >
       <div className="relative aspect-[16/9] overflow-hidden">
         <img

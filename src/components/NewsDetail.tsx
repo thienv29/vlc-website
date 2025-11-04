@@ -310,7 +310,13 @@ export default function NewsDetail() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const headerHeight = 80; // Approximate header height
+      const elementPosition = element.offsetTop - headerHeight - 20; // Extra padding
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
