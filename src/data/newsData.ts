@@ -27,69 +27,40 @@ export const newsData: NewsItem[] = [
     readTime: '5 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
-        VLC Group vừa chính thức ký kết thỏa thuận hợp tác chiến lược với một tập đoàn năng lượng quốc tế hàng đầu.
-        Thỏa thuận này đánh dấu bước ngoặt quan trọng trong chiến lược phát triển bền vững của công ty.
-      </p>
+      <h1>VLC Group ký kết hợp tác chiến lược</h1>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Nội dung hợp tác</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
-        Hai bên cam kết hợp tác trong các lĩnh vực:
-      </p>
-      <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+      <p>VLC Group vừa chính thức ký kết thỏa thuận hợp tác chiến lược với một tập đoàn năng lượng quốc tế hàng đầu. Thỏa thuận này đánh dấu bước ngoặt quan trọng trong chiến lược phát triển bền vững của công ty.</p>
+
+      <h2>Nội dung hợp tác</h2>
+      <p>Hai bên cam kết hợp tác trong các lĩnh vực:</p>
+      <ul>
         <li>Phát triển các dự án năng lượng tái tạo quy mô lớn</li>
         <li>Chuyển giao công nghệ xử lý nước thải tiên tiến</li>
         <li>Đào tạo và phát triển nguồn nhân lực</li>
         <li>Nghiên cứu chung về các giải pháp môi trường bền vững</li>
       </ul>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Tầm quan trọng của thỏa thuận</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
-        Ông Nguyễn Văn A, Tổng Giám đốc VLC Group, chia sẻ: "Đây là cơ hội tuyệt vời để chúng tôi tiếp cận với
-        công nghệ tiên tiến nhất trên thế giới và đóng góp nhiều hơn nữa cho sự nghiệp bảo vệ môi trường Việt Nam."
-      </p>
+      <h2>Tầm quan trọng của thỏa thuận</h2>
+      <p>Ông Nguyễn Văn A, Tổng Giám đốc VLC Group, chia sẻ: "Đây là cơ hội tuyệt vời để chúng tôi tiếp cận với công nghệ tiên tiến nhất trên thế giới và đóng góp nhiều hơn nữa cho sự nghiệp bảo vệ môi trường Việt Nam."</p>
 
-      <blockquote class="border-l-4 border-[#3CB371] pl-6 py-4 my-8 bg-green-500/5 rounded-r-lg">
-        <p class="text-lg italic text-gray-800">
-          "Hợp tác này không chỉ mang lại lợi ích kinh tế mà còn góp phần bảo vệ môi trường và phát triển bền vững."
-        </p>
-        <cite class="text-[#3CB371] font-semibold mt-2 block">- Ông Nguyễn Văn A, Tổng Giám đốc VLC Group</cite>
+      <blockquote>
+        <p>"Hợp tác này không chỉ mang lại lợi ích kinh tế mà còn góp phần bảo vệ môi trường và phát triển bền vững."</p>
+        <cite>- Ông Nguyễn Văn A, Tổng Giám đốc VLC Group</cite>
       </blockquote>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Kế hoạch triển khai</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
-        Thỏa thuận sẽ được triển khai theo giai đoạn với mục tiêu cụ thể:
-      </p>
-      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-6">
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <span class="text-2xl font-bold text-[#3CB371]">1</span>
-            </div>
-            <h3 class="font-semibold text-green-800 mb-2">Giai đoạn 1</h3>
-            <p class="text-sm text-gray-600">2024-2025: Chuyển giao công nghệ</p>
-          </div>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <span class="text-2xl font-bold text-[#3CB371]">2</span>
-            </div>
-            <h3 class="font-semibold text-green-800 mb-2">Giai đoạn 2</h3>
-            <p class="text-sm text-gray-600">2025-2027: Triển khai dự án chung</p>
-          </div>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <span class="text-2xl font-bold text-[#3CB371]">3</span>
-            </div>
-            <h3 class="font-semibold text-green-800 mb-2">Giai đoạn 3</h3>
-            <p class="text-sm text-gray-600">2027+: Mở rộng hợp tác</p>
-          </div>
-        </div>
-      </div>
+      <h2>Kế hoạch triển khai</h2>
+      <p>Thỏa thuận sẽ được triển khai theo giai đoạn với mục tiêu cụ thể:</p>
 
-      <p class="text-gray-700 leading-relaxed">
-        VLC Group cam kết sẽ nỗ lực hết mình để thực hiện thành công thỏa thuận hợp tác này,
-        đóng góp tích cực cho sự nghiệp bảo vệ môi trường và phát triển bền vững của Việt Nam.
-      </p>
+      <h3>Giai đoạn 1</h3>
+      <p>2024-2025: Chuyển giao công nghệ</p>
+
+      <h3>Giai đoạn 2</h3>
+      <p>2025-2027: Triển khai dự án chung</p>
+
+      <h3>Giai đoạn 3</h3>
+      <p>2027+: Mở rộng hợp tác</p>
+
+      <p>VLC Group cam kết sẽ nỗ lực hết mình để thực hiện thành công thỏa thuận hợp tác này, đóng góp tích cực cho sự nghiệp bảo vệ môi trường và phát triển bền vững của Việt Nam.</p>
     `,
     tags: ['Hợp tác', 'Năng lượng tái tạo', 'Công nghệ', 'Môi trường'],
     relatedNews: [2, 3, 4]
@@ -105,19 +76,19 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         Sau 18 tháng thi công, VLC Group đã chính thức khánh thành nhà máy điện mặt trời 100MW tại Ninh Thuận.
         Đây là một trong những dự án năng lượng tái tạo quy mô lớn mà công ty đã thực hiện.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Quy mô và công nghệ</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Quy mô và công nghệ</h2>
+      <p>
         Nhà máy sử dụng công nghệ tấm pin mặt trời thế hệ mới nhất với hiệu suất chuyển đổi lên đến 22%.
         Tổng công suất lắp đặt đạt 100MW, đủ cung cấp điện cho khoảng 50.000 hộ gia đình.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Tác động kinh tế</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Tác động kinh tế</h2>
+      <p>
         Dự án tạo ra hơn 200 việc làm trực tiếp và hàng nghìn việc làm gián tiếp trong khu vực.
         Ngoài ra, nhà máy còn góp phần giảm phát thải CO2 khoảng 150.000 tấn mỗi năm.
       </p>
@@ -136,13 +107,13 @@ export const newsData: NewsItem[] = [
     readTime: '3 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group vinh dự nhận chứng nhận ISO 14001:2015 về hệ thống quản lý môi trường,
         khẳng định cam kết mạnh mẽ của công ty trong việc bảo vệ môi trường.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Ý nghĩa của chứng nhận</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Ý nghĩa của chứng nhận</h2>
+      <p>
         Chứng nhận ISO 14001:2015 là tiêu chuẩn quốc tế về hệ thống quản lý môi trường,
         chứng minh khả năng của tổ chức trong việc quản lý tác động môi trường một cách có hệ thống.
       </p>
@@ -161,13 +132,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group vừa công bố kế hoạch đầu tư 500 tỷ đồng vào công nghệ xử lý nước thải tiên tiến.
         Đây là một phần của chiến lược phát triển bền vững và mở rộng lĩnh vực kinh doanh.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Mục tiêu đầu tư</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Mục tiêu đầu tư</h2>
+      <p>
         Dự án đầu tư tập trung vào:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -191,13 +162,13 @@ export const newsData: NewsItem[] = [
     readTime: '5 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group chính thức mở rộng hoạt động kinh doanh sang thị trường Đông Nam Á với dự án
         năng lượng tái tạo đầu tiên tại Thái Lan.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Chiến lược mở rộng</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Chiến lược mở rộng</h2>
+      <p>
         Chiến lược mở rộng của VLC Group bao gồm:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -221,13 +192,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group và Đại học Quốc gia Hà Nội vừa ký kết thỏa thuận hợp tác nghiên cứu khoa học
         trong lĩnh vực công nghệ xanh và năng lượng tái tạo.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Nội dung hợp tác</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Nội dung hợp tác</h2>
+      <p>
         Chương trình hợp tác bao gồm:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -251,13 +222,13 @@ export const newsData: NewsItem[] = [
     readTime: '3 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group vừa công bố kết quả kinh doanh quý IV/2023 với doanh thu đạt mức kỷ lục,
         tăng 35% so với cùng kỳ năm trước.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Kết quả kinh doanh</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Kết quả kinh doanh</h2>
+      <p>
         Các chỉ số chính:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -281,13 +252,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group đã hoàn thành việc triển khai hệ thống quản lý chất lượng ISO 9001:2015
         trên toàn bộ các đơn vị thành viên.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Quy trình triển khai</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Quy trình triển khai</h2>
+      <p>
         Việc triển khai được thực hiện theo các giai đoạn:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -311,13 +282,13 @@ export const newsData: NewsItem[] = [
     readTime: '5 phút đọc',
     type: 'internal',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group chính thức khởi công dự án nhà máy điện gió ngoài khơi 200MW tại tỉnh Bạc Liêu.
         Đây là dự án năng lượng tái tạo quy mô lớn đầu tiên của công ty trong lĩnh vực điện gió.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Quy mô dự án</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Quy mô dự án</h2>
+      <p>
         Dự án có các thông số kỹ thuật chính:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -343,13 +314,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         Trong khuôn khổ chương trình "Sáng tỏ tương lai", VLC Group đã trao tặng 1000 suất học bổng
         cho học sinh vượt khó trên toàn quốc.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Tiêu chí xét chọn</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Tiêu chí xét chọn</h2>
+      <p>
         Học sinh được xét chọn dựa trên các tiêu chí: thành tích học tập, hoàn cảnh gia đình khó khăn,
         và tinh thần vượt khó vươn lên trong học tập.
       </p>
@@ -368,13 +339,13 @@ export const newsData: NewsItem[] = [
     readTime: '3 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group đã phối hợp với chính quyền địa phương và cộng đồng trồng 10.000 cây xanh
         tại các tỉnh miền Trung Việt Nam.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Các loại cây trồng</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Các loại cây trồng</h2>
+      <p>
         Chương trình tập trung trồng các loại cây bản địa có khả năng chịu hạn tốt như:
         keo lai, bạch đàn, và các loại cây ăn quả lâu năm.
       </p>
@@ -393,13 +364,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         Đoàn y bác sĩ của VLC Group đã tổ chức chương trình khám bệnh miễn phí cho 2000 người dân
         tại các vùng cao của tỉnh Hà Giang và Tuyên Quang.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Dịch vụ y tế cung cấp</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Dịch vụ y tế cung cấp</h2>
+      <p>
         Chương trình cung cấp các dịch vụ khám chữa bệnh cơ bản, tư vấn sức khỏe,
         và cấp phát thuốc miễn phí cho người dân.
       </p>
@@ -418,13 +389,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group phối hợp với UBND các tỉnh xây dựng 50 phòng học kiên cố cho các trường tiểu học
         tại vùng sâu vùng xa trên toàn quốc.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Quy mô chương trình</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Quy mô chương trình</h2>
+      <p>
         Chương trình bao gồm:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -448,13 +419,13 @@ export const newsData: NewsItem[] = [
     readTime: '3 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group đã hỗ trợ xây dựng 20 giếng khoan nước sạch tại các tỉnh miền Trung,
         giải quyết vấn đề thiếu nước sinh hoạt cho hơn 5000 hộ dân.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Kết quả đạt được</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Kết quả đạt được</h2>
+      <p>
         Chương trình đã mang lại:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -478,13 +449,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group tổ chức chương trình đào tạo nghề miễn phí cho 500 thanh niên nông thôn
         tại các tỉnh phía Bắc, tập trung vào các ngành nghề có nhu cầu cao.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Các ngành nghề đào tạo</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Các ngành nghề đào tạo</h2>
+      <p>
         Chương trình đào tạo các nghề:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -508,13 +479,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group đã xây dựng và bàn giao trung tâm y tế hiện đại tại huyện nghèo của tỉnh Hà Giang,
         phục vụ nhu cầu khám chữa bệnh cho hơn 10.000 người dân địa phương.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Cơ sở vật chất</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Cơ sở vật chất</h2>
+      <p>
         Trung tâm y tế được trang bị:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -538,13 +509,13 @@ export const newsData: NewsItem[] = [
     readTime: '5 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group triển khai chương trình phát triển mô hình nông nghiệp sạch tại 5 tỉnh phía Bắc,
         hỗ trợ nông dân chuyển đổi sang phương thức canh tác bền vững.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Mô hình nông nghiệp sạch</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Mô hình nông nghiệp sạch</h2>
+      <p>
         Chương trình bao gồm:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
@@ -568,13 +539,13 @@ export const newsData: NewsItem[] = [
     readTime: '4 phút đọc',
     type: 'public',
     content: `
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <p>
         VLC Group hợp tác với các tổ chức quốc tế triển khai chương trình bảo vệ động vật hoang dã
         quý hiếm tại các khu bảo tồn thiên nhiên Việt Nam.
       </p>
 
-      <h2 class="text-2xl font-bold text-green-800 mb-4">Các hoạt động bảo tồn</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
+      <h2>Các hoạt động bảo tồn</h2>
+      <p>
         Chương trình tập trung vào:
       </p>
       <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
