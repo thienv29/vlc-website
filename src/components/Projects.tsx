@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Calendar, ArrowRight, CheckCircle, Clock, Search, SortAsc, SortDesc } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, CheckCircle, Clock, Search, SortAsc, SortDesc, ChevronLeft, ChevronRight } from 'lucide-react';
 import PageWrapper from './PageWrapper';
 
 interface ProjectsProps {
@@ -13,6 +13,8 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('year-desc');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   const categories = [
     { id: 'all', label: 'Tất cả' },
@@ -162,6 +164,17 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
     return filtered;
   }, [projects, selectedCategory, selectedYear, selectedStatus, searchQuery, sortBy]);
 
+  // Pagination logic for full page
+  const totalPages = Math.ceil(filteredAndSortedProjects.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentPageProjects = filteredAndSortedProjects.slice(startIndex, endIndex);
+
+  // Reset to page 1 when filters change
+  useMemo(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, selectedYear, selectedStatus, searchQuery, sortBy]);
+
   if (fullPage) {
     return (
       <PageWrapper>
@@ -249,7 +262,15 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
                 </div>
               </div>
 
-              <ProjectGrid projects={filteredAndSortedProjects} fullPage={true} />
+              <ProjectGrid projects={currentPageProjects} fullPage={true} />
+
+              {totalPages > 1 && (
+                <ProjectPagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={setCurrentPage}
+                />
+              )}
             </div>
           </div>
         </div>
@@ -271,6 +292,95 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
         <ProjectGrid projects={filteredAndSortedProjects.slice(0, 3)} />
       </div>
     </section>
+  );
+}
+
+function ProjectPagination({ currentPage, totalPages, onPageChange }: any) {
+  const getPageNumbers = () => {
+    const pages = [];
+    const maxVisiblePages = 5;
+
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      if (currentPage <= 3) {
+        for (let i = 1; i <= 4; i++) {
+          pages.push(i);
+        }
+        pages.push('...');
+        pages.push(totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(1);
+        pages.push('...');
+        for (let i = totalPages - 3; i <= totalPages; i++) {
+          pages.push(i);
+        }
+      } else {
+        pages.push(1);
+        pages.push('...');
+        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+          pages.push(i);
+        }
+        pages.push('...');
+        pages.push(totalPages);
+      }
+    }
+
+    return pages;
+  };
+
+  return (
+    <div className="flex justify-center items-center gap-2 mt-12 mb-8">
+      {/* Previous Button */}
+      <button
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+        className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+          currentPage === 1
+            ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            : 'bg-white text-[#0F5132] hover:bg-[#0F5132] hover:text-white shadow-md hover:shadow-lg'
+        }`}
+      >
+        <ChevronLeft size={16} />
+        Trước
+      </button>
+
+      {/* Page Numbers */}
+      <div className="flex gap-1">
+        {getPageNumbers().map((page, index) => (
+          <button
+            key={index}
+            onClick={() => typeof page === 'number' && onPageChange(page)}
+            disabled={page === '...'}
+            className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              page === currentPage
+                ? 'bg-[#0F5132] text-white shadow-lg'
+                : page === '...'
+                ? 'bg-transparent text-gray-400 cursor-default'
+                : 'bg-white text-[#0F5132] hover:bg-[#0F5132] hover:text-white shadow-md hover:shadow-lg'
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
+
+      {/* Next Button */}
+      <button
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+          currentPage === totalPages
+            ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            : 'bg-white text-[#0F5132] hover:bg-[#0F5132] hover:text-white shadow-md hover:shadow-lg'
+        }`}
+      >
+        Sau
+        <ChevronRight size={16} />
+      </button>
+    </div>
   );
 }
 
