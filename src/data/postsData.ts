@@ -18,94 +18,90 @@ export const postsData: PostItem[] = [
   // Dịch vụ (Services)
   {
     id: 1,
-    title: 'Dịch vụ EPC toàn diện - Giải pháp đầu tư hiệu quả cho doanh nghiệp',
-    excerpt: 'Khám phá dịch vụ Engineering, Procurement và Construction (EPC) chuyên nghiệp từ VLC Group...',
-    date: '20/03/2024',
+    title: 'Tổng thầu xử lý môi trường (EPC) - Dịch vụ toàn diện từ Văn Lang',
+    excerpt: 'Công ty môi trường Văn Lang - Tổng thầu EPC hàng đầu Việt Nam với 19 năm kinh nghiệm trong xử lý nước thải và môi trường...',
+    date: '25/03/2024',
     category: 'Dịch vụ',
-    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-    author: 'Phòng Kỹ thuật VLC Group',
-    readTime: '6 phút đọc',
+    image: 'https://images.pexels.com/photos/159304/network-cables-159304.jpeg?auto=compress&cs=tinysrgb&w=800',
+    author: 'Công ty TNHH Xử lý Chất thải Công nghiệp và Tư vấn Môi trường Văn Lang',
+    readTime: '8 phút đọc',
     content: `
-      <h1>Dịch vụ EPC toàn diện</h1>
+      <h1>Tổng thầu xử lý môi trường (EPC)</h1>
 
-      <p><strong>Dịch vụ EPC (Engineering, Procurement và Construction)</strong> là giải pháp "trọn gói" hàng đầu mà VLC Group cung cấp cho các doanh nghiệp muốn đầu tư vào các dự án năng lượng tái tạo, công nghiệp và hạ tầng.</p>
+      <p><strong>NHÀ THẦU XỬ LÝ MÔI TRƯỜNG UY TÍN VÀ CHẤT LƯỢNG HÀNG ĐẦU TẠI VIỆT NAM</strong></p>
 
-      <h2>Tại sao chọn VLC Group?</h2>
+      <h2>CÔNG TY MÔI TRƯỜNG HÀNG ĐẦU VIỆT NAM</h2>
+
+      <p>Với kinh nghiệm hơn 19 năm xây dựng và phát triển, <strong>VĂN LANG</strong> đã trở thành thương hiệu uy tín và là <strong>Tổng thầu EPC</strong> hàng đầu Việt Nam về Công nghệ Môi trường xử lý nước thải, nước cấp. Thương hiệu <strong>VĂN LANG</strong> gắn liền với những dự án lớn của Chủ đầu tư trong và ngoài nước; các Tập đoàn đa quốc gia...</p>
+
+      <p><strong>VĂN LANG</strong> đã trở thành một trong 5 công ty môi trường hàng đầu Việt Nam, chúng tôi tự hào mang đến những sản phẩm và dịch vụ tối ưu nhất giúp khách hàng an tâm, bền vững sản xuất, phát triển kinh tế.</p>
+
+      <h2>DỰ ÁN TIÊU BIỂU - QUY MÔ LỚN NHẤT ĐÔNG NAM Á</h2>
+
+      <p>Top 5 công ty môi trường tư nhân hàng đầu Việt Nam. <strong>VĂN LANG</strong> vinh dự trở thành <strong>Tổng Thầu EPC</strong> của các <strong>Dự Án với Quy mô lớn nhất nhì Đông Nam Á</strong> nổi bật như:</p>
+
       <ul>
-        <li>Giảm 30-40% chi phí so với phương thức triển khai riêng lẻ</li>
-        <li>Tiết kiệm 25% thời gian triển khai dự án</li>
-        <li>Đảm bảo chất lượng và tiến độ với hợp đồng trách nhiệm</li>
+        <li><strong>Nhà máy xử lý nước thải KCN NHƠN TRẠCH - 6A - Tổng công suất: 120.000 m³/ngày.đêm. Module 1 - Q = 40.000 m³/ngày.đêm</strong></li>
+        <li><strong>Hệ Thống xử lý nước thải KCN Dệt Nhuộm TMTC - Tổng công suất: 40.000 m³/ngày.đêm</strong></li>
+        <li><strong>Nhà máy xử lý nước thải KCN Long Bình (KCN Dệt Nhuộm) - 10.600 m³/ngày.đêm</strong></li>
+        <li><strong>Hệ Thống xử lý nước thải Dệt nhuộm Cty Chyang Sheng (GĐ 3) Công suất 7.000m³/ngày.đêm</strong></li>
+        <li><strong>Hệ Thống xử lý nước thải Sigma Việt Nam (Long An) Công suất 4.900m³/ngày.đêm</strong></li>
+        <li><strong>Hệ Thống xử lý nước thải nhà máy Dệt Đại Hào Công suất 3.500m³/ngày.đêm</strong></li>
+        <li><strong>Hệ Thống xử lý nước thải nhà máy giấy bình minh Công suất 3.500m³/ngày.đêm</strong></li>
+        <li><strong>Hệ Thống xử lý nước thải Dệt may Hoa Sen Công suất 1.000m³/ngày.đêm</strong></li>
       </ul>
 
-      <h2>Quy trình EPC 4 bước</h2>
-      <p>VLC Group triển khai dự án theo quy trình chuẩn quốc tế:</p>
+      <h2>CƠ SỞ VẬT CHẤT HIỆN ĐẠI - ĐÁP ỨNG NHANH TIẾN ĐỘ YÊU CẦU</h2>
 
-      <h3>Bước 1: Engineering - Thiết kế</h3>
-      <ul>
-        <li>Phân tích kỹ thuật chi tiết</li>
-        <li>Thiết kế tối ưu về mặt kỹ thuật và kinh tế</li>
-        <li>Lập hồ sơ thiết kế thi công</li>
-        <li>Đánh giá rủi ro và biện pháp phòng ngừa</li>
-      </ul>
+      <p>Với Hơn 19 năm hình thành và phát triển <strong>VĂN LANG</strong> tự hào là một trong những đơn vị dẫn đầu trong lĩnh vực Xử Lý Nước Thải với Cơ Sở Vật Chất đầy đủ, hiện đại cùng dàn cơ giới thiết bị tiên tiến và đặc biệt là nhà xưởng <strong>VĂN LANG</strong> với diện tích lên tới 3000 m² do đó các yêu cầu của khách hàng cả về <strong>"TIẾN ĐỘ cùng với CHẤT LƯỢNG"</strong> đều được chúng tôi đáp ứng một cách <strong>"NHANH CHÓNG VÀ HIỆU QUẢ"</strong> nhất.</p>
 
-      <h3>Bước 2: Procurement - Thu mua</h3>
-      <ul>
-        <li>Lựa chọn nhà cung cấp uy tín</li>
-        <li>Đàm phán giá cả tối ưu</li>
-        <li>Kiểm soát chất lượng vật tư thiết bị</li>
-        <li>Quản lý logistics và giao nhận</li>
-      </ul>
+      <p><strong>VĂN LANG</strong> luôn hướng đến là <strong>TỔNG THẦU EPC</strong> trong lĩnh vực xử lý môi trường số một Việt Nam. Chúng tôi nhận thấy thị trường trong nước và nước ngoài luôn rộng cửa đón chào những doanh nghiệp biết tận dụng thời cơ, làm chủ công nghệ để đáp ứng được các yêu cầu của khách hàng. Vì vậy, <strong>VĂN LANG</strong> luôn quan tâm và tích cực đầu tư trang bị các máy móc công nghệ mới để luôn nâng cao và đáp ứng được các yêu cầu khác nhau của Quý Khách Hàng!</p>
 
-      <h3>Bước 3: Construction - Thi công</h3>
-      <ul>
-        <li>Quản lý đội ngũ thi công chuyên nghiệp</li>
-        <li>Giám sát chất lượng 24/7</li>
-        <li>Tuân thủ an toàn lao động</li>
-        <li>Báo cáo tiến độ hàng tuần</li>
-      </ul>
+      <h2>VĂN LANG KHÁC BIỆT VỚI CÁC CÔNG TY MÔI TRƯỜNG KHÁC</h2>
 
-      <h3>Bước 4: Commissioning - Nghiệm thu</h3>
-      <ul>
-        <li>Nghiệm thu từng hạng mục</li>
-        <li>Chạy thử và hiệu chỉnh</li>
-        <li>Đào tạo vận hành cho khách hàng</li>
-        <li>Bàn giao dự án hoàn chỉnh</li>
-      </ul>
+      <p>Chúng tôi khác biệt bởi: <strong>"NĂNG LỰC QUẢN LÝ VÀ TỔ CHỨC THI CÔNG"</strong></p>
 
-      <h2>Tiêu chuẩn chất lượng</h2>
-      <ul>
-        <li>Tuân thủ các tiêu chuẩn quốc tế ISO 9001:2015</li>
-        <li>Đảm bảo an toàn lao động và môi trường</li>
-        <li>Kiểm soát chất lượng nghiêm ngặt ở mọi giai đoạn</li>
-      </ul>
+      <p>Suốt chặng đường hơn 19 năm hình thành và phát triển, trải qua biết bao thăng trầm và sóng gió <strong>Văn Lang</strong> đã khẳng định được vị thế của mình trong lĩnh vực môi trường nói chung và lĩnh vực Xử Lý Nước Thải nói riêng. Chúng tôi luôn luôn thực hiện theo 4 giá trị như sau: <strong>"CHẤT LƯỢNG - TIẾN ĐỘ - GIÁ THÀNH HỢP LÝ - TẬN TÂM PHỤC VỤ"!</strong></p>
 
-      <h2>Gói dịch vụ EPC</h2>
-      <p>Chúng tôi cung cấp các gói dịch vụ phù hợp với nhu cầu:</p>
+      <h2>HỆ THỐNG PHÒNG BAN LIÊN KẾT CHẶT CHẼ</h2>
 
-      <h3>Gói Cơ bản</h3>
-      <p>Thiết kế, thu mua và thi công</p>
+      <p>Về nhân lực, <strong>VĂN LANG</strong> tự hào với đội ngũ nhân sự Chất lượng và Hệ thống các phòng ban liên kết chặt chẽ với nhau trong mọi Dự Án, mọi công trình để chất lượng luôn được đảm bảo một cách tốt nhất và đạt hiệu quả nhất. Chúng tôi hiểu con người chính là giá trị cốt lõi của thành công hiện tại và tương lai nên luôn luôn cải tiến môi trường làm việc, chính sách đãi ngộ để nâng cao đời sống vật chất và tinh thần của cán bộ công nhân viên.</p>
 
-      <h3>Gói Nâng cao</h3>
-      <p>Bao gồm vận hành và bảo trì</p>
+      <p>Với sự phát triển nhanh chóng của công ty và thị trường trong nước <strong>VĂN LANG</strong> luôn chú trọng đào tạo, nâng cao trình độ lao động trong công ty, không chỉ về chuyên môn nghiệp vụ và còn về những kỹ năng mềm trong công việc và kỹ năng quản lý để có thể đáp ứng được yêu cầu công việc và thăng tiến.</p>
 
-      <h3>Gói Toàn diện</h3>
-      <p>Giải pháp trọn gói từ A đến Z</p>
+      <p>Kết quả của những nỗ lực ấy thể hiện rõ nhất qua sự gắn bó của cán bộ nhân viên với công ty. Nhờ đó, công ty luôn có được đội ngũ nhân lực lành nghề, giàu kinh nghiệm và phong phú. Nhân viên coi công ty như ngôi nhà thứ 2 của mình, đồng nghiệp như người thân, của cải của công ty cũng như tài sản của mình nên vô cùng trân trọng và gìn giữ. Do vậy, các hoạt động phong trào trong công ty luôn được hưởng ứng nhiệt tình và sôi nổi. Đó chính là điều mà mọi nhà quản lý có Tâm luôn mong muốn có được.</p>
 
-      <h3>Gói Tư vấn</h3>
-      <p>Tư vấn và lập kế hoạch dự án</p>
+      <h2>CAM KẾT VỚI CHỦ ĐẦU TƯ</h2>
 
-      <h2>Lợi ích của dịch vụ EPC</h2>
-      <p>Khách hàng lựa chọn dịch vụ EPC của VLC Group sẽ nhận được:</p>
-      <ul>
-        <li>Giảm thiểu rủi ro và chi phí phát sinh</li>
-        <li>Tiết kiệm thời gian triển khai dự án</li>
-        <li>Đảm bảo chất lượng và tiến độ</li>
-        <li>Hỗ trợ bảo hành và bảo trì dài hạn</li>
-      </ul>
+      <p>Công ty môi trường Văn Lang với bề dày kinh nghiệm 19 năm, là nhà thầu uy tín, Tổng Thầu EPC uy tín trong lĩnh vực xử lý môi trường, là nhà thầu xử lý môi trường hàng đầu tại Việt Nam. Chúng tôi tự tin mang đến cho Quý Khách Hàng những công trình đúng chất lượng và hiệu quả xử lý tốt nhất. <strong>Cam kết với chủ đầu tư cả về tiến độ lẫn chất lượng nhà thầu.</strong></p>
 
-      <p>Liên hệ với chúng tôi để được tư vấn chi tiết!</p>
+      <h2>DỊCH VỤ TƯ VẤN CHUYÊN SÂU</h2>
+
+      <p>Để được tư vấn cách thức xử lý nước thải nhiễm phèn, tư vấn các loại hóa chất xử lý nước nhiễm phèn, liều lượng sử dụng hóa chất xử lý nước nhiễm phèn, vận hành hệ thống xử lý nước nhiễm phèn cho xử lý nước;</p>
+
+      <p>Quý Khách Hàng có nhu cầu Tư vấn các thủ tục môi trường, Lập giấy phép đăng kinh doanh, giấy phép đầu tư, Lập báo cáo đánh giá tác động môi trường (ĐTM), Lập đề án bảo vệ môi trường, xin giấy phép xả thải, xin giấy phép đăng ký nước ngầm, đăng ký chủ nguồn chất thải, lập báo cáo hoàn thành công trình, biện pháp bảo vệ môi trường, lập báo cáo giám sát môi trường...</p>
+
+      <p>Tư Vấn Thiết kế hệ thống xử lý nước thải giấy, Tính toán hệ thống xử lý nước thải giấy, Bột giấy, Bản vẽ Cad xử lý nước thải giấy, Cấu tạo Thiết bị xử lý nước, Báo giá hệ thống xử lý nước thải bột giấy, Chi phí xây dựng hệ thống xử nước thải giấy, Tính Kinh tế Xử lý nước thải Dệt Nhuộm, Xử lý nước thải Thủy Sản, Xử lý nước cấp, Xử lý nước Khu Công Nghiệp, Xử lý nước thải chế biến giấy, Xử lý nước thải bột giấy, Xử lý nước thải Thủy Sản, Xử lý nước thải chế biến sữa, Xử lý nước thải váng sữa, Xử lý nước thải thực phẩm, Xử lý nước thải có hàm lượng chất lơ lửng cao...</p>
+
+      <p>Hỗ trợ tư vấn công trình, Xây dựng Hệ thống xử lý nước thải, Xử lý nước cấp, Tổng Thầu EPC, Tổng Thầu Xây Dựng, Tư Vấn Môi Trường, Đánh giá tác động môi trường (ĐTM), Thủ tục môi trường, Hồ sơ môi trường, Cố vấn môi trường, Tư vấn giám sát môi trường, Vận hành hệ thống xử lý nước thải, Cải tạo Hệ thống xử lý nước thải, Kiểm tra hỗ trợ tư vấn miễn phí công trình hiện hữu tại nhà máy...</p>
+
+      <h2>THÔNG TIN LIÊN HỆ</h2>
+
+      <p><strong>Công ty TNHH Xử lý Chất thải Công nghiệp và Tư vấn Môi trường Văn Lang</strong></p>
+      <p><strong>Địa chỉ:</strong> 1/1 đường số 5, Phường 7, Quận Gò Vấp, TPHCM</p>
+      <p><strong>Hotline:</strong> 0946 758 660 - Mr. Hiếu hoặc 0918 203 065 - Mr. Long</p>
+      <p><strong>Email:</strong> vanlang@vlc.vn - <a href="mailto:congtymoitruongvanlang@gmail.com">congtymoitruongvanlang@gmail.com</a></p>
+      <p><strong>Website:</strong> <a href="http://vlc.vn" target="_blank">vlc.vn</a></p>
+      <p><strong>Fanpage:</strong> <a href="https://facebook.com/vlc.vn" target="_blank">facebook.com/vlc.vn</a></p>
+      <p><strong>Youtube:</strong> <a href="https://www.youtube.com/channel/UC0AzgJssqlZu8m6k4o3iCAw?view_as=subscriber" target="_blank">youtube.com/channel/UC0AzgJssqlZu8m6k4o3iCAw?view_as=subscriber</a></p>
+
+      <div style="text-align: center; margin: 20px 0;">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/FLBNxBAKcjU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <p><em>Liên hệ ngay hôm nay để được tư vấn miễn phí và nhận báo giá chi tiết cho dự án của Quý Khách Hàng!</em></p>
     `,
-    tags: ['EPC', 'Dịch vụ', 'Năng lượng tái tạo', 'Đầu tư'],
+    tags: ['EPC', 'Xử lý nước thải', 'Môi trường', 'Tổng thầu', 'Văn Lang'],
     relatedPosts: [2, 3, 4]
   },
   {
