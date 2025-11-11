@@ -31,7 +31,7 @@ export default function Header() {
 
   // Dynamic navigation structure
   const navItems: NavItem[] = [
-    { path: '/', label: t('nav.home') },
+    // { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
     {
       path: '/services',
