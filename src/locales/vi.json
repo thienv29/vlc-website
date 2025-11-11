@@ -3,6 +3,7 @@
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "services": "Dịch vụ",
+    "products": "Sản phẩm",
     "projects": "Dự án",
     "sustainability": "Phát triển bền vững",
     "news": "Tin tức",
@@ -324,6 +325,44 @@
         ]
       }
     }
+  },
+  "products": {
+    "title": "Sản phẩm & Giải pháp",
+    "subtitle": "Công nghệ tiên tiến cho ngành công nghiệp Việt Nam",
+    "searchPlaceholder": "Tìm kiếm sản phẩm...",
+    "allCategories": "Tất cả danh mục",
+    "resultsFound": "Tìm thấy",
+    "productsText": "sản phẩm",
+    "noResults": "Không tìm thấy sản phẩm",
+    "noResultsDesc": "Thử tìm kiếm với từ khóa khác hoặc xóa bộ lọc",
+    "clearFilters": "Xóa bộ lọc",
+    "viewDetails": "Xem chi tiết",
+    "requestQuote": "Yêu cầu báo giá",
+    "shareProduct": "Chia sẻ sản phẩm",
+    "backToProducts": "Quay lại sản phẩm",
+    "productNotFound": "Không tìm thấy sản phẩm",
+    "productNotFoundDesc": "Sản phẩm bạn tìm kiếm không tồn tại hoặc đã bị xóa.",
+    "backToList": "Quay lại trang sản phẩm",
+    "specifications": "Thông số kỹ thuật",
+    "features": "Tính năng nổi bật",
+    "relatedProducts": "Sản phẩm liên quan",
+    "productInfo": "Thông tin sản phẩm",
+    "category": "Danh mục:",
+    "readTime": "Thời gian đọc:",
+    "price": "Giá:",
+    "contactForm": {
+      "title": "Yêu cầu tư vấn",
+      "description": "Để được tư vấn chi tiết về sản phẩm này, vui lòng điền thông tin liên hệ.",
+      "name": "Họ tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "message": "Nội dung yêu cầu",
+      "submit": "Gửi yêu cầu"
+    },
+    "tableOfContents": "Mục lục",
+    "share": "Chia sẻ:",
+    "previous": "Trước",
+    "next": "Sau"
   },
   "common": {
     "language": "Ngôn ngữ",

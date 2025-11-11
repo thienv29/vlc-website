@@ -43,6 +43,7 @@ export default function Header() {
         { path: '/services/22', label: 'Sản phẩm và công nghệ tiên tiến' }
       ]
     },
+    { path: '/products', label: t('nav.products') },
     {
       path: '/projects',
       label: t('nav.projects'),

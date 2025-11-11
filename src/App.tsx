@@ -24,6 +24,8 @@ import Testimonials from './components/Testimonials';
 import ProjectShowcase from './components/ProjectShowcase';
 import ScrollToTop from './components/ScrollToTop';
 import EditorPage from './components/EditorPage';
+import Products from './components/Products';
+import ProductDetail from './components/ProductDetail';
 
 function App() {
   return (
@@ -59,6 +61,8 @@ function App() {
             <Route path="/services/:id" element={<PostDetailStatic />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:id" element={<JobDetail />} />
+            <Route path="/products" element={<Products fullPage />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/contact" element={<Contact fullPage />} />
             <Route path="/editor" element={<EditorPage />} />
           </Routes>
