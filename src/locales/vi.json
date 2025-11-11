@@ -364,6 +364,27 @@
     "previous": "Trước",
     "next": "Sau"
   },
+  "footer": {
+    "description": "Đối tác tin cậy trong lĩnh vực EPC và phát triển bền vững, mang đến giá trị vượt trội cho khách hàng và cộng đồng.",
+    "aboutUs": "Về chúng tôi",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "projects": "Dự án",
+    "sustainability": "Phát triển bền vững",
+    "support": "Hỗ trợ",
+    "news": "Tin tức",
+    "careers": "Tuyển dụng",
+    "contact": "Liên hệ",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "address": "123 Đường ABC, Quận Cầu Giấy, Hà Nội",
+    "phone": "(024) 1234 5678",
+    "email": "contact@vlcgroup.vn",
+    "newsletter": "Đăng ký nhận tin",
+    "emailPlaceholder": "Email của bạn",
+    "copyright": "© 2024 VLC Group. All rights reserved.",
+    "design": "Thiết kế bởi VLC Digital Team"
+  },
   "common": {
     "language": "Ngôn ngữ",
     "vietnamese": "Tiếng Việt",

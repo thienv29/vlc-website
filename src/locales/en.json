@@ -364,6 +364,27 @@
     "previous": "Previous",
     "next": "Next"
   },
+  "footer": {
+    "description": "Trusted partner in EPC and sustainable development, delivering superior value to customers and communities.",
+    "aboutUs": "About Us",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "sustainability": "Sustainability",
+    "support": "Support",
+    "news": "News",
+    "careers": "Careers",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "address": "123 ABC Street, Cau Giay District, Hanoi",
+    "phone": "(024) 1234 5678",
+    "email": "contact@vlcgroup.vn",
+    "newsletter": "Subscribe to Newsletter",
+    "emailPlaceholder": "Your Email",
+    "copyright": "© 2024 VLC Group. All rights reserved.",
+    "design": "Designed by VLC Digital Team"
+  },
   "common": {
     "language": "Language",
     "vietnamese": "Vietnamese",

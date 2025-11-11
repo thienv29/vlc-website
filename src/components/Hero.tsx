@@ -45,7 +45,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/nhon-trach-6a-120.jpg)' }}>
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat pt-24" style={{ backgroundImage: 'url(/nhon-trach-6a-120.jpg)' }}>
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
