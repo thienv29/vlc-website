@@ -26,6 +26,7 @@ import ScrollToTop from './components/ScrollToTop';
 import EditorPage from './components/EditorPage';
 import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/contact" element={<Contact fullPage />} />
             <Route path="/editor" element={<EditorPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

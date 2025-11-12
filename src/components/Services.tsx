@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Building2, Wrench, Leaf, ShoppingBag, ArrowRight, ChevronDown, CheckCircle, Star, Award, Users, TrendingUp, Shield, Zap, Globe, Clock, Target } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { servicesData } from '../data/servicesData';
@@ -9,6 +10,7 @@ interface ServicesProps {
 
 export default function Services({ fullPage = false }: ServicesProps) {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const services = [
     {
@@ -369,12 +371,18 @@ export default function Services({ fullPage = false }: ServicesProps) {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl shadow-lg">
+                <button
+                  onClick={() => navigate('/contact')}
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl shadow-lg"
+                >
                   <Target className="w-6 h-6" />
                   Yêu cầu tư vấn miễn phí
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold text-lg hover:bg-white/20 transition-all border border-white/20">
+                <button
+                  onClick={() => navigate('/contact')}
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold text-lg hover:bg-white/20 transition-all border border-white/20"
+                >
                   <Clock className="w-6 h-6" />
                   Lên lịch gặp mặt
                 </button>
