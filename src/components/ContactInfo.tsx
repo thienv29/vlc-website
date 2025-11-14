@@ -36,9 +36,36 @@ export default function ContactInfo() {
             <div className="w-16 h-16 bg-[#3CB371]/10 rounded-xl flex items-center justify-center mx-auto mb-6">
               <MapPin className="text-[#3CB371]" size={32} />
             </div>
-            <h3 className="text-xl font-bold text-[#0F5132] mb-4">Địa chỉ</h3>
-            <p className="text-gray-600">123 Đường ABC</p>
-            <p className="text-gray-600">Quận Cầu Giấy, Hà Nội</p>
+            <h3 className="text-xl font-bold text-[#0F5132] mb-6">Địa chỉ văn phòng</h3>
+            <div className="space-y-5">
+              <div className="border-l-4 border-[#3CB371] pl-5 py-3 bg-gray-50 rounded-r-lg">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#3CB371] rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="font-semibold text-[#0F5132] text-sm mb-1">Miền Bắc</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">36 Trần Thái Tông, Phường Cầu Giấy, Hà Nội</p>
+                  </div>
+                </div>
+              </div>
+              <div className="border-l-4 border-[#3CB371] pl-5 py-3 bg-gray-50 rounded-r-lg">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#3CB371] rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="font-semibold text-[#0F5132] text-sm mb-1">Miền Trung</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">23 Trảng Kèo 4, Phường Hội An Tây, Đà Nẵng</p>
+                  </div>
+                </div>
+              </div>
+              <div className="border-l-4 border-[#3CB371] pl-5 py-3 bg-gray-50 rounded-r-lg">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#3CB371] rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="font-semibold text-[#0F5132] text-sm mb-1">Miền Tây</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">Lô 17D, Đường số 5, Phường Long Xuyên, An Giang</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

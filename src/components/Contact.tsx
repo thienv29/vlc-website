@@ -55,22 +55,22 @@ export default function Contact({ fullPage = false }: ContactProps) {
 function ContactContent({ formData, setFormData, handleSubmit, compact = false }: any) {
   const offices = [
     {
-      city: 'Hà Nội',
-      address: '123 Đường ABC, Quận Cầu Giấy, Hà Nội',
+      city: 'Chi nhánh Miền Bắc',
+      address: '36 Trần Thái Tông, Phường Cầu Giấy, Hà Nội',
       phone: '(024) 1234 5678',
       email: 'hanoi@vlcgroup.vn',
     },
     {
-      city: 'TP.HCM',
-      address: '456 Đường XYZ, Quận 1, TP.HCM',
-      phone: '(028) 8765 4321',
-      email: 'hcm@vlcgroup.vn',
-    },
-    {
-      city: 'Đà Nẵng',
-      address: '789 Đường DEF, Quận Hải Châu, Đà Nẵng',
+      city: 'Chi nhánh Miền Trung',
+      address: '23 Trảng Kèo 4, Phường Hội An Tây, Đà Nẵng',
       phone: '(0236) 9876 5432',
       email: 'danang@vlcgroup.vn',
+    },
+    {
+      city: 'Chi nhánh Miền Tây',
+      address: 'Lô 17D, Đường số 5, Phường Long Xuyên, An Giang',
+      phone: '(0296) 1234 5678',
+      email: 'angiang@vlcgroup.vn',
     },
   ];
 

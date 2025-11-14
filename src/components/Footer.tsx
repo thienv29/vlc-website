@@ -86,11 +86,19 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">{t('footer.contact')}</h4>
             <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="text-primary-400 flex-shrink-0 mt-1" size={18} />
-                <span className="text-gray-300 text-sm">
-                  {t('footer.address')}
-                </span>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <MapPin className="text-primary-400 flex-shrink-0 mt-1" size={16} />
+                  <span className="text-gray-300 text-sm">Miền Bắc: 36 Trần Thái Tông, Phường Cầu Giấy, Hà Nội</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="text-primary-400 flex-shrink-0 mt-1" size={16} />
+                  <span className="text-gray-300 text-sm">Miền Trung: 23 Trảng Kèo 4, Phường Hội An Tây, Đà Nẵng</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="text-primary-400 flex-shrink-0 mt-1" size={16} />
+                  <span className="text-gray-300 text-sm">Miền Tây: Lô 17D, Đường số 5, Phường Long Xuyên, An Giang</span>
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-primary-400 flex-shrink-0" size={18} />
