@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Building2, Wrench, Leaf, ShoppingBag, ArrowRight, ChevronDown, CheckCircle, Star, Award, Users, TrendingUp, Shield, Zap, Globe, Clock, Target } from 'lucide-react';
+import { Building2, Wrench, Leaf, ShoppingBag, ArrowRight, Award, Users, TrendingUp, Shield, Zap, Globe, Clock, Target, ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { servicesData } from '../data/servicesData';
+import FeaturedProjects from './FeaturedProjects';
 
 interface ServicesProps {
   fullPage?: boolean;
@@ -14,66 +14,60 @@ export default function Services({ fullPage = false }: ServicesProps) {
 
   const services = [
     {
-      id: 'epc',
+      id: 'wastewater',
       icon: Building2,
-      title: t('services.services.epc.title'),
-      description: t('services.services.epc.description'),
-      color: 'rgb(37 99 235)', // Industrial blue - accent-600
-      bgColor: 'rgb(239 246 255)', // Light blue background - accent-50
-      items: t('services.services.epc.items', { returnObjects: true }) as string[],
-      image: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800',
-      detailedContent: {
-        process: t('services.services.epc.process', { returnObjects: true }) as string[],
-        standards: t('services.services.epc.standards', { returnObjects: true }) as string[],
-        packages: t('services.services.epc.packages', { returnObjects: true }) as string[],
-      }
+      title: '💧 Dịch vụ xử lý nước thải',
+      description: 'Dịch vụ xử lý nước thải hiệu quả tới CWI giúp khách hàng giảm thiểu tác động môi trường và tuân thủ các quy định.',
+      detailedDesc: 'Chúng tôi tư vấn, thiết kế và triển khai các hệ thống xử lý nước thải tiên tiến, đáp ứng các yêu cầu cụ thể của từng khách hàng.',
+      color: 'rgb(59 130 246)',
+      bgColor: 'rgb(239 246 255)',
+      items: ['Hệ thống xử lý sinh học', 'Công nghệ MBBR tiên tiến', 'Tuân thủ QCVN 14:2008/BTNMT'],
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80', // Water treatment plant
+      gradientFrom: 'from-teal-500/70',
+      gradientTo: 'to-cyan-600/70'
     },
     {
-      id: 'maintenance',
+      id: 'ro-di',
       icon: Wrench,
-      title: t('services.services.maintenance.title'),
-      description: t('services.services.maintenance.description'),
-      color: 'rgb(30 64 175)', // Darker blue - accent-700
-      bgColor: 'rgb(238 242 255)', // Light blue background - accent-50
-      items: t('services.services.maintenance.items', { returnObjects: true }) as string[],
-      image: 'https://images.pexels.com/photos/3862135/pexels-photo-3862135.jpeg?auto=compress&cs=tinysrgb&w=800',
-      detailedContent: {
-        operations: t('services.services.maintenance.operations', { returnObjects: true }) as string[],
-        maintenance: t('services.services.maintenance.maintenance', { returnObjects: true }) as string[],
-        projects: t('services.services.maintenance.projects', { returnObjects: true }) as string[],
-      }
+      title: '🧪 Dịch vụ xử lý nước RO - DI',
+      description: 'Dịch vụ xử lý nước RO - DI để tạo ra nước tinh khiết, không chứa tạp chất và ion có hại.',
+      detailedDesc: 'Với công nghệ tiên tiến, CWI đảm bảo xử lý nước tinh khiết và an toàn cho nhiều ứng dụng khác nhau trong công nghiệp, y tế, và nghiên cứu khoa học.',
+      color: 'rgb(59 130 246)',
+      bgColor: 'rgb(239 246 255)',
+      items: ['Công nghệ RO/DI tiên tiến', 'Nước siêu tinh khiết', 'Ứng dụng y tế & nghiên cứu'],
+      image: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=800&q=80', // RO water treatment
+      gradientFrom: 'from-teal-500/70',
+      gradientTo: 'to-cyan-600/70'
     },
     {
-      id: 'environment',
+      id: 'air-treatment',
       icon: Leaf,
-      title: t('services.services.environment.title'),
-      description: t('services.services.environment.description'),
-      color: 'rgb(30 64 175)', // Darker blue - accent-700
-      bgColor: 'rgb(238 242 255)', // Light blue background - accent-50
-      items: t('services.services.environment.items', { returnObjects: true }) as string[],
-      image: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800',
-      detailedContent: {
-        consulting: t('services.services.environment.consulting', { returnObjects: true }) as string[],
-        process: t('services.services.environment.process', { returnObjects: true }) as string[],
-      }
+      title: '💨 Dịch vụ xử lý khí thải',
+      description: 'Dịch vụ xử lý khí thải để giảm thiểu ô nhiễm không khí và đảm bảo môi trường làm việc an toàn cho khách hàng.',
+      detailedDesc: 'Chúng tôi thiết kế và lắp đặt hệ thống xử lý khí thải tiên tiến, đáp ứng các tiêu chuẩn an toàn và quy định pháp luật.',
+      color: 'rgb(59 130 246)',
+      bgColor: 'rgb(239 246 255)',
+      items: ['Hệ thống lọc khí tiên tiến', 'Giảm thiểu ô nhiễm không khí', 'Tuân thủ tiêu chuẩn môi trường'],
+      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80', // Air pollution control
+      gradientFrom: 'from-teal-500/70',
+      gradientTo: 'to-cyan-600/70'
     },
     {
-      id: 'products',
+      id: 'solid-waste',
       icon: ShoppingBag,
-      title: t('services.services.products.title'),
-      description: t('services.services.products.description'),
-      color: 'rgb(37 99 235)', // Industrial blue - accent-600
-      bgColor: 'rgb(239 246 255)', // Light blue background - accent-50
-      items: t('services.services.products.items', { returnObjects: true }) as string[],
-      image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800',
-      detailedContent: {
-        products: t('services.services.products.products', { returnObjects: true }) as any[],
-      }
-    },
+      title: '♻️ Dịch vụ xử lý chất thải rắn',
+      description: 'Dịch vụ xử lý chất thải rắn đáng tin cậy và tiên tiến. Từ việc tách, xử lý đến tái chế.',
+      detailedDesc: 'Chúng tôi giúp giảm thiểu lượng chất thải rắn và tối ưu hóa quy trình xử lý, đóng góp vào bảo vệ môi trường và phát triển bền vững.',
+      color: 'rgb(59 130 246)',
+      bgColor: 'rgb(239 246 255)',
+      items: ['Công nghệ tái chế tiên tiến', 'Giảm thiểu chất thải', 'Phát triển bền vững'],
+      image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80', // Waste management facility
+      gradientFrom: 'from-teal-500/70',
+      gradientTo: 'to-cyan-600/70'
+    }
   ];
 
   if (fullPage) {
-    const [activeService, setActiveService] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -88,10 +82,10 @@ export default function Services({ fullPage = false }: ServicesProps) {
     };
 
     const stats = [
-      { icon: Users, value: '1000+', label: 'Khách hàng tin cậy', color: 'text-accent-600' },
-      { icon: Award, value: '25+', label: 'Giải thưởng ngành', color: 'text-primary-600' },
-      { icon: TrendingUp, value: '98%', label: 'Tỷ lệ hài lòng', color: 'text-accent-700' },
-      { icon: Shield, value: 'ISO 9001', label: 'Chứng nhận chất lượng', color: 'text-secondary-600' }
+      { icon: Users, value: '1000+', label: 'Khách hàng tin cậy', color: 'text-blue-400' },
+      { icon: Award, value: '25+', label: 'Giải thưởng ngành', color: 'text-green-400' },
+      { icon: TrendingUp, value: '98%', label: 'Tỷ lệ hài lòng', color: 'text-blue-400' },
+      { icon: Shield, value: 'ISO 9001', label: 'Chứng nhận chất lượng', color: 'text-red-400' }
     ];
 
     return (
@@ -108,7 +102,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
 
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
+            <div className="absolute inset-0" style={{  
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             }} />
           </div>
@@ -153,12 +147,12 @@ export default function Services({ fullPage = false }: ServicesProps) {
             </div>
 
             {/* Stats Preview */}
-            <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               {stats.map((stat, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all transform hover:scale-105">
-                  <stat.icon className={`w-8 h-8 mx-auto mb-2 ${stat.color}`} />
-                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-blue-100">{stat.label}</div>
+                <div key={index} className="bg-primary-800/30 backdrop-blur-md rounded-2xl p-6 border border-primary-700/50 hover:bg-primary-800/40 transition-all transform hover:scale-105 hover:border-primary-600/60">
+                  <stat.icon className={`w-10 h-10 mx-auto mb-3 ${stat.color}`} strokeWidth={1.5} />
+                  <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                  <div className="text-sm text-gray-200 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -187,97 +181,93 @@ export default function Services({ fullPage = false }: ServicesProps) {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Services Grid - Soft colors and updated content */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-3 hover:rotate-1 animate-slideInUp overflow-hidden"
+                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 animate-slideInUp"
                   style={{ animationDelay: `${index * 150}ms` }}
                   onClick={() => scrollToSection(`service-${service.id}`)}
                 >
-                  {/* Background Gradient Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Floating Elements */}
-                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
-                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-green-400/10 to-blue-400/10 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
-
-                  <div className="relative z-10">
-                    {/* Service Icon with Enhanced Design */}
-                    <div className="relative mb-8">
-                      <div
-                        className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6"
-                        style={{
-                          background: `linear-gradient(135deg, ${service.color}20, ${service.color}10)`,
-                          border: `2px solid ${service.color}30`
-                        }}
-                      >
-                        <service.icon size={36} style={{ color: service.color }} className="drop-shadow-sm" />
-                      </div>
-                      {/* Decorative Ring */}
-                      <div className="absolute inset-0 rounded-2xl border-2 border-dashed border-gray-200 group-hover:border-primary-300 group-hover:scale-110 transition-all duration-500" />
-                    </div>
-
-                    {/* Service Title */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-800 transition-colors duration-300">
-                      {service.title}
-                    </h3>
-
-                    {/* Service Description */}
-                    <p className="text-gray-600 mb-8 leading-relaxed text-base group-hover:text-gray-700 transition-colors duration-300">
-                      {service.description}
-                    </p>
-
-                    {/* Service Features Preview */}
-                    <div className="mb-8">
-                      <div className="flex flex-wrap gap-2">
-                        {service.items.slice(0, 2).map((item: string, i: number) => (
-                          <span
-                            key={i}
-                            className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full group-hover:bg-primary-100 group-hover:text-primary-800 transition-all duration-300"
-                          >
-                            <CheckCircle size={12} />
-                            {item.length > 25 ? `${item.substring(0, 25)}...` : item}
-                          </span>
-                        ))}
-                        {service.items.length > 2 && (
-                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-primary-100 to-primary-50 text-primary-700 text-xs font-medium rounded-full">
-                            +{service.items.length - 2} nữa
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                      {/* CTA Button */}
-                    <div className="flex items-center justify-between">
-                      <button
-                        onClick={() => {
-                          const articleId = service.id === 'epc' ? 19 : service.id === 'maintenance' ? 20 : service.id === 'environment' ? 21 : 22;
-                          window.location.href = `/services/${articleId}`;
-                        }}
-                        className="group/btn inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                      >
-                        <span>{t('services.learnMore')}</span>
-                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                      </button>
-
-                      {/* Service Badge */}
-                      <div className="flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                        <span>Chuyên nghiệp</span>
-                      </div>
+                  {/* Top Half - Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      onError={(e) => {
+                        // Fallback to soft gradient with icon if image not found
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const iconContainer = target.nextElementSibling as HTMLElement;
+                        if (iconContainer) iconContainer.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback Icon Container with soft gradient */}
+                    <div 
+                      className={`absolute inset-0 bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} flex items-center justify-center`}
+                      style={{ display: 'none' }}
+                    >
+                      <service.icon size={64} className="text-white" />
                     </div>
                   </div>
 
-                  {/* Hover Effect Border */}
-                  <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-primary-300 transition-all duration-500" />
+                  {/* Bottom Half - Soft gradient background with content */}
+                  <div className={`bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} text-white p-6 min-h-[240px] flex flex-col`}>
+                    {/* Service Title with emoji */}
+                    <h3 className="text-lg font-bold mb-3 leading-tight">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Service Description */}
+                    <p className="text-white/95 text-sm leading-relaxed mb-3 flex-shrink-0">
+                      {service.description}
+                    </p>
+
+                    {/* Detailed Description */}
+                    <p className="text-white/90 text-xs leading-relaxed mb-4 flex-1">
+                      {service.detailedDesc}
+                    </p>
+
+                    {/* Key Features - bullet points */}
+                    <div className="space-y-1 flex-shrink-0">
+                      {service.items.slice(0, 3).map((item: string, i: number) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 bg-white/70 rounded-full flex-shrink-0 mt-1.5" />
+                          <span className="text-white/90 text-xs leading-relaxed">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-16 text-center">
+              <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Cần tư vấn giải pháp phù hợp?
+                </h3>
+                <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                  Đội ngũ chuyên gia của VLC Group sẵn sàng hỗ trợ bạn tìm ra giải pháp tối ưu cho dự án
+                </p>
+                <button
+                  onClick={() => window.location.href = '/contact'}
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <span>Liên hệ ngay</span>
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Statistics Section */}
+        <FeaturedProjects />
+
         <section id="stats-section" className="py-20 bg-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-green-50 opacity-50" />
           <div className="relative max-w-7xl mx-auto px-6">
@@ -308,7 +298,6 @@ export default function Services({ fullPage = false }: ServicesProps) {
               ))}
             </div>
 
-            {/* Additional Stats Row */}
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { icon: Globe, value: '20+', label: 'Năm kinh nghiệm', desc: 'Trong lĩnh vực EPC' },
@@ -334,9 +323,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
 
 
 
-        {/* Call to Action Section */}
         <section className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 text-white relative overflow-hidden">
-          {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,

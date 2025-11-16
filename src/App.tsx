@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { homepageSections } from './config/sectionOrder';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -28,7 +29,35 @@ import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
 import NotFound from './components/NotFound';
 
+// Component mapping for dynamic rendering
+const componentMap = {
+  Hero,
+  About,
+  Services,
+  ContactInfo,
+  LeadershipQuotes,
+  Post,
+  Partners,
+  CTA,
+  Testimonials,
+  ProjectShowcase,
+};
+
 function App() {
+  // Render homepage sections dynamically based on configuration
+  const renderHomepageSections = () => {
+    return homepageSections
+      .filter(section => section.enabled)
+      .map(section => {
+        const Component = componentMap[section.component as keyof typeof componentMap];
+        if (!Component) {
+          console.warn(`Component ${section.component} not found in componentMap`);
+          return null;
+        }
+        return <Component key={section.id} {...(section.props || {})} />;
+      });
+  };
+
   return (
     <Router>
       <ScrollToTop />
@@ -38,16 +67,7 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
-                <Hero />
-                <About />
-                <ProjectShowcase />
-                <Services />
-                <Testimonials />
-                <ContactInfo />
-                <LeadershipQuotes />
-                <Post />
-                <Partners />
-                <CTA />
+                {renderHomepageSections()}
               </>
             } />
             <Route path="/about" element={<About fullPage />} />

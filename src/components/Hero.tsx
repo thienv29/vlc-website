@@ -9,7 +9,7 @@ export default function Hero() {
 
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat pt-24" style={{ backgroundImage: 'url(/nhon-trach-6a-120.jpg)' }}>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat pt-28 md:pt-32 pb-16" style={{ backgroundImage: 'url(/nhon-trach-6a-120.jpg)' }}>
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
@@ -51,13 +51,13 @@ export default function Hero() {
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slideInUp">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-slideInUp">
           {t('hero.title')}
           <br />
           <span className="text-primary-400">{t('hero.subtitle')}</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed animate-slideInUp delay-100">
+        <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed animate-slideInUp delay-100">
           {t('hero.description')}
         </p>
 
@@ -65,17 +65,17 @@ export default function Hero() {
         <div className="mb-8 animate-slideInUp delay-150">
           <div className="max-w-6xl mx-auto">
             <div className="bg-white/15 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
-              <h3 className="text-xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
-                <MapPin className="w-6 h-6 text-primary-300" />
+              <h3 className="text-lg font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
+                <MapPin className="w-5 h-5 text-primary-300" />
                 {t('hero.officeLocations')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-6 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                   <div className="text-center">
                     <div className="inline-flex p-3 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                      <MapPin className="w-6 h-6 text-white" />
+                      <MapPin className="w-5 h-5 text-white" />
                     </div>
-                    <div className="font-bold text-white text-lg mb-2 group-hover:text-primary-200 transition-colors">
+                    <div className="font-bold text-white text-base mb-2 group-hover:text-primary-200 transition-colors">
                       {t('hero.branches.north')}
                     </div>
                     <div className="text-white/90 text-sm leading-relaxed font-medium">
@@ -87,9 +87,9 @@ export default function Hero() {
                 <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-6 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                   <div className="text-center">
                     <div className="inline-flex p-3 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                      <MapPin className="w-6 h-6 text-white" />
+                      <MapPin className="w-5 h-5 text-white" />
                     </div>
-                    <div className="font-bold text-white text-lg mb-2 group-hover:text-primary-200 transition-colors">
+                    <div className="font-bold text-white text-base mb-2 group-hover:text-primary-200 transition-colors">
                       {t('hero.branches.central')}
                     </div>
                     <div className="text-white/90 text-sm leading-relaxed font-medium">
@@ -101,9 +101,9 @@ export default function Hero() {
                 <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-6 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                   <div className="text-center">
                     <div className="inline-flex p-3 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                      <MapPin className="w-6 h-6 text-white" />
+                      <MapPin className="w-5 h-5 text-white" />
                     </div>
-                    <div className="font-bold text-white text-lg mb-2 group-hover:text-primary-200 transition-colors">
+                    <div className="font-bold text-white text-base mb-2 group-hover:text-primary-200 transition-colors">
                       {t('hero.branches.west')}
                     </div>
                     <div className="text-white/90 text-sm leading-relaxed font-medium">
@@ -117,24 +117,24 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slideInUp delay-200">
-          <button className="group px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 transition-all flex items-center gap-2 shadow-lg shadow-primary-500/30 transform hover:-translate-y-1">
+          <button className="group px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold text-base hover:bg-primary-600 transition-all flex items-center gap-2 shadow-lg shadow-primary-500/30 transform hover:-translate-y-1">
             {t('hero.exploreServices')}
-            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
           </button>
-          <button className="group px-8 py-4 bg-white/10 backdrop-blur-md text-white border-2 border-white/30 rounded-lg font-semibold text-lg hover:bg-white/20 transition-all flex items-center gap-2 transform hover:-translate-y-1">
-            <Play size={20} />
+          <button className="group px-6 py-3 bg-white/10 backdrop-blur-md text-white border-2 border-white/30 rounded-lg font-semibold text-base hover:bg-white/20 transition-all flex items-center gap-2 transform hover:-translate-y-1">
+            <Play size={18} />
             {t('hero.watchIntro')}
           </button>
         </div>
 
         {/* CTA Button - Learn More About VLC */}
-        <div className="mt-16 animate-fadeIn delay-300">
+        <div className="mt-10 animate-fadeIn delay-300">
           <a 
             href="/about"
-            className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-md text-white border-2 border-primary-400/50 rounded-lg font-semibold text-lg hover:bg-primary-500/20 hover:border-primary-400 transition-all duration-300 transform hover:-translate-y-1 shadow-lg"
+            className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md text-white border-2 border-primary-400/50 rounded-lg font-semibold text-base hover:bg-primary-500/20 hover:border-primary-400 transition-all duration-300 transform hover:-translate-y-1 shadow-lg"
           >
             {t('hero.learnMore')}
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </div>

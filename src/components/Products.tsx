@@ -1,8 +1,9 @@
 import { useState, useMemo } from 'react';
-import { Search, Filter, ArrowRight, Calendar, Tag, DollarSign, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Search, Filter, ArrowRight, Tag, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { productsData, getProductsByCategory, searchProducts } from '../data/productsData';
+import ProductCard from './ProductCard';
 
 interface ProductsProps {
   fullPage?: boolean;
@@ -198,90 +199,48 @@ export default function Products({ fullPage = false }: ProductsProps) {
 }
 
 function ProductsGrid({ products, compact = false }: any) {
-  const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleViewDetails = (productId: number) => {
+    navigate(`/products/${productId}`);
+  };
+
+  const handleAddToCart = (productId: number) => {
+    // Add cart logic here
+    console.log('Adding product to cart:', productId);
+    // You can implement cart functionality here
+  };
 
   if (compact) {
     return (
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
         {products.map((product: any) => (
-          <ProductCard key={product.id} product={product} t={t} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            onViewDetails={handleViewDetails}
+            onAddToCart={handleAddToCart}
+          />
         ))}
       </div>
     );
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fadeIn">
-      {products.map((product: any, index: number) => (
-        <ProductCard key={product.id} product={product} index={index} t={t} />
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 animate-fadeIn items-stretch">
+      {products.map((product: any) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          onViewDetails={handleViewDetails}
+          onAddToCart={handleAddToCart}
+        />
       ))}
     </div>
   );
 }
 
-function ProductCard({ product, index = 0, t }: any) {
-  const navigate = useNavigate();
-
-  return (
-    <div
-      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer animate-slideInUp border border-gray-100"
-      style={{ animationDelay: `${index * 100}ms` }}
-      onClick={() => navigate(`/products/${product.id}`)}
-    >
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <img
-          src={product.image}
-          alt={product.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-primary-600 animate-fadeIn">
-            {product.category}
-          </span>
-        </div>
-        {product.price && (
-          <div className="absolute top-4 right-4">
-            <span className="px-3 py-1 bg-accent-500 text-white rounded-full text-xs font-semibold animate-fadeIn">
-              {product.price}
-            </span>
-          </div>
-        )}
-      </div>
-      <div className="p-6">
-        <div className="flex items-center gap-2 text-sm text-gray-600 mb-3 animate-fadeIn">
-          <Calendar size={16} className="text-primary-500" />
-          {product.date}
-        </div>
-        <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors animate-fadeIn">
-          {product.title}
-        </h3>
-        <p className="text-sm text-gray-600 line-clamp-2 mb-4 animate-fadeIn">{product.excerpt}</p>
-
-        {/* Features Preview */}
-        {product.features && product.features.length > 0 && (
-          <div className="mb-4">
-            <div className="flex flex-wrap gap-1">
-              {product.features.slice(0, 2).map((feature: string, i: number) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-1 px-2 py-1 bg-primary-50 text-primary-700 text-xs rounded-md"
-                >
-                  ✓ {feature.length > 20 ? `${feature.substring(0, 20)}...` : feature}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <button className="text-primary-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all animate-fadeIn">
-          {t('products.viewDetails')}
-          <ArrowRight size={16} />
-        </button>
-      </div>
-    </div>
-  );
-}
-
+// Pagination component
 function Pagination({ currentPage, totalPages, onPageChange }: any) {
   const { t } = useTranslation();
 

@@ -11,7 +11,8 @@
     "contact": "Contact",
     "newsSubmenu": {
       "internal": "Internal News",
-      "community": "Community News"
+      "project": "Project & Market News",
+      "community": "Community Activities"
     },
     "projectsSubmenu": {
       "group1": "Project Group 1",
@@ -31,6 +32,18 @@
     "description": "Leading in EPC solutions, green technology and sustainable development for modern businesses",
     "exploreServices": "Explore Services",
     "watchIntro": "Watch Introduction",
+    "learnMore": "Learn More About VLC",
+    "officeLocations": "Office Locations",
+    "branches": {
+      "north": "Northern Branch",
+      "central": "Central Branch",
+      "west": "Western Branch"
+    },
+    "addresses": {
+      "north": "36 Tran Thai Tong, Cau Giay Ward, Hanoi",
+      "central": "23 Trang Keo 4, Hoi An Tay Ward, Da Nang", 
+      "west": "Lot 17D, Street No. 5, Long Xuyen Ward, An Giang"
+    },
     "stats": {
       "projects": "Completed Projects",
       "experience": "Years of Experience",
