@@ -6,7 +6,7 @@ interface PageWrapperProps {
 
 export default function PageWrapper({ children }: PageWrapperProps) {
   return (
-    <div className="pt-24 pb-20 bg-gray-50">
+    <div className="pt-24 bg-gray-50">
       {children}
     </div>
   );
