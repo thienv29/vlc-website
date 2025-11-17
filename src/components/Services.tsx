@@ -91,7 +91,7 @@ export default function Services({ fullPage = false }: ServicesProps) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
         {/* Enhanced Banner Section */}
-        <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="relative min-h-[600px] md:min-h-[700px] lg:min-h-screen flex items-center justify-center overflow-hidden pt-28 md:pt-32 pb-16 md:pb-20">
           {/* Animated Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700" />
           <div className="absolute inset-0">
@@ -107,15 +107,15 @@ export default function Services({ fullPage = false }: ServicesProps) {
             }} />
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 text-center py-8 md:py-12">
             {/* Badge */}
-            <div className={`inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <Zap className="w-5 h-5 text-yellow-400" />
-              <span className="text-white font-medium">EPC & SUSTAINABILITY LEADER</span>
+            <div className={`inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6 md:mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <Zap className="w-4 h-4 md:w-5 md:h-5 text-yellow-400" />
+              <span className="text-white font-medium text-sm md:text-base">EPC & SUSTAINABILITY LEADER</span>
             </div>
 
             {/* Main Title */}
-            <h1 className={`text-5xl md:text-7xl font-bold text-white mb-6 leading-tight transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               Giải pháp tổng thể
               <span className="block bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
                 EPC & Dịch vụ
@@ -123,43 +123,43 @@ export default function Services({ fullPage = false }: ServicesProps) {
             </h1>
 
             {/* Subtitle */}
-            <p className={`text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <p className={`text-lg md:text-xl lg:text-2xl text-blue-100 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               Tiên phong trong các giải pháp kỹ thuật toàn diện, từ thiết kế đến vận hành, mang đến giá trị vượt trội cho doanh nghiệp Việt Nam
             </p>
 
             {/* CTA Buttons */}
-            <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-10 md:mb-16 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <button
                 onClick={() => scrollToSection('services-overview')}
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl shadow-lg"
+                className="group inline-flex items-center justify-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 bg-white text-primary-600 rounded-xl font-bold text-base md:text-lg hover:bg-blue-50 transition-all transform hover:scale-105 hover:shadow-2xl shadow-lg"
               >
-                <Target className="w-6 h-6" />
+                <Target className="w-5 h-5 md:w-6 md:h-6" />
                 Khám phá dịch vụ
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => scrollToSection('stats-section')}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold text-lg hover:bg-white/20 transition-all border border-white/20"
+                className="inline-flex items-center justify-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold text-base md:text-lg hover:bg-white/20 transition-all border border-white/20"
               >
-                <TrendingUp className="w-6 h-6" />
+                <TrendingUp className="w-5 h-5 md:w-6 md:h-6" />
                 Xem thành tựu
               </button>
             </div>
 
             {/* Stats Preview */}
-            <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               {stats.map((stat, index) => (
-                <div key={index} className="bg-primary-800/30 backdrop-blur-md rounded-2xl p-6 border border-primary-700/50 hover:bg-primary-800/40 transition-all transform hover:scale-105 hover:border-primary-600/60">
-                  <stat.icon className={`w-10 h-10 mx-auto mb-3 ${stat.color}`} strokeWidth={1.5} />
-                  <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-200 font-medium">{stat.label}</div>
+                <div key={index} className="bg-primary-800/30 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-primary-700/50 hover:bg-primary-800/40 transition-all transform hover:scale-105 hover:border-primary-600/60">
+                  <stat.icon className={`w-8 h-8 md:w-10 md:h-10 mx-auto mb-2 md:mb-3 ${stat.color}`} strokeWidth={1.5} />
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2">{stat.value}</div>
+                  <div className="text-xs md:text-sm text-gray-200 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Scroll Indicator */}
-          <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className={`hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <button
               onClick={() => scrollToSection('services-overview')}
               className="animate-bounce text-white/70 hover:text-white transition-colors"

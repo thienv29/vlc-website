@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { homepageSections } from './config/sectionOrder';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +15,7 @@ import PostDetail from './components/PostDetail';
 import PostDetailStatic from './components/PostDetailStatic';
 import PostInternal from './components/PostInternal';
 import PostCommunity from './components/PostCommunity';
+import PostMarket from './components/PostMarket';
 import Careers from './components/Careers';
 import JobDetail from './components/JobDetail';
 import Contact from './components/Contact';
@@ -29,34 +29,7 @@ import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
 import NotFound from './components/NotFound';
 
-// Component mapping for dynamic rendering
-const componentMap = {
-  Hero,
-  About,
-  Services,
-  ContactInfo,
-  LeadershipQuotes,
-  Post,
-  Partners,
-  CTA,
-  Testimonials,
-  ProjectShowcase,
-};
-
 function App() {
-  // Render homepage sections dynamically based on configuration
-  const renderHomepageSections = () => {
-    return homepageSections
-      .filter(section => section.enabled)
-      .map(section => {
-        const Component = componentMap[section.component as keyof typeof componentMap];
-        if (!Component) {
-          console.warn(`Component ${section.component} not found in componentMap`);
-          return null;
-        }
-        return <Component key={section.id} {...(section.props || {})} />;
-      });
-  };
 
   return (
     <Router>
@@ -67,7 +40,16 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
-                {renderHomepageSections()}
+                <Hero />
+                <About />
+                <ProjectShowcase />
+                <Services />
+                <Testimonials />
+                <ContactInfo />
+                <LeadershipQuotes />
+                <Post />
+                <Partners />
+                <CTA />
               </>
             } />
             <Route path="/about" element={<About fullPage />} />
@@ -77,6 +59,7 @@ function App() {
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/news" element={<Post fullPage />} />
             <Route path="/news/internal" element={<PostInternal />} />
+            <Route path="/news/market" element={<PostMarket />} />
             <Route path="/news/community" element={<PostCommunity />} />
             <Route path="/news/:id" element={<PostDetail showSidebar={true} />} />
             <Route path="/services/:id" element={<PostDetailStatic />} />

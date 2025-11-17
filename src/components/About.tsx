@@ -16,7 +16,7 @@ function useScrollAnimation() {
       },
       {
         threshold: 0.3,
-        rootMargin: '50px 0px -50px 0px' // Changed from -100px to -50px and added 50px top margin
+        rootMargin: '50px 0px -50px 0px'
       }
     );
 

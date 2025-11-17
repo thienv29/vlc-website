@@ -1,7 +1,46 @@
 import { useState } from 'react';
 import { Calendar, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import PageWrapper from './PageWrapper';
+
+// Tabs component để chuyển đổi giữa các loại tin
+function NewsTabs({ activeTab }: { activeTab: string }) {
+  const navigate = useNavigate();
+  
+  return (
+    <div className="flex gap-4 mb-12 justify-center animate-fadeIn flex-wrap">
+      <button
+        onClick={() => navigate('/news/internal')}
+        className={`px-8 py-3 rounded-full font-semibold transition-all ${
+          activeTab === 'internal'
+            ? 'bg-[#0F5132] text-white shadow-lg'
+            : 'bg-white text-gray-700 hover:bg-gray-50'
+        }`}
+      >
+        Tin công ty
+      </button>
+      <button
+        onClick={() => navigate('/news/community')}
+        className={`px-8 py-3 rounded-full font-semibold transition-all ${
+          activeTab === 'community'
+            ? 'bg-[#3CB371] text-white shadow-lg'
+            : 'bg-white text-gray-700 hover:bg-gray-50'
+        }`}
+      >
+        Tin cộng đồng
+      </button>
+      <button
+        onClick={() => navigate('/news/market')}
+        className={`px-8 py-3 rounded-full font-semibold transition-all ${
+          activeTab === 'market'
+            ? 'bg-[#2563EB] text-white shadow-lg'
+            : 'bg-white text-gray-700 hover:bg-gray-50'
+        }`}
+      >
+        Tin thị trường
+      </button>
+    </div>
+  );
+}
 
 export default function NewsCommunity() {
   const navigate = useNavigate();
@@ -100,6 +139,9 @@ export default function NewsCommunity() {
             Các hoạt động xã hội và đóng góp cộng đồng của VLC Group
           </p>
         </div>
+
+        {/* Tabs để chuyển đổi giữa các loại tin */}
+        <NewsTabs activeTab="community" />
 
         <div className="space-y-8 animate-fadeIn">
           <div
