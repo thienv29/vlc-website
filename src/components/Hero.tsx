@@ -1,6 +1,7 @@
 import { ArrowRight, Play, MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -117,10 +118,13 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slideInUp delay-200">
-          <button className="group px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold text-base hover:bg-primary-600 transition-all flex items-center gap-2 shadow-lg shadow-primary-500/30 transform hover:-translate-y-1">
+          <Link
+            to="/services"
+            className="group px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold text-base hover:bg-primary-600 transition-all flex items-center gap-2 shadow-lg shadow-primary-500/30 transform hover:-translate-y-1"
+          >
             {t('hero.exploreServices')}
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-          </button>
+          </Link>
           <button className="group px-6 py-3 bg-white/10 backdrop-blur-md text-white border-2 border-white/30 rounded-lg font-semibold text-base hover:bg-white/20 transition-all flex items-center gap-2 transform hover:-translate-y-1">
             <Play size={18} />
             {t('hero.watchIntro')}
