@@ -14,7 +14,7 @@ export default function FeaturedProjects() {
       location: 'Đồng Nai, Việt Nam',
       year: '2024',
       description: 'Dự án EPC quy mô lớn với công nghệ tiên tiến, công suất xử lý 120.000 m³/ngày',
-      image: '/projects/nhon-trach-6a-120.jpg',
+      image: '/nhon-trach-6a-120.jpg',
       status: 'Đang triển khai',
       highlights: [
         'Công nghệ MBBR tiên tiến',
@@ -24,13 +24,13 @@ export default function FeaturedProjects() {
       investment: '450 tỷ VND'
     },
     {
-      id: 2, 
+      id: 2,
       title: 'Hệ thống điện mặt trời EVN SPC',
       category: 'EPC - Năng lượng tái tạo',
       location: 'Bình Thuận, Việt Nam',
       year: '2023',
       description: 'Dự án điện mặt trời quy mô 50MW với hệ thống lưu trữ năng lượng tiên tiến',
-      image: '/projects/solar-power-binh-thuan.jpg',
+      image: '/tk-landing-page-web-2.jpg',
       status: 'Hoàn thành',
       highlights: [
         'Công suất 50MW',
@@ -43,10 +43,10 @@ export default function FeaturedProjects() {
       id: 3,
       title: 'Nhà máy Xử lý chất thải rắn Cần Thơ',
       category: 'EPC - Môi trường',
-      location: 'Cần Thơ, Việt Nam', 
+      location: 'Cần Thơ, Việt Nam',
       year: '2023',
       description: 'Nhà máy xử lý rác thải đô thị công nghệ đốt có thu hồi năng lượng',
-      image: '/projects/waste-treatment-cantho.jpg',
+      image: '/nuoc-thai-dau-ra-1.jpg',
       status: 'Vận hành',
       highlights: [
         'Công suất 1.500 tấn/ngày',
@@ -57,17 +57,17 @@ export default function FeaturedProjects() {
     },
     {
       id: 4,
-      title: 'Hệ thống IoT giám sát môi trường',
+      title: 'Vận hành & Bảo trì hệ thống công nghiệp',
       category: 'Công nghệ & Tự động hóa',
       location: 'Toàn quốc',
       year: '2024',
-      description: 'Triển khai hệ thống IoT giám sát chất lượng môi trường thời gian thực',
-      image: '/projects/iot-environmental-monitoring.jpg', 
+      description: 'Dịch vụ vận hành 24/7 và bảo trì định kỳ cho các hệ thống công nghiệp',
+      image: '/vanhanhbaotri.jpg',
       status: 'Triển khai',
       highlights: [
-        '500+ điểm giám sát',
-        'AI phân tích dữ liệu',
-        'Cảnh báo sớm ô nhiễm'
+        'Vận hành 24/7',
+        'Bảo trì định kỳ',
+        'Theo dõi hiệu suất'
       ],
       investment: '180 tỷ VND'
     }
