@@ -50,9 +50,9 @@ export default function Header() {
       path: '/news',
       label: t('nav.news'),
       submenu: [
-        { path: '/news/internal', label: t('nav.newsSubmenu.internal') },
-        { path: '/news/market', label: t('nav.newsSubmenu.market') },
-        { path: '/news/community', label: t('nav.newsSubmenu.community') }
+        { path: '/news/c/internal', label: t('nav.newsSubmenu.internal') },
+        { path: '/news/c/market', label: t('nav.newsSubmenu.market') },
+        { path: '/news/c/community', label: t('nav.newsSubmenu.community') }
       ]
     },
     { path: '/careers', label: t('nav.careers') },
