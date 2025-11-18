@@ -91,7 +91,15 @@ export default function Careers() {
               <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 animate-slideInUp delay-100">
                 Tham gia đội ngũ hơn 1000+ chuyên gia, xây dựng tương lai xanh và thịnh vượng
               </p>
-              <button className="px-8 py-4 bg-white text-accent-800 rounded-lg font-semibold hover:bg-gray-100 transition-all animate-slideInUp delay-200">
+              <button
+                onClick={() => {
+                  const element = document.querySelector('#job-listings');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="px-8 py-4 bg-white text-accent-800 rounded-lg font-semibold hover:bg-gray-100 transition-all animate-slideInUp delay-200"
+              >
                 Khám phá cơ hội
               </button>
             </div>
@@ -124,7 +132,7 @@ export default function Careers() {
           </div>
         </div>
 
-        <div>
+        <div id="job-listings">
           <h2 className="text-4xl font-bold text-accent-800 mb-12 text-center">
             Vị trí tuyển dụng
           </h2>
