@@ -17,6 +17,14 @@ export default {
           900: '#14532d',
           950: '#052e16',
         },
+        brand: {
+          green: '#3CB371',
+          dark: '#0F5132',
+          blue: '#208BB3',
+          teal: '#004650',
+          'teal-light': '#006171',
+          orange: '#FF6B35',
+        },
         secondary: {
           50: '#fef2f2',
           100: '#fee2e2',

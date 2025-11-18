@@ -85,7 +85,7 @@ export default function PostDetailStatic() {
           {/* Article Content */}
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
             {/* Article Title - Centered */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#004650] text-center mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-teal text-center mb-6 leading-tight">
               {newsItem.title}
             </h1>
 
@@ -96,7 +96,7 @@ export default function PostDetailStatic() {
 
             {/* Article Body - Prose Styling for rest of content */}
             <div
-              className="prose max-w-none prose-headings:text-[#004650] prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-blockquote:border-[#208BB3] prose-blockquote:text-gray-800 prose-blockquote:bg-[#208BB3]/5 prose-blockquote:p-4 prose-blockquote:rounded-lg"
+              className="prose max-w-none prose-headings:text-brand-teal prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-blockquote:border-brand-blue prose-blockquote:text-gray-800 prose-blockquote:bg-brand-blue/5 prose-blockquote:p-4 prose-blockquote:rounded-lg"
               dangerouslySetInnerHTML={{ __html: newsItem.content }}
             />
 

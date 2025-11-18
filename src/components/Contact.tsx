@@ -24,7 +24,7 @@ export default function Contact({ fullPage = false }: ContactProps) {
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-[#0F5132] mb-4">Liên hệ với chúng tôi</h2>
+            <h2 className="text-5xl font-bold text-brand-dark mb-4">Liên hệ với chúng tôi</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Sẵn sàng hỗ trợ bạn 24/7
             </p>
@@ -39,12 +39,12 @@ export default function Contact({ fullPage = false }: ContactProps) {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
-            Liên hệ
-          </span>
-          <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-6">
-            Bắt đầu dự án của bạn
-          </h2>
+            <span className="text-brand-green font-semibold text-sm uppercase tracking-wider">
+              Liên hệ
+            </span>
+            <h2 className="text-4xl font-bold text-brand-dark mt-4 mb-6">
+              Bắt đầu dự án của bạn
+            </h2>
         </div>
         <ContactContent formData={formData} setFormData={setFormData} handleSubmit={handleSubmit} compact />
       </div>
@@ -79,11 +79,11 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
       <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-12 mb-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-[#3CB371]/10 text-[#3CB371] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-brand-green/10 text-brand-green px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Mail size={16} />
               Liên hệ với chúng tôi
             </div>
-            <h3 className="text-3xl font-bold text-[#0F5132] mb-4">Gửi yêu cầu tư vấn</h3>
+            <h3 className="text-3xl font-bold text-brand-dark mb-4">Gửi yêu cầu tư vấn</h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Điền thông tin bên dưới, chúng tôi sẽ liên hệ trong vòng 24h để hỗ trợ bạn tốt nhất
             </p>
@@ -92,24 +92,25 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-[#0F5132]">Họ và tên *</label>
+
+                <label className="block text-sm font-semibold text-brand-dark">Họ và tên *</label>
                 <input
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] placeholder-gray-400 focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-brand-dark placeholder-gray-400 focus:outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 transition-all"
                   placeholder="Nguyễn Văn A"
                 />
               </div>
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-[#0F5132]">Email *</label>
+                <label className="block text-sm font-semibold text-brand-dark">Email *</label>
                 <input
                   type="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] placeholder-gray-400 focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-brand-dark placeholder-gray-400 focus:outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 transition-all"
                   placeholder="email@example.com"
                 />
               </div>
@@ -117,22 +118,22 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-[#0F5132]">Số điện thoại *</label>
+                <label className="block text-sm font-semibold text-brand-dark">Số điện thoại *</label>
                 <input
                   type="tel"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] placeholder-gray-400 focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-brand-dark placeholder-gray-400 focus:outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 transition-all"
                   placeholder="0901234567"
                 />
               </div>
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-[#0F5132]">Dịch vụ quan tâm</label>
+                <label className="block text-sm font-semibold text-brand-dark">Dịch vụ quan tâm</label>
                 <select
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all bg-white"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-brand-dark focus:outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 transition-all bg-white"
                 >
                   <option value="">Chọn dịch vụ</option>
                   <option value="epc">Tổng thầu EPC</option>
@@ -144,13 +145,13 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
             </div>
 
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-[#0F5132]">Nội dung *</label>
+              <label className="block text-sm font-semibold text-brand-dark">Nội dung *</label>
               <textarea
                 required
                 rows={6}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-[#0F5132] placeholder-gray-400 focus:outline-none focus:border-[#3CB371] focus:ring-2 focus:ring-[#3CB371]/20 transition-all resize-none"
+                className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 text-brand-dark placeholder-gray-400 focus:outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 transition-all resize-none"
                 placeholder="Mô tả chi tiết về nhu cầu của bạn..."
               />
             </div>
@@ -158,7 +159,7 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
             <div className="text-center pt-4">
               <button
                 type="submit"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#3CB371] to-[#0F5132] text-white rounded-xl font-semibold hover:from-[#0F5132] hover:to-[#3CB371] transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-brand-green to-brand-dark text-white rounded-xl font-semibold hover:from-brand-dark hover:to-brand-green transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <Send size={20} />
                 Gửi yêu cầu tư vấn
@@ -186,19 +187,19 @@ function ContactContent({ formData, setFormData, handleSubmit, compact = false }
 
       <div className="grid md:grid-cols-3 gap-8">
         {offices.map((office, index) => (
-          <div key={index} className="bg-[#F5F7FA] rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-[#0F5132] mb-6">{office.city}</h3>
+          <div key={index} className="bg-blue-50 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-brand-dark mb-6">{office.city}</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="text-[#3CB371] flex-shrink-0 mt-1" size={20} />
+                <MapPin className="text-brand-green flex-shrink-0 mt-1" size={20} />
                 <span className="text-gray-600 text-sm">{office.address}</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="text-[#3CB371] flex-shrink-0" size={20} />
+                <Phone className="text-brand-green flex-shrink-0" size={20} />
                 <span className="text-gray-600 text-sm">{office.phone}</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="text-[#3CB371] flex-shrink-0" size={20} />
+                <Mail className="text-brand-green flex-shrink-0" size={20} />
                 <span className="text-gray-600 text-sm">{office.email}</span>
               </div>
             </div>

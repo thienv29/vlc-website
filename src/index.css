@@ -85,3 +85,13 @@
 .prose a:hover {
   color: #1d4ed8;
 }
+
+/* Brand color variables */
+:root {
+  --brand-green: #3CB371;
+  --brand-dark: #0F5132;
+  --brand-blue: #208BB3;
+  --brand-teal: #004650;
+  --brand-teal-light: #006171;
+  --brand-orange: #FF6B35;
+}
