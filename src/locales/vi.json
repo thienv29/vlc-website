@@ -11,7 +11,8 @@
     "contact": "Liên hệ",
     "newsSubmenu": {
       "internal": "Tin nội bộ",
-      "community": "Tin cộng đồng"
+      "market": "Tin thị trường",
+      "community": "Tin Hoạt động cộng đồng"
     },
     "projectsSubmenu": {
       "group1": "Nhóm dự án 1",
@@ -31,6 +32,18 @@
     "description": "Tiên phong trong các giải pháp EPC, công nghệ xanh và phát triển bền vững cho doanh nghiệp hiện đại",
     "exploreServices": "Khám phá dịch vụ",
     "watchIntro": "Xem giới thiệu",
+    "learnMore": "Tìm hiểu thêm về VLC",
+    "officeLocations": "Văn phòng đại diện",
+    "branches": {
+      "north": "Chi nhánh Miền Bắc",
+      "central": "Chi nhánh Miền Trung", 
+      "west": "Chi nhánh Miền Tây"
+    },
+    "addresses": {
+      "north": "36 Trần Thái Tông, Phường Cầu Giấy, Hà Nội",
+      "central": "23 Trảng Kèo 4, Phường Hội An Tây, Đà Nẵng",
+      "west": "Lô 17D, Đường số 5, Phường Long Xuyên, An Giang"
+    },
     "stats": {
       "projects": "Dự án hoàn thành",
       "experience": "Năm kinh nghiệm",

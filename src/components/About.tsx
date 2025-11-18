@@ -1,8 +1,8 @@
-import { Target, Eye, Award, Users } from 'lucide-react';
+import { Target, Eye, Award, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef, useState } from 'react';
+import QualityCertifications from './about/QualityCertifications';
 
-// Custom hook for scroll-triggered animations
 function useScrollAnimation() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -15,8 +15,8 @@ function useScrollAnimation() {
         }
       },
       {
-        threshold: 0.3, // Increased from 0.1 to 0.3 for earlier triggering
-        rootMargin: '50px 0px -50px 0px' // Changed from -100px to -50px and added 50px top margin
+        threshold: 0.3,
+        rootMargin: '50px 0px -50px 0px'
       }
     );
 
@@ -68,10 +68,17 @@ export default function About({ fullPage = false }: AboutProps) {
         </div>
 
         <div className="max-w-7xl mx-auto px-6">
+          {/* Section 1: Giới thiệu chung */}
           <AboutContent />
-          <Timeline />
+          
+          {/* Section 2: Tầm nhìn, Sứ mệnh, Giá trị Cốt lõi */}
           <Values />
+          
+          {/* Section 3: Chứng nhận chất lượng (Năng lực) */}
           <Certifications />
+          
+          {/* Section 4: Câu chuyện Thương hiệu & Văn hóa (Timeline) */}
+          <Timeline />
         </div>
       </div>
     );
@@ -88,13 +95,6 @@ export default function About({ fullPage = false }: AboutProps) {
 
 function AboutContent() {
   const { t } = useTranslation();
-
-  const features = [
-    { icon: Target, label: t('about.features.quality') },
-    { icon: Users, label: t('about.features.experts') },
-    { icon: Award, label: t('about.features.iso') },
-    { icon: Eye, label: t('about.features.transparency') },
-  ];
 
   return (
     <div className="grid md:grid-cols-2 gap-16 items-center mb-20 animate-fadeIn">
@@ -123,15 +123,15 @@ function AboutContent() {
           {t('about.description2')}
         </p>
 
-        <div className="grid grid-cols-2 gap-6">
-          {features.map((item, index) => (
-            <div key={index} className="flex items-center gap-3 transform hover:-translate-y-1 transition-transform">
-              <div className="w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
-                <item.icon className="text-primary-600" size={24} />
-              </div>
-              <span className="text-sm font-medium text-gray-700">{item.label}</span>
-            </div>
-          ))}
+        {/* CTA Button thay thế 4 khối icon */}
+        <div className="mt-8">
+          <a 
+            href="/contact"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            <span>Liên hệ tư vấn dự án</span>
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
       </div>
     </div>
@@ -323,167 +323,5 @@ function Values() {
 }
 
 function Certifications() {
-  const { t } = useTranslation();
-
-  const stats = [
-    { value: t('about.certifications.stats.certifications'), label: 'International Certifications', icon: '🏆' },
-    { value: t('about.certifications.stats.awards'), label: 'Industry Awards', icon: '⭐' },
-    { value: t('about.certifications.stats.years'), label: 'Consecutive Recognition', icon: '📈' },
-    { value: t('about.certifications.stats.recognition'), label: 'National Trust', icon: '🏛️' },
-  ];
-
-  const certifications = t('about.certifications.certifications', { returnObjects: true }) as any[];
-  const awards = t('about.certifications.awards', { returnObjects: true }) as any[];
-
-  const getIcon = (iconType: string) => {
-    const icons = {
-      quality: '⚡',
-      environment: '🌱',
-      safety: '🛡️',
-      energy: '⚡',
-      green: '🌿',
-      sustainability: '♻️'
-    };
-    return icons[iconType as keyof typeof icons] || '🏆';
-  };
-
-  return (
-    <div className="relative bg-gradient-to-br from-slate-50 via-white to-primary-50/30 rounded-3xl p-8 md:p-16 overflow-hidden animate-fadeIn">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary-100/20 to-transparent rounded-full -translate-y-48 translate-x-48"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-primary-200/10 to-transparent rounded-full translate-y-40 -translate-x-40"></div>
-
-      <div className="relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 bg-primary-100/50 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
-            <Award className="text-primary-600" size={24} />
-            <span className="text-primary-700 font-semibold uppercase tracking-wider text-sm">
-              {t('about.certifications.subtitle')}
-            </span>
-          </div>
-
-          <h3 className="text-4xl md:text-5xl font-bold text-primary-800 mb-6 animate-slideInUp">
-            {t('about.certifications.title')}
-          </h3>
-
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed animate-slideInUp delay-100">
-            {t('about.certifications.description')}
-          </p>
-
-          <div className="w-32 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto mt-8 rounded-full"></div>
-        </div>
-
-       
-
-        {/* Certifications Section */}
-        <div className="mb-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certifications.map((cert: any, index: number) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:border-primary-200 transform hover:-translate-y-2 transition-all duration-500 animate-fadeIn"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                {/* Icon and Badge */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    {getIcon(cert.icon)}
-                  </div>
-                  <div className="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    {cert.year}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
-                      {cert.type}
-                    </span>
-                  </div>
-
-                  <h5 className="text-xl font-bold text-gray-800 group-hover:text-primary-700 transition-colors">
-                    {cert.name}
-                  </h5>
-
-                  <p className="text-gray-600 leading-relaxed">
-                    {cert.description}
-                  </p>
-                </div>
-
-                {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-primary-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Awards Section */}
-        <div>
-          <h4 className="text-3xl font-bold text-primary-800 text-center mb-12 animate-slideInUp">
-            Industry Awards & Recognition
-          </h4>
-
-          <div className="space-y-6">
-            {awards.map((award: any, index: number) => (
-              <div
-                key={index}
-                className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-2xl transition-all duration-500 animate-fadeIn ${
-                  index % 2 === 0
-                    ? 'bg-gradient-to-r from-white to-primary-50/30 border-l-4 border-primary-500'
-                    : 'bg-gradient-to-l from-white to-primary-50/30 border-r-4 border-primary-500 md:flex-row-reverse'
-                }`}
-                style={{ animationDelay: `${index * 250}ms` }}
-              >
-                {/* Award Badge */}
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-3xl shadow-xl animate-pulse">
-                    🏆
-                  </div>
-                </div>
-
-                {/* Award Content */}
-                <div className="flex-1 text-center md:text-left">
-                  <div className="flex flex-col md:flex-row md:items-center gap-2 mb-3">
-                    <h5 className="text-2xl font-bold text-gray-800">
-                      {award.name}
-                    </h5>
-                    <span className="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-semibold self-center md:self-auto">
-                      {award.year}
-                    </span>
-                  </div>
-
-                  <p className="text-gray-600 mb-3">
-                    <span className="font-semibold text-primary-700">{award.organization}</span>
-                  </p>
-
-                  <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-medium">
-                    <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
-                    {award.category}
-                  </div>
-                </div>
-
-                {/* Decorative element */}
-                <div className={`hidden md:block w-16 h-16 rounded-full ${
-                  index % 2 === 0
-                    ? 'bg-gradient-to-r from-primary-200 to-primary-300'
-                    : 'bg-gradient-to-l from-primary-200 to-primary-300'
-                } opacity-20`}></div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-12 py-6 rounded-2xl shadow-xl inline-block">
-            <p className="text-lg font-semibold">
-              Excellence Through Continuous Recognition
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <QualityCertifications />;
 }

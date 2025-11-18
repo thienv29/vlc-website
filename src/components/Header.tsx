@@ -44,26 +44,15 @@ export default function Header() {
       ]
     },
     { path: '/products', label: t('nav.products') },
-    {
-      path: '/projects',
-      label: t('nav.projects'),
-      submenu: [
-        { path: '/projects', label: 'Khu công nghiệp', 
-          submenu:  [
-            { path: '/projects/1', label: 'HỒ SỰ CỐ CỤM CÔNG NGHIỆP NHỊ XUÂN', },
-            { path: '/projects/2', label: 'Khách sạn 5 sao' }
-          ]
-        },
-        { path: '/projects', label: 'Nhà máy Dệt - Nhuộm' }
-      ]
-    },
+    { path: '/projects', label: t('nav.projects') },
     { path: '/sustainability', label: t('nav.sustainability') },
     {
       path: '/news',
       label: t('nav.news'),
       submenu: [
-        { path: '/news/internal', label: t('nav.newsSubmenu.internal') },
-        { path: '/news/community', label: t('nav.newsSubmenu.community') }
+        { path: '/news/c/internal', label: t('nav.newsSubmenu.internal') },
+        { path: '/news/c/market', label: t('nav.newsSubmenu.market') },
+        { path: '/news/c/community', label: t('nav.newsSubmenu.community') }
       ]
     },
     { path: '/careers', label: t('nav.careers') },

@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import PageWrapper from './PageWrapper';
-import { getInternalNews, getPublicNews } from '../data/newsData';
+import { getInternalNews, getPublicNews, getMarketNews } from '../data/newsData';
 
 interface NewsProps {
   fullPage?: boolean;
@@ -16,9 +15,13 @@ export default function News({ fullPage = false }: NewsProps) {
   const news = {
     company: getInternalNews(),
     community: getPublicNews(),
+    market: getMarketNews(),
   };
 
-  const currentNews = activeTab === 'company' ? news.company : news.community;
+  const currentNews = 
+    activeTab === 'company' ? news.company : 
+    activeTab === 'community' ? news.community : 
+    news.market;
 
   // Pagination logic for full page
   const totalPages = Math.ceil(currentNews.length / itemsPerPage);
@@ -61,21 +64,29 @@ export default function News({ fullPage = false }: NewsProps) {
   return (
     <section className="py-24 bg-[#F5F7FA]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center mb-12">
-          <div>
-            <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
-              Tin tức
-            </span>
-            <h2 className="text-4xl font-bold text-[#0F5132] mt-4">
-              Hoạt động nổi bật
-            </h2>
-          </div>
-          <button className="hidden md:flex items-center gap-2 text-[#3CB371] font-semibold hover:gap-3 transition-all">
+        <div className="text-center mb-8">
+          <span className="text-[#3CB371] font-semibold text-sm uppercase tracking-wider">
+            Tin tức
+          </span>
+          <h2 className="text-4xl font-bold text-[#0F5132] mt-4 mb-8">
+            Hoạt động nổi bật
+          </h2>
+        </div>
+        
+        {/* Tabs cho trang chủ */}
+        <NewsTabs activeTab={activeTab} setActiveTab={handleTabChange} />
+        
+        <NewsGrid news={displayNews} compact />
+        
+        <div className="text-center mt-12">
+          <a 
+            href="/news" 
+            className="inline-flex items-center gap-2 text-[#3CB371] font-semibold hover:gap-3 transition-all"
+          >
             Xem tất cả
             <ArrowRight size={20} />
-          </button>
+          </a>
         </div>
-        <NewsGrid news={displayNews} compact />
       </div>
     </section>
   );
@@ -83,7 +94,7 @@ export default function News({ fullPage = false }: NewsProps) {
 
 function NewsTabs({ activeTab, setActiveTab }: any) {
   return (
-    <div className="flex gap-4 mb-12 justify-center animate-fadeIn">
+    <div className="flex gap-4 mb-12 justify-center animate-fadeIn flex-wrap">
       <button
         onClick={() => setActiveTab('company')}
         className={`px-8 py-3 rounded-full font-semibold transition-all animate-slideInLeft ${
@@ -96,13 +107,23 @@ function NewsTabs({ activeTab, setActiveTab }: any) {
       </button>
       <button
         onClick={() => setActiveTab('community')}
-        className={`px-8 py-3 rounded-full font-semibold transition-all animate-slideInRight ${
+        className={`px-8 py-3 rounded-full font-semibold transition-all ${
           activeTab === 'community'
             ? 'bg-[#3CB371] text-white shadow-lg'
             : 'bg-white text-gray-700 hover:bg-gray-50'
         }`}
       >
         Tin cộng đồng
+      </button>
+      <button
+        onClick={() => setActiveTab('market')}
+        className={`px-8 py-3 rounded-full font-semibold transition-all animate-slideInRight ${
+          activeTab === 'market'
+            ? 'bg-[#2563EB] text-white shadow-lg'
+            : 'bg-white text-gray-700 hover:bg-gray-50'
+        }`}
+      >
+        Tin thị trường
       </button>
     </div>
   );

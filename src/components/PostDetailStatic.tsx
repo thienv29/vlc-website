@@ -62,122 +62,225 @@ export default function PostDetailStatic() {
 
   return (
     <PageWrapper>
-      {/* Clean Static Page Layout */}
-      <div className="min-h-screen bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          {/* Page Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3CB371]/10 text-[#3CB371] rounded-full text-sm font-medium mb-6">
-              {newsItem.category}
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F5132] mb-6 leading-tight">
+      {/* Hero Banner */}
+      <div className="relative h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white bg-cover bg-center" style={{ backgroundImage: `linear-gradient(135deg, rgba(0, 70, 80, 0.9) 0%, rgba(0, 97, 113, 0.85) 100%), url(${newsItem.image})` }}>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div className="relative z-10 max-w-4xl px-6 mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#CCEC81]/10 text-[#CCEC81] rounded-full text-sm font-medium mb-6">
+            {newsItem.category}
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ textShadow: '2px 2px 10px rgba(0,0,0,0.3)' }}>
+            {newsItem.title}
+          </h1>
+          <p className="text-xl md:text-2xl opacity-95 leading-relaxed mb-6">
+            {newsItem.excerpt}
+          </p>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+
+          {/* Article Content */}
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+            {/* Article Title - Centered */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#004650] text-center mb-6 leading-tight">
               {newsItem.title}
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+
+            {/* Article Excerpt - Centered */}
+            <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto leading-relaxed mb-8">
               {newsItem.excerpt}
             </p>
-          </div>
 
-          {/* Hero Image */}
-          <div className="mb-12">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={newsItem.image}
-                alt={newsItem.title}
-                className="w-full h-64 md:h-96 object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl">
-            {/* Article Content */}
+            {/* Article Body - Prose Styling for rest of content */}
             <div
-              className="prose prose-xl max-w-none prose-headings:text-[#0F5132] prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-blockquote:border-[#3CB371] prose-blockquote:text-gray-800 prose-blockquote:bg-[#3CB371]/5 prose-blockquote:p-6 prose-blockquote:rounded-lg"
+              className="prose max-w-none prose-headings:text-[#004650] prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-blockquote:border-[#208BB3] prose-blockquote:text-gray-800 prose-blockquote:bg-[#208BB3]/5 prose-blockquote:p-4 prose-blockquote:rounded-lg"
               dangerouslySetInnerHTML={{ __html: newsItem.content }}
             />
 
-            {/* Article Meta */}
-            <div className="mt-16 pt-8 border-t border-gray-200">
-              <div className="flex flex-wrap items-center justify-between gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-6">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={16} className="text-[#3CB371]" />
-                    <span>{newsItem.date}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <User size={16} className="text-[#3CB371]" />
-                    <span>{newsItem.author}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock size={16} className="text-[#3CB371]" />
-                    <span>{newsItem.readTime}</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+      </section>
 
-                {/* Share Buttons */}
-                <div className="flex items-center gap-4">
-                  <span className="text-sm font-medium text-gray-700">Chia sẻ:</span>
-                  <div className="flex gap-3">
-                    <button
-                      onClick={() => handleShare('facebook')}
-                      className="w-10 h-10 bg-[#1877F2] text-white rounded-full flex items-center justify-center hover:bg-[#1877F2]/90 transition-colors"
-                      title="Chia sẻ trên Facebook"
-                    >
-                      <Facebook size={18} />
-                    </button>
-                    <button
-                      onClick={() => handleShare('twitter')}
-                      className="w-10 h-10 bg-[#1DA1F2] text-white rounded-full flex items-center justify-center hover:bg-[#1DA1F2]/90 transition-colors"
-                      title="Chia sẻ trên Twitter"
-                    >
-                      <Twitter size={18} />
-                    </button>
-                    <button
-                      onClick={() => handleShare('linkedin')}
-                      className="w-10 h-10 bg-[#0077B5] text-white rounded-full flex items-center justify-center hover:bg-[#0077B5]/90 transition-colors"
-                      title="Chia sẻ trên LinkedIn"
-                    >
-                      <Linkedin size={18} />
-                    </button>
-                  </div>
-                </div>
+      {/* Section 2: Capabilities */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#004650] mb-6">Khả Năng & Chuyên Môn</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Điểm mạnh của chúng tôi trong việc cung cấp thông tin và giải pháp môi trường chất lượng cao
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#208BB3] to-[#CCEC81]"></div>
+              <div className="text-5xl mb-6">👥</div>
+              <h3 className="text-2xl font-bold text-[#004650] mb-4">Đội Ngũ Chuyên Gia</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Kỹ sư và chuyên gia giàu kinh nghiệm, am hiểu sâu sắc về pháp lý môi trường và công nghệ xử lý nước thải.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#208BB3] to-[#CCEC81]"></div>
+              <div className="text-5xl mb-6">📊</div>
+              <h3 className="text-2xl font-bold text-[#004650] mb-4">Quy Trình Trọn Gói</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Từ nghiên cứu, tư vấn đến triển khai, chúng tôi cam kết hỗ trợ toàn diện mọi khía cạnh của dự án.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#208BB3] to-[#CCEC81]"></div>
+              <div className="text-5xl mb-6">💡</div>
+              <h3 className="text-2xl font-bold text-[#004650] mb-4">Giải Pháp Sáng Tạo</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Luôn tìm kiếm và áp dụng các công nghệ tiên tiến, giải pháp hiệu quả nhất cho từng dự án cụ thể.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Related Topics */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#004650] mb-6">Dịch Vụ Liên Quan</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Khám phá các dịch vụ môi trường chúng tôi cung cấp để hỗ trợ doanh nghiệp của bạn
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[#208BB3]">
+              <div className="bg-gradient-to-r from-[#004650] to-[#006171] p-6 text-center text-white">
+                <div className="text-4xl mb-4">📝</div>
+                <h3 className="text-2xl font-bold mb-2">Đánh Giá Tác Động Môi Trường</h3>
               </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Lập báo cáo ĐTM chi tiết cho các dự án đầu tư mới theo quy định hiện hành.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Khảo sát và đánh giá hiện trạng
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Dự báo tác động môi trường
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Đề xuất biện pháp giảm thiểu
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-              {/* Tags */}
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Tag size={18} className="text-[#3CB371]" />
-                <span className="text-sm font-medium text-gray-700">Tags:</span>
-                {newsItem.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-[#3CB371]/10 text-[#3CB371] rounded-full text-sm font-medium hover:bg-[#3CB371]/20 transition-colors cursor-pointer"
-                  >
-                    {tag}
-                  </span>
-                ))}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[#208BB3]">
+              <div className="bg-gradient-to-r from-[#004650] to-[#006171] p-6 text-center text-white">
+                <div className="text-4xl mb-4">📋</div>
+                <h3 className="text-2xl font-bold mb-2">Giấy Phép Môi Trường</h3>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Lập hồ sơ xin cấp và gia hạn GPMT cho các cơ sở sản xuất kinh doanh.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Xin cấp GPMT mới
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Gia hạn và điều chỉnh giấy phép
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Tư vấn tuân thủ điều kiện
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[#208BB3]">
+              <div className="bg-gradient-to-r from-[#004650] to-[#006171] p-6 text-center text-white">
+                <div className="text-4xl mb-4">📝</div>
+                <h3 className="text-2xl font-bold mb-2">Đánh Giá Tác Động Môi Trường</h3>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Lập báo cáo ĐTM chi tiết cho các dự án đầu tư mới theo quy định hiện hành.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Khảo sát và đánh giá hiện trạng
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Dự báo tác động môi trường
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Đề xuất biện pháp giảm thiểu
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[#208BB3]">
+              <div className="bg-gradient-to-r from-[#004650] to-[#006171] p-6 text-center text-white">
+                <div className="text-4xl mb-4">📝</div>
+                <h3 className="text-2xl font-bold mb-2">Đánh Giá Tác Động Môi Trường</h3>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Lập báo cáo ĐTM chi tiết cho các dự án đầu tư mới theo quy định hiện hành.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Khảo sát và đánh giá hiện trạng
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Dự báo tác động môi trường
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <span className="text-[#208BB3] mr-3">✓</span> Đề xuất biện pháp giảm thiểu
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-
-          {/* Back Navigation */}
-          <div className="text-center mt-12">
-            <button
-              onClick={() => {
-                // Check if this is a service or news item based on the ID
-                const isService = newsItem && newsItem.id >= 19 && newsItem.id <= 22;
-                navigate(isService ? '/services' : '/news');
-              }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#0F5132] text-white rounded-xl font-semibold hover:bg-[#0F5132]/90 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              <ArrowLeft size={20} />
-              {newsItem && newsItem.id >= 19 && newsItem.id <= 22 ? 'Quay lại trang dịch vụ' : 'Quay lại trang tin tức'}
-            </button>
-          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Section 4: Operations & Maintenance */}
+      {newsId === 20 && (
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#004650] mb-6">Vận Hành & Bảo Trì (O&M)</h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Khám phá dự án thực tế mà chúng tôi đã triển khai và vận hành thành công
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl max-w-4xl mx-auto">
+              <div className="relative">
+                <iframe
+                  className="w-full h-80 md:h-[500px]"
+                  src="https://www.youtube.com/embed/zlqW5XguxEE"
+                  title="Dự án xử lý nước thải thực tế - VLC Môi Trường"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="absolute bottom-4 left-4 right-4 bg-black bg-opacity-75 text-white px-4 py-2 rounded-lg">
+                  <h4 className="font-semibold">Dự án Nhà máy xử lý nước thải ABC</h4>
+                  <p className="text-sm">Hoàn thành 2022 - Vận hành ổn định với hiệu suất vượt trội</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
     </PageWrapper>
   );
 }

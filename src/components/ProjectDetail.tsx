@@ -267,7 +267,7 @@ export default function ProjectDetail() {
         </div>
 
         {/* Related Projects */}
-        <div className="mt-16">
+        <div className="mt-16 mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#0F5132] mb-4">Dự án liên quan</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">

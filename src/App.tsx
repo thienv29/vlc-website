@@ -13,8 +13,7 @@ import ProjectDetail from './components/ProjectDetail';
 import Sustainability from './components/Sustainability';
 import PostDetail from './components/PostDetail';
 import PostDetailStatic from './components/PostDetailStatic';
-import PostInternal from './components/PostInternal';
-import PostCommunity from './components/PostCommunity';
+import NewsCategory from './components/NewsCategory';
 import Careers from './components/Careers';
 import JobDetail from './components/JobDetail';
 import Contact from './components/Contact';
@@ -29,6 +28,7 @@ import ProductDetail from './components/ProductDetail';
 import NotFound from './components/NotFound';
 
 function App() {
+
   return (
     <Router>
       <ScrollToTop />
@@ -56,8 +56,7 @@ function App() {
             <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/news" element={<Post fullPage />} />
-            <Route path="/news/internal" element={<PostInternal />} />
-            <Route path="/news/community" element={<PostCommunity />} />
+            <Route path="/news/c/:category" element={<NewsCategory />} />
             <Route path="/news/:id" element={<PostDetail showSidebar={true} />} />
             <Route path="/services/:id" element={<PostDetailStatic />} />
             <Route path="/careers" element={<Careers />} />

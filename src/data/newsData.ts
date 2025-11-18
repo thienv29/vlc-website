@@ -11,7 +11,7 @@ export interface NewsItem {
   content: string;
   tags: string[];
   relatedNews: number[];
-  type: 'internal' | 'public'; // New category field
+  type: 'internal' | 'public' | 'market'; // internal: tin công ty, public: tin cộng đồng, market: tin thị trường
 }
 
 export const newsData: NewsItem[] = [
@@ -557,6 +557,187 @@ export const newsData: NewsItem[] = [
     `,
     tags: ['Động vật', 'Hoang dã', 'Bảo tồn', 'Môi trường'],
     relatedNews: [5, 17]
+  },
+  // Market News (Tin thị trường)
+  {
+    id: 19,
+    title: 'Thị trường năng lượng tái tạo Việt Nam tăng trưởng 35% trong năm 2024',
+    excerpt: 'Báo cáo mới nhất cho thấy thị trường năng lượng tái tạo tại Việt Nam đang có sự bùng nổ mạnh mẽ...',
+    date: '12/11/2024',
+    category: 'Thị trường',
+    image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=800',
+    author: 'Phân tích thị trường',
+    readTime: '6 phút đọc',
+    type: 'market',
+    content: `
+      <h1>Thị trường năng lượng tái tạo bùng nổ tại Việt Nam</h1>
+      
+      <p>Theo báo cáo mới nhất từ Bộ Công Thương, thị trường năng lượng tái tạo Việt Nam đã ghi nhận mức tăng trưởng ấn tượng 35% trong năm 2024, với tổng công suất lắp đặt đạt hơn 25.000 MW.</p>
+
+      <h2>Các yếu tố thúc đẩy tăng trưởng</h2>
+      <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+        <li>Chính sách hỗ trợ mạnh mẽ từ Chính phủ</li>
+        <li>Cam kết Net Zero 2050 của Việt Nam</li>
+        <li>Nhu cầu điện năng tăng cao</li>
+        <li>Công nghệ ngày càng hiệu quả và giảm chi phí</li>
+      </ul>
+
+      <h2>Triển vọng tương lai</h2>
+      <p>Các chuyên gia dự báo thị trường sẽ tiếp tục tăng trưởng với tốc độ 25-30% mỗi năm trong 5 năm tới, tạo ra cơ hội lớn cho các doanh nghiệp trong lĩnh vực này.</p>
+    `,
+    tags: ['Thị trường', 'Năng lượng tái tạo', 'Tăng trưởng', 'Việt Nam'],
+    relatedNews: [20, 21]
+  },
+  {
+    id: 20,
+    title: 'Giá pin năng lượng mặt trời giảm 40% so với năm 2020',
+    excerpt: 'Công nghệ mới giúp giảm mạnh chi phí sản xuất, mở ra cơ hội phát triển năng lượng sạch...',
+    date: '08/11/2024',
+    category: 'Công nghệ',
+    image: 'https://images.pexels.com/photos/433308/pexels-photo-433308.jpeg?auto=compress&cs=tinysrgb&w=800',
+    author: 'Chuyên gia năng lượng',
+    readTime: '5 phút đọc',
+    type: 'market',
+    content: `
+      <h1>Cách mạng giá pin năng lượng mặt trời</h1>
+      
+      <p>Giá pin năng lượng mặt trời đã giảm đáng kể 40% so với năm 2020, nhờ vào những tiến bộ vượt bậc trong công nghệ sản xuất và quy mô kinh tế.</p>
+
+      <h2>Nguyên nhân giảm giá</h2>
+      <p>Sự giảm giá này đến từ nhiều yếu tố:</p>
+      <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+        <li>Cải tiến công nghệ sản xuất tấm pin</li>
+        <li>Tăng quy mô sản xuất toàn cầu</li>
+        <li>Cạnh tranh gay gắt giữa các nhà sản xuất</li>
+        <li>Tự động hóa trong quy trình sản xuất</li>
+      </ul>
+
+      <h2>Tác động đến ngành năng lượng</h2>
+      <p>Việc giảm giá pin giúp năng lượng mặt trời trở nên cạnh tranh hơn so với các nguồn năng lượng hóa thạch, thúc đẩy quá trình chuyển đổi năng lượng xanh trên toàn cầu.</p>
+    `,
+    tags: ['Pin mặt trời', 'Giá cả', 'Công nghệ', 'Thị trường'],
+    relatedNews: [19, 22]
+  },
+  {
+    id: 21,
+    title: 'Quy định mới về xử lý nước thải công nghiệp có hiệu lực từ 2025',
+    excerpt: 'Bộ Tài nguyên và Môi trường công bố tiêu chuẩn mới nghiêm ngặt hơn cho xử lý nước thải...',
+    date: '05/11/2024',
+    category: 'Chính sách',
+    image: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800',
+    author: 'Luật sư môi trường',
+    readTime: '7 phút đọc',
+    type: 'market',
+    content: `
+      <h1>Quy định mới về xử lý nước thải công nghiệp</h1>
+      
+      <p>Bộ Tài nguyên và Môi trường vừa công bố Thông tư mới quy định tiêu chuẩn xả thải nước thải công nghiệp, có hiệu lực từ ngày 01/01/2025.</p>
+
+      <h2>Những thay đổi chính</h2>
+      <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+        <li>Giảm ngưỡng cho phép các chất ô nhiễm như COD, BOD, kim loại nặng</li>
+        <li>Bắt buộc lắp đặt hệ thống giám sát tự động liên tục</li>
+        <li>Tăng mức phạt đối với vi phạm môi trường</li>
+        <li>Yêu cầu công bố công khai số liệu xả thải</li>
+      </ul>
+
+      <h2>Tác động đến doanh nghiệp</h2>
+      <p>Các doanh nghiệp cần đầu tư nâng cấp hệ thống xử lý nước thải để đáp ứng tiêu chuẩn mới. Đây là cơ hội cho các công ty chuyên cung cấp giải pháp xử lý môi trường.</p>
+    `,
+    tags: ['Quy định', 'Nước thải', 'Môi trường', 'Chính sách'],
+    relatedNews: [19, 23]
+  },
+  {
+    id: 22,
+    title: 'Đầu tư nước ngoài vào năng lượng sạch tại Việt Nam tăng kỷ lục',
+    excerpt: 'Các quỹ đầu tư quốc tế đang tích cực rót vốn vào các dự án năng lượng tái tạo...',
+    date: '01/11/2024',
+    category: 'Đầu tư',
+    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
+    author: 'Chuyên gia tài chính',
+    readTime: '5 phút đọc',
+    type: 'market',
+    content: `
+      <h1>Làn sóng đầu tư nước ngoài vào năng lượng sạch</h1>
+      
+      <p>Năm 2024 chứng kiến mức đầu tư nước ngoài vào lĩnh vực năng lượng sạch tại Việt Nam đạt kỷ lục 8,5 tỷ USD, tăng 120% so với năm trước.</p>
+
+      <h2>Các dự án lớn</h2>
+      <p>Một số dự án thu hút vốn đầu tư lớn:</p>
+      <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+        <li>Dự án điện gió ngoài khơi tại Bình Thuận - 3 tỷ USD</li>
+        <li>Nhà máy điện mặt trời tại Ninh Thuận - 1,5 tỷ USD</li>
+        <li>Dự án năng lượng sinh khối tại Đồng bằng sông Cửu Long - 800 triệu USD</li>
+      </ul>
+
+      <h2>Lý do thu hút đầu tư</h2>
+      <p>Việt Nam có tiềm năng lớn về năng lượng tái tạo, chính sách hỗ trợ tốt, và vị trí chiến lược trong khu vực Đông Nam Á.</p>
+    `,
+    tags: ['Đầu tư nước ngoài', 'Năng lượng sạch', 'FDI', 'Dự án'],
+    relatedNews: [20, 19]
+  },
+  {
+    id: 23,
+    title: 'Công nghệ AI trong quản lý và tối ưu hóa năng lượng',
+    excerpt: 'Ứng dụng trí tuệ nhân tạo đang cách mạng hóa cách thức quản lý năng lượng...',
+    date: '28/10/2024',
+    category: 'Công nghệ',
+    image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
+    author: 'Chuyên gia AI',
+    readTime: '6 phút đọc',
+    type: 'market',
+    content: `
+      <h1>AI - Tương lai của quản lý năng lượng</h1>
+      
+      <p>Công nghệ trí tuệ nhân tạo (AI) đang trở thành công cụ mạnh mẽ trong việc tối ưu hóa sử dụng năng lượng, giảm lãng phí và nâng cao hiệu quả.</p>
+
+      <h2>Ứng dụng của AI</h2>
+      <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+        <li>Dự báo nhu cầu năng lượng chính xác</li>
+        <li>Tối ưu hóa lưới điện thông minh</li>
+        <li>Phát hiện sớm sự cố và bảo trì dự phòng</li>
+        <li>Quản lý tự động hệ thống HVAC và chiếu sáng</li>
+      </ul>
+
+      <h2>Tiết kiệm chi phí</h2>
+      <p>Các nghiên cứu cho thấy ứng dụng AI có thể giảm chi phí năng lượng từ 15-30% và giảm phát thải carbon đáng kể.</p>
+
+      <blockquote>
+        <p>"AI không chỉ giúp tiết kiệm năng lượng mà còn tạo ra một hệ thống năng lượng thông minh, bền vững hơn."</p>
+      </blockquote>
+    `,
+    tags: ['AI', 'Công nghệ', 'Quản lý năng lượng', 'Tối ưu hóa'],
+    relatedNews: [21, 20]
+  },
+  {
+    id: 24,
+    title: 'Xu hướng xây dựng xanh và tiêu chuẩn LEED tại Việt Nam',
+    excerpt: 'Ngày càng nhiều dự án xây dựng hướng tới chứng nhận LEED và tiêu chuẩn xanh quốc tế...',
+    date: '22/10/2024',
+    category: 'Xây dựng',
+    image: 'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800',
+    author: 'Kiến trúc sư xanh',
+    readTime: '5 phút đọc',
+    type: 'market',
+    content: `
+      <h1>Xu hướng xây dựng xanh tại Việt Nam</h1>
+      
+      <p>Xây dựng xanh không còn là xu hướng xa lạ mà đang trở thành tiêu chuẩn mới cho các dự án bất động sản tại Việt Nam.</p>
+
+      <h2>Lợi ích của xây dựng xanh</h2>
+      <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+        <li>Tiết kiệm năng lượng 25-30%</li>
+        <li>Giảm chi phí vận hành dài hạn</li>
+        <li>Cải thiện sức khỏe và năng suất người sử dụng</li>
+        <li>Tăng giá trị bất động sản</li>
+        <li>Giảm tác động đến môi trường</li>
+      </ul>
+
+      <h2>Tiêu chuẩn LEED</h2>
+      <p>Hiện tại Việt Nam đã có hơn 150 dự án đạt chứng nhận LEED, tăng 45% so với năm 2020. Xu hướng này được dự báo sẽ tiếp tục tăng mạnh.</p>
+    `,
+    tags: ['Xây dựng xanh', 'LEED', 'Bất động sản', 'Bền vững'],
+    relatedNews: [19, 22]
   }
 ];
 
@@ -567,6 +748,10 @@ export const getInternalNews = (): NewsItem[] => {
 
 export const getPublicNews = (): NewsItem[] => {
   return newsData.filter(item => item.type === 'public');
+};
+
+export const getMarketNews = (): NewsItem[] => {
+  return newsData.filter(item => item.type === 'market');
 };
 
 export const getNewsById = (id: number): NewsItem | undefined => {
