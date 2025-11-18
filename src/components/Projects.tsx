@@ -189,7 +189,7 @@ export default function Projects({ fullPage = false }: ProjectsProps) {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 pb-16">
 
           <div className="flex gap-8">
             <div className="w-80 flex-shrink-0 animate-fadeIn">
