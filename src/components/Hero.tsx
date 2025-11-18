@@ -45,21 +45,21 @@ export default function Hero() {
         {/* Office Locations with subtle frame */}
         <div className="mb-12 animate-slideInUp delay-300">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-lg">
+            <div className="bg-black/20 backdrop-blur-sm border border-white/25 rounded-2xl p-6 shadow-lg">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <div className="text-center">
-                  <div className="font-semibold text-white text-sm">{t('hero.branches.north')}</div>
-                  <div className="text-white/70 text-xs mt-1">{t('hero.addresses.north')}</div>
+                <div className="text-center group px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-white/10 hover:shadow-md">
+                  <div className="font-semibold text-white text-sm group-hover:text-primary-200 transition-colors">{t('hero.branches.north')}</div>
+                  <div className="text-white/80 text-xs mt-1 font-medium group-hover:text-white transition-colors">{t('hero.addresses.north')}</div>
                 </div>
-                <div className="hidden sm:block w-px h-8 bg-white/30"></div>
-                <div className="text-center">
-                  <div className="font-semibold text-white text-sm">{t('hero.branches.central')}</div>
-                  <div className="text-white/70 text-xs mt-1">{t('hero.addresses.central')}</div>
+                <div className="hidden sm:block w-px h-8 bg-white/40 group-hover:bg-white/60"></div>
+                <div className="text-center group px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-white/10 hover:shadow-md">
+                  <div className="font-semibold text-white text-sm group-hover:text-primary-200 transition-colors">{t('hero.branches.central')}</div>
+                  <div className="text-white/80 text-xs mt-1 font-medium group-hover:text-white transition-colors">{t('hero.addresses.central')}</div>
                 </div>
-                <div className="hidden sm:block w-px h-8 bg-white/30"></div>
-                <div className="text-center">
-                  <div className="font-semibold text-white text-sm">{t('hero.branches.west')}</div>
-                  <div className="text-white/70 text-xs mt-1">{t('hero.addresses.west')}</div>
+                <div className="hidden sm:block w-px h-8 bg-white/40 group-hover:bg-white/60"></div>
+                <div className="text-center group px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer hover:bg-white/10 hover:shadow-md">
+                  <div className="font-semibold text-white text-sm group-hover:text-primary-200 transition-colors">{t('hero.branches.west')}</div>
+                  <div className="text-white/80 text-xs mt-1 font-medium group-hover:text-white transition-colors">{t('hero.addresses.west')}</div>
                 </div>
               </div>
             </div>
