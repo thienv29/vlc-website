@@ -85,24 +85,24 @@ export default function FeaturedProjects() {
     <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
-            <Award className="w-4 h-4" />
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-2 bg-primary-100 text-primary-700 rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
+            <Award className="w-3 h-3 md:w-4 md:h-4" />
             Dự án tiêu biểu
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             Dự án nổi bật & Mới nhất
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 md:px-0">
             Những dự án EPC chất lượng cao, ứng dụng công nghệ tiên tiến và tạo giá trị bền vững
           </p>
         </div>
 
         {/* Carousel Container */}
         <div className="relative">
-          {/* Main Project Showcase */}
-          <div className="relative overflow-hidden rounded-3xl">
-            <div className="relative h-96 md:h-[500px]">
+        {/* Main Project Showcase */}
+        <div className="relative overflow-hidden rounded-3xl">
+          <div className="relative h-80 sm:h-96 md:h-[500px]">
               <img
                 src={featuredProjects[currentSlide].image}
                 alt={featuredProjects[currentSlide].title}
@@ -113,18 +113,18 @@ export default function FeaturedProjects() {
               />
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               
               {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-12">
                 <div className="max-w-4xl">
                   {/* Category & Status */}
-                  <div className="flex flex-wrap items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-primary-500 text-white rounded-full text-sm font-medium">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-3 sm:mb-4">
+                    <span className="px-2 py-1 sm:px-3 text-xs sm:text-sm bg-primary-500 text-white rounded-full font-medium">
                       {featuredProjects[currentSlide].category}
                     </span>
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      featuredProjects[currentSlide].status === 'Hoàn thành' 
+                    <span className={`px-2 py-1 sm:px-3 text-xs sm:text-sm rounded-full font-medium ${
+                      featuredProjects[currentSlide].status === 'Hoàn thành'
                         ? 'bg-green-500/20 text-green-300 border border-green-400/30'
                         : featuredProjects[currentSlide].status === 'Đang triển khai'
                         ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-400/30'
@@ -135,37 +135,37 @@ export default function FeaturedProjects() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 leading-tight">
                     {featuredProjects[currentSlide].title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-lg text-gray-200 mb-6 leading-relaxed max-w-3xl">
+                  {/* Description - Hidden on mobile, visible on md+ */}
+                  <p className="hidden md:block text-base lg:text-lg text-gray-200 mb-6 leading-relaxed max-w-3xl">
                     {featuredProjects[currentSlide].description}
                   </p>
 
                   {/* Project Info */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div className="flex items-center gap-3">
-                      <MapPin className="w-5 h-5 text-primary-400" />
-                      <span className="text-gray-300">{featuredProjects[currentSlide].location}</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-8">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
+                      <span className="text-gray-300 text-sm sm:text-base">{featuredProjects[currentSlide].location}</span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Calendar className="w-5 h-5 text-primary-400" />
-                      <span className="text-gray-300">{featuredProjects[currentSlide].year}</span>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
+                      <span className="text-gray-300 text-sm sm:text-base">{featuredProjects[currentSlide].year}</span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Award className="w-5 h-5 text-primary-400" />
-                      <span className="text-gray-300">{featuredProjects[currentSlide].investment}</span>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <Award className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
+                      <span className="text-gray-300 text-sm sm:text-base">{featuredProjects[currentSlide].investment}</span>
                     </div>
                   </div>
 
-                  {/* Highlights */}
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    {featuredProjects[currentSlide].highlights.map((highlight, index) => (
+                  {/* Highlights - Hidden on mobile, visible on md+ */}
+                  <div className="hidden md:flex flex-wrap gap-3 mb-6">
+                    {featuredProjects[currentSlide].highlights.slice(0, 2).map((highlight, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full text-sm"
+                        className="px-2 py-1 sm:px-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full text-xs sm:text-sm"
                       >
                         ✓ {highlight}
                       </span>
@@ -173,39 +173,70 @@ export default function FeaturedProjects() {
                   </div>
 
                   {/* CTA */}
-                  <button className="inline-flex items-center gap-3 px-8 py-3 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all transform hover:scale-105">
-                    Xem chi tiết dự án
-                    <ArrowRight className="w-5 h-5" />
+                  <button className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-8 sm:py-3 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all transform hover:scale-105 text-sm sm:text-base">
+                    Xem chi tiết
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - Hidden on mobile, visible on md+ */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all"
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
-          
+
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all"
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Indicators */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+          {/* Mobile Navigation */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 md:hidden">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <div className="flex gap-1">
+                {featuredProjects.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentSlide
+                        ? 'bg-white w-6'
+                        : 'bg-white/50 hover:bg-white/70'
+                    }`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop Indicators */}
+          <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 gap-2">
             {featuredProjects.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentSlide 
-                    ? 'bg-white w-8' 
+                  index === currentSlide
+                    ? 'bg-white w-8'
                     : 'bg-white/50 hover:bg-white/70'
                 }`}
               />
