@@ -63,50 +63,50 @@ export default function Hero() {
 
         {/* Address Information */}
         <div className="mb-8 animate-slideInUp delay-150">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white/15 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
-              <h3 className="text-lg font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
-                <MapPin className="w-5 h-5 text-primary-300" />
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white/15 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-2xl">
+              <h3 className="text-base font-bold text-white mb-4 text-center flex items-center justify-center gap-2">
+                <MapPin className="w-4 h-4 text-primary-300" />
                 {t('hero.officeLocations')}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-6 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-4 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="text-center">
-                    <div className="inline-flex p-3 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                      <MapPin className="w-5 h-5 text-white" />
+                    <div className="inline-flex p-2 bg-white/20 rounded-full mb-2 group-hover:bg-white/30 transition-colors">
+                      <MapPin className="w-4 h-4 text-white" />
                     </div>
-                    <div className="font-bold text-white text-base mb-2 group-hover:text-primary-200 transition-colors">
+                    <div className="font-bold text-white text-sm mb-1 group-hover:text-primary-200 transition-colors">
                       {t('hero.branches.north')}
                     </div>
-                    <div className="text-white/90 text-sm leading-relaxed font-medium">
+                    <div className="text-white/90 text-xs leading-relaxed font-medium">
                       {t('hero.addresses.north')}
                     </div>
                   </div>
                 </div>
-                
-                <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-6 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+
+                <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-4 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="text-center">
-                    <div className="inline-flex p-3 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                      <MapPin className="w-5 h-5 text-white" />
+                    <div className="inline-flex p-2 bg-white/20 rounded-full mb-2 group-hover:bg-white/30 transition-colors">
+                      <MapPin className="w-4 h-4 text-white" />
                     </div>
-                    <div className="font-bold text-white text-base mb-2 group-hover:text-primary-200 transition-colors">
+                    <div className="font-bold text-white text-sm mb-1 group-hover:text-primary-200 transition-colors">
                       {t('hero.branches.central')}
                     </div>
-                    <div className="text-white/90 text-sm leading-relaxed font-medium">
+                    <div className="text-white/90 text-xs leading-relaxed font-medium">
                       {t('hero.addresses.central')}
                     </div>
                   </div>
                 </div>
-                
-                <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-6 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+
+                <div className="group bg-white/20 backdrop-blur-lg border border-white/25 rounded-2xl p-4 hover:bg-white/30 hover:border-white/40 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="text-center">
-                    <div className="inline-flex p-3 bg-white/20 rounded-full mb-4 group-hover:bg-white/30 transition-colors">
-                      <MapPin className="w-5 h-5 text-white" />
+                    <div className="inline-flex p-2 bg-white/20 rounded-full mb-2 group-hover:bg-white/30 transition-colors">
+                      <MapPin className="w-4 h-4 text-white" />
                     </div>
-                    <div className="font-bold text-white text-base mb-2 group-hover:text-primary-200 transition-colors">
+                    <div className="font-bold text-white text-sm mb-1 group-hover:text-primary-200 transition-colors">
                       {t('hero.branches.west')}
                     </div>
-                    <div className="text-white/90 text-sm leading-relaxed font-medium">
+                    <div className="text-white/90 text-xs leading-relaxed font-medium">
                       {t('hero.addresses.west')}
                     </div>
                   </div>
